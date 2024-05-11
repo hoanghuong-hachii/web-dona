@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/digitalsign.css">
+
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/product_detail.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <div class="main">
+        <div class="grid">
+            <header class="header">
+                <div class="header-top">
+                    <div class="grid wide">
+
+                        <div class="header__top">
+                            <a class="header-menu">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <rect width="24" height="24" fill="none" />
+                                    <g fill="none">
+                                        <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                        <path fill="currentColor" d="M20 17.5a1.5 1.5 0 0 1 .144 2.993L20 20.5H4a1.5 1.5 0 0 1-.144-2.993L4 17.5zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 1 1 0-3z" />
+                                    </g>
+                                </svg>
+                            </a>
+
+                            <div class="navbar__logo">
+                                <a href="/home.html">
+                                    <img src="./assets/imgs/logo.webp" style="width: 100%;" alt="">
+                                </a>
+                            </div>
+                            
+                            <div class="header__top-search">
+                                <div class="navbar__search">
+                                    <button class="navbar__search-btn">
+                                        <i class="navbar__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                    <input class="navbar__search-input search-auto" type="text" placeholder="Bạn muốn tìm gì?">
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="navbar__list">
+                                <li class="navbar__item">
+                                    <div class="navbar__store">
+                                        <svg class="navbar__item-icon" style="margin-right: 8px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><path fill="currentColor" d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8A2.37 2.37 0 0 1 8 7.083A2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0a.5.5 0 0 1 1 0a1.375 1.375 0 0 0 2.75 0a.5.5 0 0 1 1 0a1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0a.5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"/></svg>
+                                        <a href="#">Hệ thống cửa hàng</a>
+                                    </div>
+                                </li>
+
+                                <li class="navbar__item">
+                                    <div class="navbar__item-acount">
+                                        <div class="navbar__item-acount-avatar">
+                                            <svg class="navbar__item-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20"><path fill="currentColor" d="M9.993 10.573a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9M10 0a6 6 0 0 1 3.04 11.174c3.688 1.11 6.458 4.218 6.955 8.078c.047.367-.226.7-.61.745c-.383.045-.733-.215-.78-.582c-.54-4.19-4.169-7.345-8.57-7.345c-4.425 0-8.101 3.161-8.64 7.345c-.047.367-.397.627-.78.582c-.384-.045-.657-.378-.61-.745c.496-3.844 3.281-6.948 6.975-8.068A6 6 0 0 1 10 0"/></svg>
+                                        </div>
+                                        <div class="navbar__item-acount-content">
+                                            <a href="#">Tài khoản</a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="navbar__item ">
+                                    <div class="navbar__item-notify--show">
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                <g fill="none" stroke="#313131" stroke-linecap="round" stroke-width="2">
+                                                    <g>
+                                                        <path stroke-dasharray="4" stroke-dashoffset="4" d="M12 3V5">
+                                                            <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="4;0" />
+                                                        </path>
+                                                        <path stroke-dasharray="28" stroke-dashoffset="28" d="M12 5C8.68629 5 6 7.68629 6 11L6 17C5 17 4 18 4 19H12M12 5C15.3137 5 18 7.68629 18 11L18 17C19 17 20 18 20 19H12">
+                                                            <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.2s" dur="0.4s" values="28;0" />
+                                                        </path>
+                                                        <animateTransform attributeName="transform" begin="0.8s" dur="6s" keyTimes="0;0.05;0.15;0.2;1" repeatCount="indefinite" type="rotate" values="0 12 3;3 12 3;-3 12 3;0 12 3;0 12 3" />
+                                                    </g>
+                                                    <path stroke-dasharray="8" stroke-dashoffset="8" d="M10 20C10 21.1046 10.8954 22 12 22C13.1046 22 14 21.1046 14 20">
+                                                        <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="8;0" />
+                                                        <animateTransform attributeName="transform" begin="1s" dur="6s" keyTimes="0;0.05;0.15;0.2;1" repeatCount="indefinite" type="rotate" values="0 12 8;6 12 8;-6 12 8;0 12 8;0 12 8" />
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                            <span id="count-notify" class="count-item">0</span>
+                                        </a>
+                                        
+                                        <div class="navbar__notice">
+                                            <header class="navbar__notice-header">
+                                                <h3>Thông báo mới nhận</h3>
+                                            </header>
+                                            <ul class="navbar__notice-list">
+                                                <li class="navbar__notice-item navbar__notice-item--viewed">
+                                                    <a href="#" class="">
+                                                        <img class="notice-img" src="https://cf.shopee.vn/file/a8d76bca057ba0b117dcf8e1ef068d16_xhdpi" alt="">
+                                                        <div class="navbar__notice-info">
+                                                            <span class="navbar__notice-name">Mỹ phẩm Ohui chính hãng</span>
+                                                            <span class="navbar__notice-desc">Mô tả của mỹ phẩm Ohui chính hãng</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="navbar__notice-item">
+                                                    <a href="#" class="">
+                                                        <img class="notice-img" src="https://cf.shopee.vn/file/a8d76bca057ba0b117dcf8e1ef068d16_xhdpi" alt="">
+                                                        <div class="navbar__notice-info">
+                                                            <span class="navbar__notice-name">
+                                                                Đèn Led hình Đèn Lồng 8 khía dài 10M nhiều chế độ nhấp nháy treo cây trang trí Tết</span>
+                                                            <span class="navbar__notice-desc">
+                                                                Đèn Led hình Đèn Lồng 8 khía dài 10M nhiều chế độ nhấp nháy treo cây trang trí Tết</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="navbar__notice-item">
+                                                    <a href="#" class="">
+                                                        <img class="notice-img" src="https://cf.shopee.vn/file/a8d76bca057ba0b117dcf8e1ef068d16_xhdpi" alt="">
+                                                        <div class="navbar__notice-info">
+                                                            <span class="navbar__notice-name">Mỹ phẩm Ohui chính hãng</span>
+                                                            <span class="navbar__notice-desc">Mô tả của mỹ phẩm Ohui chính hãng</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <footer class="navbar__notice-footer">
+                                                <a href="#">Xem tất cả</a>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="navbar__item">
+                                    <div class="navbar__item-like">
+                                        <a href="#">
+                                            <svg class="navbar__item-icon" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#000000" d="M31.91 61.67L29.62 60c-9.4-6.7-16.72-13.49-21.74-20.17C3.11 33.5.48 27.39.06 21.7A17.63 17.63 0 0 1 5.45 7.16a17 17 0 0 1 11.86-4.81c3.46 0 7.93.39 11.8 3.4A19.09 19.09 0 0 1 32 8.41a19.91 19.91 0 0 1 2.91-2.67c3.89-3 8.37-3.41 11.84-3.41a16.86 16.86 0 0 1 11.85 4.8 17.51 17.51 0 0 1 5.33 14.53c-.44 5.7-3.1 11.81-7.9 18.14C51 46.5 43.63 53.3 34.21 60zM8.51 10.38a13.31 13.31 0 0 0-4 11c.35 4.83 2.69 10.15 6.94 15.79 4.7 6.24 11.59 12.65 20.48 19 8.92-6.39 15.84-12.81 20.58-19.08 4.28-5.65 6.64-11 7-15.8a13.25 13.25 0 0 0-4-11 12.53 12.53 0 0 0-8.76-3.57c-2.76 0-6.29.29-9.11 2.48a12.37 12.37 0 0 0-3.09 3.15v.07L32 16l-2.5-3.56a12.68 12.68 0 0 0-3.11-3.2c-2.8-2.17-6.32-2.46-9.07-2.46a12.58 12.58 0 0 0-8.8 3.59z"></path></svg>
+
+                                            <span id="count-like" class="count-item">0</span>
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="navbar__item">
+                                    <div class="navbar__item-cart">
+                                        <a href="shoping_cart.html">
+                                            <svg class="navbar__item-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M6 6h24l-3 13H9m18 4H10L5 2H2"/><circle cx="25" cy="27" r="2"/><circle cx="12" cy="27" r="2"/></g></svg>
+                                            <span id="count-cart" class="count-item">0</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <div class="header-middle">
+                    <div class="grid wide">
+                        <div class="header__middle">
+                            <ul class="nav-category">
+                                <li class="nav-category__item"><a href="#">Trang chủ</a></li>
+                                <li class="nav-category__item">
+                                    <a href="#">Thương hiệu
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 20 20">
+                                            <rect width="20" height="20" fill="none" />
+                                            <path fill="currentColor" d="M10.103 12.778L16.81 6.08a.69.69 0 0 1 .99.012a.726.726 0 0 1-.012 1.012l-7.203 7.193a.69.69 0 0 1-.985-.006L2.205 6.72a.727.727 0 0 1 0-1.01a.69.69 0 0 1 .99 0z" />
+                                        </svg>
+                                    </a>
+                                    <div class="subnav-category">
+                                        <div class="row">
+                                            <div class="col l-4 m-4">
+                                                <ul class="subnav-item">
+                                                    <li class="item"><a href="#">A'pieu</a></li>
+                                                    <li class="item"><a href="#">AHC</a></li>
+                                                    <li class="item"><a href="#">Banila Co</a></li>
+                                                    <li class="item"><a href="#">Cosrx</a></li>
+                                                    <li class="item"><a href="#">Club Clio</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col l-4 m-4">
+                                                <ul class="subnav-item">
+                                                    <li class="item"><a href="#">Dear Dahlia</a></li>
+                                                    <li class="item"><a href="#">Dermatory</a></li>
+                                                    <li class="item"><a href="#">Peripera</a></li>
+                                                    <li class="item"><a href="#">The Face Shop</a></li>
+                                                    <li class="item"><a href="#">Garnier</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col l-4 m-4">
+                                                <ul class="subnav-item">
+                                                    <li class="item"><a href="#">Kai</a></li>
+                                                    <li class="item"><a href="#">Hada Labo</a></li>
+                                                    <li class="item"><a href="#">L'oreal Paris</a></li>
+                                                    <li class="item"><a href="#">LA ROCHE-POSAY</a></li>
+                                            
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </li>
+                                <li class="nav-category__item">
+                                    <a href="#">Trang điểm
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 20 20">
+                                            <rect width="20" height="20" fill="none" />
+                                            <path fill="currentColor" d="M10.103 12.778L16.81 6.08a.69.69 0 0 1 .99.012a.726.726 0 0 1-.012 1.012l-7.203 7.193a.69.69 0 0 1-.985-.006L2.205 6.72a.727.727 0 0 1 0-1.01a.69.69 0 0 1 .99 0z" />
+                                        </svg>
+                                    </a>
+                                    
+                                    <div class="subnav-category">
+                                        <div class="row">
+                                            <div class="col l-4 m-4">
+                                                <h3 class="subnav-title">Trang điểm mặt</h3>
+                                                <ul class="subnav-item">
+                                                    <li class="item"><a href="#">Kem nền</a></li>
+                                                    <li class="item"><a href="#">Che khuyết điểm</a></li>
+                                                    <li class="item"><a href="#">Kem lót</a></li>
+                                                    <li class="item"><a href="#">Phấn má hồng</a></li>
+                                                    <li class="item"><a href="#">Phấn nước Cushion</a></li>
+                                                    <li class="item"><a href="#">Phấn phủ</a></li>
+                                                    <li class="item"><a href="#">Tạo khối - Highlight</a></li>
+                                                    <li class="item"><a href="#">Kem nền</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col l-4 m-4">
+                                                <h3 class="subnav-title">Trang điểm mắt</h3>
+                                                <ul class="subnav-item">
+                                                    <li class="item"><a href="#">Mascara</a></li>
+                                                    <li class="item"><a href="#">Kẻ chân mày</a></li>
+                                                    <li class="item"><a href="#">Phấn mắt</a></li>
+                                                    <li class="item"><a href="#">Kẻ viền mắt</a></li>
+                                                    <li class="item"><a href="#">Phụ kiện trang điểm</a></li>
+                                                    <li class="item"><a href="#">Bông mút trang điểm</a></li>
+                                                    <li class="item"><a href="#">Bông Cotton</a></li>
+                                                    <li class="item"><a href="#">Phụ kiện trang điểm khác</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col l-4 m-4">
+                                                <h3 class="subnav-title">Trang điểm môi</h3>
+                                                <ul class="subnav-item">
+                                                    <li class="item"><a href="#">Son thỏi</a></li>
+                                                    <li class="item"><a href="#">Son tint</a></li>
+                                                    <li class="item"><a href="#">Son bóng</a></li>
+                                                    <li class="item"><a href="#">Son dưỡng môi</a></li>
+                                            
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </li>
+                                <li class="nav-category__item">
+                                    <a href="#">Dưỡng da
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 20 20">
+                                            <rect width="20" height="20" fill="none" />
+                                            <path fill="currentColor" d="M10.103 12.778L16.81 6.08a.69.69 0 0 1 .99.012a.726.726 0 0 1-.012 1.012l-7.203 7.193a.69.69 0 0 1-.985-.006L2.205 6.72a.727.727 0 0 1 0-1.01a.69.69 0 0 1 .99 0z" />
+                                        </svg>
+                                    </a>
+                                    <div class="subnav-category-min">
+                                        <ul class="subnav-item">
+                                            <li class="item ">
+                                                <a href="#">Dưỡng da mặt
+                                                    <div class="icon-arrowRight">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
+                                                            <rect width="15" height="15" fill="none" />
+                                                            <path fill="none" stroke="currentColor" stroke-linecap="square" d="m5 14l7-6.5L5 1" />
+                                                        </svg>
+                                                    </div>
+                                                    
+                                                </a>
+
+                                                <div class="subnav-second">
+                                                    <ul class="subnav-s-list">
+                                                        <li class="subnav-s__item"><a href="#">Nước cân bằng</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Xịt khoáng</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Sữa dưỡng</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Tinh chất dưỡng</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Kem dưỡng mắt</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Kem dưỡng da mặt</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Bộ dưỡng chăm sóc da</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a href="#">Làm sạch
+                                                    <div class="icon-arrowRight">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
+                                                            <rect width="15" height="15" fill="none" />
+                                                            <path fill="none" stroke="currentColor" stroke-linecap="square" d="m5 14l7-6.5L5 1" />
+                                                        </svg>
+                                                    </div>
+                                                </a>
+                                                <div class="subnav-second">
+                                                    <ul class="subnav-s-list">
+                                                        <li class="subnav-s__item"><a href="#">Sữa rửa mặt</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Tẩy trang da mặt</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Tẩy trang cho môi và mắt</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Tẩy tế bào chết mặt</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Phụ kiện làm sạch</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a href="#">Mặt nạ</a>
+                                                <div class="icon-arrowRight">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
+                                                        <rect width="15" height="15" fill="none" />
+                                                        <path fill="none" stroke="currentColor" stroke-linecap="square" d="m5 14l7-6.5L5 1" />
+                                                    </svg>
+                                                </div>
+
+                                                <div class="subnav-second">
+                                                    <ul class="subnav-s-list">
+                                                        <li class="subnav-s__item"><a href="#">Mặt nạ giấy</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Mặt nạ môi</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Mặt nạ dưỡng</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Mặt nạ tay chân</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                </li>
+                                <li class="nav-category__item">
+                                    <a href="#">Chăm sóc cá nhân
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 20 20">
+                                            <rect width="20" height="20" fill="none" />
+                                            <path fill="currentColor" d="M10.103 12.778L16.81 6.08a.69.69 0 0 1 .99.012a.726.726 0 0 1-.012 1.012l-7.203 7.193a.69.69 0 0 1-.985-.006L2.205 6.72a.727.727 0 0 1 0-1.01a.69.69 0 0 1 .99 0z" />
+                                        </svg>
+                                    </a>
+                                    <div class="subnav-category-min">
+                                        <ul class="subnav-item">
+                                            <li class="item ">
+                                                <a href="#">Chăm sóc body
+                                                    <div class="icon-arrowRight">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
+                                                            <rect width="15" height="15" fill="none" />
+                                                            <path fill="none" stroke="currentColor" stroke-linecap="square" d="m5 14l7-6.5L5 1" />
+                                                        </svg>
+                                                    </div>
+                                                    
+                                                </a>
+
+                                                <div class="subnav-second">
+                                                    <ul class="subnav-s-list">
+                                                        <li class="subnav-s__item"><a href="#">Sữa tắm</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Dưỡng thể</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Làm sạch tế bào chết</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Phụ kiện chăm sóc cơ thể</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Nước hoa / xịt thơm body</a></li>
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a href="#">Chăm sóc tóc
+                                                    <div class="icon-arrowRight">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
+                                                            <rect width="15" height="15" fill="none" />
+                                                            <path fill="none" stroke="currentColor" stroke-linecap="square" d="m5 14l7-6.5L5 1" />
+                                                        </svg>
+                                                    </div>
+                                                </a>
+                                                <div class="subnav-second">
+                                                    <ul class="subnav-s-list">
+                                                        <li class="subnav-s__item"><a href="#">Dầu gội - dầu xả</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Dưỡng tóc</a></li>
+                                                        <li class="subnav-s__item"><a href="#">Tạo kiểu tóc</a></li>
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-category__item"><a href="#">Khuyến mãi HOT</a></li>
+                                <li class="nav-category__item"><a href="#">Top bán chạy</a></li>
+                                <li class="nav-category__item"><a href="#">Chăm sóc cơ thể</a></li>
+                                <li class="nav-category__item"><a href="#">Nhận mã ưu đãi</a></li>
+                            </ul>
+                
+                            <div class="control-menu">
+                                <div  id="control-menu__left">
+                                    <i class="fa-solid fa-angle-left "></i>
+                                </div>
+                                <div  id="control-menu__right">
+                                    <i class="fa-solid fa-angle-right "></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="header__top-search search-mb">
+                            <div class="navbar__search">
+                                <button id="search-button" class="navbar__search-btn search-button">
+                                    <i class="navbar__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                                </button>
+                                <input id="search-form" class=" search-form navbar__search-input search-auto" type="text" placeholder="Bạn muốn tìm gì?">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.navbar__search-input').keypress(function(event) {
+                if (event.keyCode === 13) {
+                    console.log('enter')
+                    event.preventDefault(); 
+                    performSearch(); 
+                }
+            });
+        
+            $('.navbar__search-btn').click(function() {
+                performSearch(); 
+            });
+        
+            function performSearch() {
+                var keyword = $('.navbar__search-input').val(); 
+                console.log('Bạn đang tìm kiếm: ' + keyword);
+                window.location.href = './search_result.html?search=' + encodeURIComponent(keyword);
+                
+            }
+
+        });
+       
+    </script>
+</body>
+</html>
+    
+       
+            

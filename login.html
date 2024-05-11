@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/digitalsign.css">
+
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/product_detail.css">
+    <link rel="stylesheet" href="./assets/css/shoping_cart.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <div class="main">
+        <div class="grid">
+            <header class="header"></header>
+        </div>
+
+        <div id="container">
+            <div class="grid wide">
+
+                <div class="bread-crumb">
+                    <ul class="list">
+                        <li class="item">
+                            <a href="/home.html">
+                                <h3>Trang chủ</h3>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#">
+                                <h3>Đăng nhập</h3>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="container-body">
+                    <header class="login-header">
+                        <h3>Đăng nhập</h3>
+                    </header>
+
+                    <div class="login-body">
+                        <input type="text" name="" id="name" class="input-form" placeholder="Email/Tên đăng nhập">
+                        <input type="text" name="" id="pass" class="input-form mt-16" placeholder="Mật khẩu">
+
+                        <a href="#" onclick="RequestLogin();" class="btn-all mt-16">Đăng nhập</a>
+                    </div>
+
+                    <footer class="login-footer">
+                        <div class="forget">
+                            <a href="#">Quên mật khẩu?</a>
+                            <a href="/register.html">Đăng ký tại đây</a>
+
+                        </div>
+                        <span>Hoặc đăng nhập qua</span>
+
+                        <div class="social-btn">
+                            <a href="#" class="btn-social" style="background: #3b5998;">
+                                <svg class="mr-16" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
+                                    <path fill="#fff" d="M9.5 3H12V0H9.5C7.57 0 6 1.57 6 3.5V5H4v3h2v8h3V8h2.5l.5-3H9V3.5c0-.271.229-.5.5-.5" />
+                                </svg>
+                                <p>Facebook</p>
+                            </a>
+                            <a href="#" class="btn-social ml-4" style="background: #e14b33;">
+                                <svg class="mr-16" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="#fff" d="m14.969 11.814l.001.146a8.015 8.015 0 0 1-.929 3.757l.021-.044a6.588 6.588 0 0 1-2.55 2.632l-.032.017a7.55 7.55 0 0 1-3.851.951h.008h-.022a7.457 7.457 0 0 1-2.995-.623l.048.019a7.515 7.515 0 0 1-4.044-4.013l-.018-.049c-.382-.876-.604-1.896-.604-2.969S.224 9.545.625 8.62l-.019.049a7.515 7.515 0 0 1 4.013-4.044l.049-.018a7.365 7.365 0 0 1 2.951-.606h.018h-.001L7.761 4c1.937 0 3.695.762 4.992 2.004l-.003-.003l-2.073 1.99a4.187 4.187 0 0 0-3.046-1.177h.006h-.031c-.864 0-1.671.24-2.36.657l.02-.011a4.865 4.865 0 0 0-.022 8.342l.022.012a4.508 4.508 0 0 0 2.339.646h.033h-.002h.052c.549 0 1.077-.088 1.572-.25l-.036.01a4.044 4.044 0 0 0 1.204-.607l-.011.008a4.39 4.39 0 0 0 .81-.807l.008-.01c.198-.25.369-.535.5-.841l.009-.024c.093-.22.17-.478.22-.746l.004-.024H7.634v-2.625h7.208c.078.382.124.821.126 1.27v.002zM24 10.541v2.189h-2.177v2.177h-2.189V12.73H17.46v-2.189h2.177V8.364h2.189v2.177z" />
+                                </svg>
+                                <p>Google</p>
+                            </a>
+                        </div>
+                        
+
+                    </footer>
+                   
+                    
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="./assets/js/product_detail.js"></script>
+    <script src="./assets/js/placeholderTypewriter.js"></script>
+    <!-- <script>
+        
+        localStorage.setItem('env_id', 'US000001');
+
+        var envValue = localStorage.getItem('env_id');
+        console.log('Environment id:', envValue);
+
+    </script> -->
+
+    <script>
+
+        function RequestLogin() {
+            let name = $('#name').val();
+            let pass = $('#pass').val();
+            $.ajax({
+                url: 'http://localhost:8080/api/v2/users/login',
+                type: 'POST',
+                data: JSON.stringify({
+                    "username": name,
+                    "password": pass
+                }),
+                contentType: 'application/json',
+                success: function(response) {
+                    //console.log(response);
+                    let dataUser = response.data
+                    let id = dataUser.idUser
+                    localStorage.setItem('env_id', id);
+                    window.location.href='/home.html'
+
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+            
+        }
+       
+    </script>
+    <script>
+
+        $(document).ready(function() {
+            $(".header").load("base.html")
+            $("#footer").load("footer.html")
+
+        });
+        
+    </script>
+</body>
+</html>

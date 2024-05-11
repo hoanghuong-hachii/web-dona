@@ -1,0 +1,205 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color:#333;
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --mainColor: #72a834;
+    --subColor: #4e7661;
+    --topHeader: #8cc7a8;
+    --bgHeader: #ffffff;
+    --topHeader2: #b2d18f;
+    --bgFlash: linear-gradient(to right, rgb(140,199,168,0.6), rgb(178,209,143,0.6));
+
+    --height-header: 110px;
+    --height-header-top: 60px;
+    --height-header-middle: calc(var(--height-header) - var(--height-header-top));
+    --header-color: linear-gradient(to right, #FF902F 0%, #fc6075 100%);
+
+    --box-shadow: 0 2px 4px rgba(0,0,0,.08);
+    --box-shadow3dir:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --topHeader3: linear-gradient(to right, var(--topHeader), var(--topHeader2));
+    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.5rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.font-bold {
+    font-weight: 500 !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+.mt-24 {
+    margin-top: 24px;
+}
+.mt-32 {
+    margin-top: 32px;
+}
+.mt-40 {
+    margin-top: 40px;
+}
+.ml-4 {
+    margin-left: 4px;
+}
+
+.ml-8 {
+    margin-left: 8px;
+}
+.ml-16 {
+    margin-left: 16px;
+}
+
+.mr-4 {
+    margin-right: 4px;
+}
+
+.mr-8 {
+    margin-right: 8px;
+}
+
+.mr-16 {
+    margin-right: 16px;
+}
+
+.mb-4 {
+    margin-bottom: 4px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.display {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+.red {
+    color: red;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+input[type="radio"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+    accent-color: red;
+}
+
+input[type="checkbox"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+}
+
+.separate::after {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 24px;
+    content: "";
+    display: block;
+    border-left: #a6a6a6 solid 1px;
+}
+
+.seperator-row {
+    width: 100%;
+    height: 1px;
+    background-color: var(--secondary);
+}
+
+.social-white-bg {
+   background-image: url(https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/7b95007f3377150730bbb5d1ddb477d6.png);
+}
+
+.social-item {
+    font-size: 24px;
+}
+
+.no-border-b{
+    border-bottom: none;
+}
+
+@keyframes header-notifyGrow {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

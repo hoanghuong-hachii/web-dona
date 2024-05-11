@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký CA</title>
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/digitalsign.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        
+        <div class="container-test">
+
+            <div class="grid wide">
+               
+                <div class="body-content">
+                    <div class="container-header">
+                        <header class="re-title">
+                        
+                            ĐĂNG KÝ CHỨNG CHỈ KÝ SỐ
+                        </header>
+                    </div>
+                    
+                    <form action="" class="re-form">
+                        <div class="re-text">
+                            <label for="name" class="form-lable">Họ và tên người đăng ký
+                                <span class="text-require">(*)</span>
+                            </label>
+                            <input type="text" name="" id="name" class="form-input" placeholder="Họ và tên"  >
+                        </div>
+
+                        <div class="re-text">
+                            <label for="email" class="form-lable">Email
+                                <span class="text-require">(*)</span>
+                            </label>
+                            <input type="email" name="" id="email" class="form-input" placeholder="Email">
+                        </div>
+
+                        <div class="re-pass">
+                            <div class="re-text">
+                                <label for="passwd" class="form-lable">Mật khẩu
+                                    <span class="text-require">(*)</span>
+                                </label>
+                                <input type="password" name="" id="passwd" class="form-input" placeholder="Nhập mật khẩu">
+                            </div>
+    
+                            <div class="re-text ml-16">
+                                <label for="re-passwd" class="form-lable ">Xác nhận mật khẩu
+                                    <span class="text-require">(*)</span>
+                                </label>
+                                <input type="password" name="" id="re-passwd" class="form-input " placeholder="Nhập lại mật khẩu">
+                            </div>
+                        </div>
+                        
+
+                        <div class="re-text">
+                            <label for="name-company" class="form-lable">Tên công ty
+                                <span class="text-require">(*)</span>
+                            </label>
+                            <input type="text" name="" id="name-company" class="form-input" placeholder="Tên công ty">
+                        </div>
+
+                        <div class="re-text">
+                            <label for="phone" class="form-lable">Số điện thoại
+                                <span class="text-require">(*)</span>
+                            </label>
+                            <input type="number" name="" id="phone" class="form-input" placeholder="Nhập số điện thoại">
+                        </div>
+                        
+                    </form>
+
+                    <input id="js_btnRegister" onclick="showAlertSuccess();" class="btn-submit" type="submit" value="Đăng ký">
+                    
+                </div>
+                    
+                
+                <!-- form đăng ký -->
+                
+                
+            </div>
+            
+            
+
+        </div>
+        
+        <div class="toastSuccess">
+            <header class="toast-header">
+                <i class="toast-btn__cancel fa-solid fa-xmark"></i>
+            </header>
+            <i class="toast-icon "></i>
+            <h3 class="toast-status"></h3>
+            <span class="toast-desc"></span>
+            <footer class="toast-btn">
+                <button  class="toast-btn__ok">Done</button>
+            </footer>
+            
+        </div>
+    </div>
+    <script>
+
+        var idUser = localStorage.getItem('env_id');
+
+        $("#js_btnRegister").on('click', function(){
+
+            let requestData = {
+                "idUser": idUser,
+                "name": $("#name").val(),
+                "password": $("#passwd").val(),
+                "email": $("#email").val(),
+                "phone": $("#phone").val(),
+                "companyName": $("#name-company").val()
+            }
+
+            $.ajax({
+                url: "http://localhost:8080/api/v1/register-certificates/register",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(requestData),
+                success: function (reponse){
+                    console.log("Đăng ký thành công: "+ reponse)
+                    showAlertSuccess();
+                },
+                error: function(xhr, status, error){ 
+                    console.log("Đăng ký thất bại: "+  xhr.responseText)
+                    var responeError = "Tài khoản đã đăng ký chứng chỉ";
+                    showAlertError(responeError);
+                }
+
+            })
+        })
+    </script>
+    
+    <script src="./assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Signature</title>
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/digitalsign.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.228/pdf.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <header class="header-test">
+
+        </header>
+        <div class="container-test1">
+
+            <div class="grid wide ">
+                <div class="body-file">
+                    <h3 class="pdf-title">Ký số PDF</h3>
+                    <p class="pdf-desc">Chọn file cần ký số.</p>
+                    <div class="btn-upload">Chọn tệp PDF
+                        <input onclick="upFile();" id="file-upload" type="file" multiple accept=".pdf">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/signPdf.js" ></script>
+</body>
+</html>

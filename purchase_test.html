@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt hàng</title>
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/digitalsign.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <link rel="stylesheet" href="./assets/css/contruct.css">
+    <link rel="stylesheet" href="./assets/css/sign_digital.css">
+
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/product_detail.css">
+    <link rel="stylesheet" href="./assets/css/shoping_cart.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
+
+</head>
+<body>
+    
+    <div class="main" style="background-color: #fff;">
+        <div class="grid">
+            <header class="header">
+            </header>
+        </div>
+
+        <div id="container" >
+            <div class="grid wide">
+
+                <div class="bread-crumb">
+                    <ul class="list">
+                        <li class="item">
+                            <a href="home.html">
+                                <h3>Trang chủ</h3>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#">
+                                <h3>Thanh toán</h3>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="container-body">
+
+                    <div class="row">
+                        <div class="col l-7 m-12 c-12">
+
+                            <div class="row">
+
+                                <div class="col l-6 m-6 c-12">
+                                    
+                                    <div class="invoice">
+                                        <div class="info-header">Thông tin đơn hàng</div>
+                                
+                                        <div id="body-invoice" class="body" >
+                                            <form action="">
+                                                <label for="email" class="form-lable">Email</label>
+                                                <input type="text" class="form-input"  id="email" placeholder="Email">
+                                                <label for="name" class="form-lable">Họ và tên</label>
+                                                <input type="text" class="form-input"  id="name" placeholder="Họ và tên">
+        
+                                                <label for="sdt" class="form-lable">Số điện thoại</label>
+                                                <input type="text" class="form-input"  id="sdt" placeholder="Số điện thoại">
+                                                
+                                                <label for="dc" class="form-lable">Địa chỉ</label>
+                                                <textarea type="text"  id="dc" placeholder="Nhập địa chỉ (bao gồm Số nhà, Phường/Xã, Quận/Huyện, Tỉnh/Thành phố (nếu có)"></textarea>
+                                            
+                                            </form>
+                                        </div>
+        
+                                    </div>
+                                </div>
+                                <div class="col l-6 m-6 c-12">
+                                    <div class="invoice">
+                                        <div class="info-header">Vận chuyển</div>
+                                
+                                        <div class="body-tranfer mt-40">
+                                            <div class="body-form">
+                                                <input type="radio" name="" id="check_tranfer" checked >
+                                                <label class="ml-16" for="check_tranfer">Giao hàng tận nơi</label>
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="info-header mt-32">Thanh toán</div>
+                                
+                                        <div class="body-purchase mt-24">
+                                            <div class="body-form">
+                                                <input type="radio"  name="tran" id="cod" checked>
+                                                <label class="ml-16" for="cod">Thanh toán khi  nhận hàng</label>
+                                            </div>
+                                            <div class="body-form " style="border-top: 1px solid var(--subColor);">
+                                                <input type="radio" name="tran" id="ck" >
+                                                <label class="ml-16" for="ck">Thanh toán online</label>
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="info-header mt-32">Hóa đơn điện tử</div>
+
+                                        <a id="invoice-btn" href="#" class="mt-16" style="width: 100%; display: block; text-align: center">Yêu cầu ngay</a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="col l-5 m-12 c-12">
+                            
+                            <div class="product_buy">
+                                <div class="buy-header">
+                                    <span>Đơn hàng</span>
+                                    <span></span>
+                                </div>
+                                
+                                <ul id="productList">
+                                    <li class="item">
+                                        <div class="info">
+                                            <img  src="assets/imgs/danhmuc_1.webp" alt="">
+                                            
+                                        </div>
+                                        <div class="name">
+                                            <div>Phấn Phủ Silkygirl Khoáng Kiềm Dầu Dạng Nén Không Màu 7g</div>
+                                            <div class="quantity_price">
+                                                <div class="quantity">x1</div>
+                                                <div id="price-item-total" class="price">299.000đ</div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+
+                                    </li>
+                                  
+                                  
+                                </ul>
+
+                                
+                            </div>
+                            <div class="input_discount">
+                                <input type="text" name="" id="" placeholder="Nhập mã giảm giá">
+                                <a class="btn-ok ml-16" style="width: 40%;" href="#">Áp dụng</a>
+                            </div>
+
+                            <div class="fee_order">
+                                <div class="amount">
+                                    <div class="">Tạm tính</div>
+                                    <div class="tongtam">599.000đ</div>
+                                </div>
+
+                                <div class="fee_ship">
+                                    <div class="">Phí vận chuyển</div>
+                                    <div class="">40.000đ</div>
+                                </div>
+                            </div>
+                            <div class="total_cart">
+                                <div class="price">
+                                    <div>Tổng cộng:</div>
+                                    <div class="tongcong">599.000đ</div>
+                                </div>
+
+                                <a class="btn-ok" id="dathang" href="#">Đặt hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+    <div class="container">
+        <!-- Success -->
+        <div id="toast"></div>
+
+    </div>
+      <!--Begin Modal invoice -->
+
+      <div class="modal-container modal-container-invoice js-modal-container" style="display: none;">
+        <label for="" class="modal-close js-modal-close" style="padding: 2px 6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                <rect width="24" height="24" fill="none" />
+                <path fill="#fff" d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59L7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12L5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4" />
+            </svg>
+        </label>
+        <header class="modal-header">
+            <i class="fa-solid fa-file-signature"></i>
+            YÊU CẦU HÓA ĐƠN ĐIỆN TỬ
+        </header>
+        <div class="modal-body">
+            <header class="modal-body__header" style="justify-content:flex-start">
+                <h3>Loại hóa đơn:</h3>
+                <div class="body-form">
+                    <input class="ml-16" type="radio"  name="invoice" id="per" checked>
+                    <label class="ml-16" for="per">Cá nhân</label>
+                </div>
+                <div class="body-form " >
+                    <input class="ml-16" type="radio" name="invoice" id="com" >
+                    <label class="ml-16" for="com">Công ty</label>
+                </div>
+            </header>
+            <div id="body-invoice" class="body" style="padding: 8px 16px;">
+                <form action="" class="personal-form">
+                    <label for="name-per" class="form-lable">Họ tên</label>
+                    <input type="text" class="form-input"  id="name-per" placeholder="Họ & tên">
+
+                    <label for="sdt-per" class="form-lable">Số điện thoại</label>
+                    <input type="text" class="form-input"  id="sdt-per" placeholder="Số điện thoại">
+
+                    <label for="email-per" class="form-lable">Email nhận hóa đơn</label>
+                    <input type="text" class="form-input"  id="email-per" placeholder="Email nhận hóa đơn">
+
+                    <label for="dc-per" class="form-lable">Địa chỉ</label>
+                    <textarea type="text"  id="dc-per" placeholder="Nhập địa chỉ (bao gồm Phường/Xã, Quận/Huyện, Tỉnh/Thành phố "></textarea>
+                
+                </form>
+
+                <form action=""  style="display: none;" class="company-form">
+                    <label for="name-com" class="form-lable">Tên công ty</label>
+                    <input type="text" class="form-input"  id="name-com" placeholder="Tên công ty">
+
+                    <label for="sdt-com" class="form-lable">Mã số thuế</label>
+                    <input type="text" class="form-input"  id="sdt-com" placeholder="Mã số thuế">
+                    <span style="margin-top: 6px; font-size: 12px; color: #5d5a5a">Đối với MST doanh nghiệp hợp lệ: chỉ bao gồm 10 ký tự số (xxxxxxxxxx) Đối với MST chi nhánh: chỉ có 14 ký tự (trong đó: 13 ký tự số và dấu "-") (xxxxxxxxxx-xxx)</span>
+
+                    <label for="email-com" class="form-lable">Email nhận hóa đơn</label>
+                    <input type="text" class="form-input"  id="email-com" placeholder="Email nhận hóa đơn">
+
+                    <label for="dc-com" class="form-lable">Địa chỉ</label>
+                    <textarea type="text"  id="dc-com" placeholder="Nhập địa chỉ (bao gồm Phường/Xã, Quận/Huyện, Tỉnh/Thành phố "></textarea>
+                
+                </form>
+            </div>
+        </div>
+
+        <footer class="modal-footer">
+            <input id="btn-add" type="button" value="Gửi yêu cầu" class="modal-body__btn mb-16" >
+            
+        </footer>
+    </div>
+  
+    <!-- End invoice -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/product_detail.js"></script>
+    <script src="./assets/js/placeholderTypewriter.js"></script>
+    <script src="./assets/js/purchase_test.js"></script>
+
+    <script src="./assets/js/js_toast.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#check_invoice').click('active', function() {
+                $('#body-invoice').slideToggle()
+            })
+        })
+    </script>
+
+    <script>
+
+        $(document).ready(function() {
+            $(".header").load("base.html")
+            $("#footer").load("footer.html")
+        });
+        
+    </script>
+</body>
+</html>

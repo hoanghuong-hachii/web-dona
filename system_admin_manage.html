@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate System</title>
+    
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/system_ad.css">
+
+
+</head>
+<body>
+    <header id="header">
+        <div class="head-left">
+            <a href="./system_admin_home.html" class="logo">
+                <img src="./assets/imgs/DinoBeauty3_logo.png" alt="">
+            </a>
+        </div>
+        <a class="head-icon" href="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <rect width="24" height="24" fill="none" />
+                <path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+        </a>
+        <div class="head-title">
+            <h3>Certificate Management</h3>
+        </div>
+        <div class="head-navtop-menu">
+            <ul class="list">
+                <li class="item">
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" viewBox="0 0 448 512">
+                            <rect width="448" height="512" fill="none" />
+                            <path fill="#ffffff" d="M439.39 362.29c-19.32-20.76-55.47-51.99-55.47-154.29c0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29c-6 6.45-8.66 14.16-8.61 21.71c.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32c.05-7.55-2.61-15.27-8.61-21.71M67.53 368c21.22-27.97 44.42-74.33 44.53-159.42c0-.2-.06-.38-.06-.58c0-61.86 50.14-112 112-112s112 50.14 112 112c0 .2-.06.38-.06.58c.11 85.1 23.31 131.46 44.53 159.42zM224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64" />
+                        </svg>
+                    </a>
+
+                    <div class="navbar__notice">
+                        <header class="navbar__notice-header">
+                            <h3>Notifications</h3>
+                        </header>
+                        <ul class="list">
+                            <li class="item">
+                                <a href=""><img src="./assets/imgs/avatar-1.jpg" alt=""></a>
+                                <div class="content">
+                                    <h3>Have client register new task Patient appointment booking</h3>
+                                    <span>2 mins ago</span>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <a href=""><img src="./assets/imgs/avatar-1.jpg" alt=""></a>
+                                <div class="content">
+                                    <h3>Have client register new task Patient appointment booking</h3>
+                                    <span>2 mins ago</span>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <a href=""><img src="./assets/imgs/avatar-1.jpg" alt=""></a>
+                                <div class="content">
+                                    <h3>Have client register new task Patient appointment booking</h3>
+                                    <span>2 mins ago</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <footer class="footer">
+                            <a href="">View all</a>
+                        </footer>
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="./assets/imgs/avatar-1.jpg" alt="">
+                    
+                    <a href="" class="acount">
+                        <span>System Admin</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+                            <rect width="48" height="48" fill="none" />
+                            <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 18L24 30L12 18" />
+                        </svg>
+                    </a>
+
+                    <div class="dropdown_acount">
+                        <ul>
+                            <li><a href="">My Profile</a></li>
+                            <li><a href="">Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <div class="side-main">
+            <ul class="side-list">
+                <li class="side-item">
+                    <a id="manage_page" href="./system_admin_manage.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48">
+                            <rect width="48" height="48" fill="none" />
+                            <path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" d="M5.5 5.5h15.857v15.857H5.5zm19.07 7.928l10-10l10 10l-10 10zM5.5 26.643h15.857V42.5H5.5zm21.143 0H42.5V42.5H26.643z" />
+                        </svg>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <div id="container">
+        
+       
+        <div class="manage">
+            <header class="manage-head">
+                <div class="title">
+                    <h3>Manage</h3>
+                    <span> <a href="./system_admin_home.html" class="btn_home">Dashboard</a> <p>/ Manage</p></span>
+                </div>
+    
+                <div class="btn-addCer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                        <rect width="24" height="24" fill="none" />
+                        <g fill="#fff" fill-rule="evenodd" clip-rule="evenodd">
+                            <path d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12m10-8a8 8 0 1 0 0 16a8 8 0 0 0 0-16" />
+                            <path d="M13 7a1 1 0 1 0-2 0v4H7a1 1 0 1 0 0 2h4v4a1 1 0 1 0 2 0v-4h4a1 1 0 1 0 0-2h-4z" />
+                        </g>
+                    </svg>
+                    <a href="./register_CA.html">
+                        <span>Add Certificate</span>
+                    </a>
+                </div>
+            </header>
+            
+
+            <div class="grid">
+                <div class="row">
+                    <div class="col l-3 m-6 c-6">
+                        <div class="counter">
+                            <input type="text" name="" id="certificateId" class="input-form" placeholder="Certificate ID">
+                        </div>
+                    </div>
+                    <div class="col l-3 m-6 c-6">
+                        <div class="counter">
+                            <input type="text" name="" id="name" class="input-form" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="col l-3 m-6 c-6">
+                        <div class="counter">
+                            <input type="text" name="" id="email" class="input-form" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="col l-3 m-6 c-6">
+                        <div class="counter">
+                            <div class="select-dropdown">
+                                <span id="status-text">Select Designation</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+                                    <rect width="48" height="48" fill="none" />
+                                    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 18L24 30L12 18" />
+                                </svg>
+                                <div class="menu-dropdown">
+                                    <ul>
+                                        <li><a href="#" data-status="All">All</a></li>
+                                      
+                                        <li><a href="#" data-status="Active" >Active</a></li>
+                                        <li><a href="#" data-status="Rejected">Rejected</a></li>
+                                        <li><a href="#" data-status="Expired">Expired</a></li>
+                                        <li><a href="#" data-status="Pending">Pending</a></li>
+                                        <li><a href="#" data-status="Suspended">Suspended</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+
+                <div class="page">Show 
+                    <select name="Datatable_lenght" id="page-size">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                     entries
+                </div>
+                <div class="row">
+                    <table class="data_table"  id="data-table"> 
+                        <thead>
+                            <tr role="row">
+                                <th>Name</th>
+                                <th>ID</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody id="table-body">
+                            
+                        </tbody>
+                    </table>
+
+
+                    <footer class="footer">
+                        <div class="content">
+                            Show <span id="current-page">1</span> of <span id="total-page">7</span> entries
+                        </div>
+                        <div class="pagination">
+                            <a id="prev-page" href="#" class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+                                    <rect width="48" height="48" fill="none" />
+                                    <g fill="none" stroke="#717376" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                                        <path d="M24 36L12 24L24 12" />
+                                        <path d="M36 36L24 24L36 12" />
+                                    </g>
+                                </svg>
+                            </a>
+                            <span id="cur-page">1</span>
+                            <a id="next-page" href="#" class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+                                    <rect width="48" height="48" fill="none" />
+                                    <g fill="none" stroke="#717376" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                                        <path d="M12 12L24 24L12 36" />
+                                        <path d="M24 12L36 24L24 36" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer">
+
+    </div>
+
+    <!--Begin Modal Edit -->
+    <div class="edit">
+        <input type="checkbox" hidden id="open_close" class="chk">
+   
+        <label for="open_close" class="modal-overlay"></label>
+        
+        <div class="modal-container">
+            <label for="open_close" class="modal-close ">
+                
+            </label>
+            <header class="modal-header">
+               <h3>Edit Certificate</h3> 
+            </header>
+            <div class="modal-body">
+                <form action="" class="edit-form">
+
+                    <div class="row">
+                        <div class="col l-6 m-6">
+                            <div class="info">
+                                <label for="" class="form-lable">Username</label>
+                                <input type="text" name="username" class="form-input" >
+                            </div>
+                            
+                        </div>
+                        <div class="col l-6 m-6">
+                            <div class="info">
+                                <label for="" class="form-lable">ID</label>
+                                <input type="text" name="id" class="form-input" >
+                            </div>
+                            
+                        </div>
+                        <div class="col l-6 m-6">
+                            <div class="info">
+                                <label for="" class="form-lable">Email</label>
+                                <input type="text" name="email" class="form-input" >
+                            </div>
+                           
+                        </div>
+                        <div class="col l-6 m-6">
+                            <div class="info">
+                                <label for="" class="form-lable">Date</label>
+                                <input type="text" name="date" class="form-input" >
+                            </div>
+                            
+                        </div>
+                        <div class="col l-6 m-6">
+                            <div class="info">
+                                <label for="" class="form-lable">Phone</label>
+                                <input type="text" name="phone" class="form-input" >
+                            </div>
+                            
+                        </div>
+                        <div class="col l-6 m-6">
+                            <div class="info">
+                                <label for="" class="form-lable">Company</label>
+                                <input type="text" name="company" class="form-input" >
+                            </div>
+                            
+                        </div>
+                        <div class="col l-6 m-6">
+                            <div class="info">
+                                <label for="" class="form-lable">Status</label>
+                                <select name="change-status" id="" class="form-input custom-select">
+                                    <option value="Active">Active</option>
+                                    <option value="Rejected">Rejected</option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="Suspended">Suspended</option>
+                                </select>
+                            </div>
+                            
+                        </div>
+                        <div class="col l-6 m-6">
+                            <div class="info">
+                                <label for="" class="form-lable">Expried</label>
+                                <input type="text" name="expried" class="form-input" >
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button type="submit" class="btn-save">Save</button>
+                    </div>
+                </form>
+                
+            </div>
+           
+        </div>
+    </div>
+    <!-- End Edit -->
+    <div class="toastSuccess">
+        <header class="toast-header">
+            <i class="toast-btn__cancel fa-solid fa-xmark"></i>
+        </header>
+        <i class="toast-icon "></i>
+        <h3 class="toast-status"></h3>
+        <span class="toast-desc"></span>
+        <footer class="toast-btn">
+            <button  class="toast-btn__ok">Done</button>
+        </footer>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/sys_ad.js" ></script>
+    <script src="./assets/js/main.js"></script>
+<script>
+   
+    
+</script>
+
+</body>
+</html>

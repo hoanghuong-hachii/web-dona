@@ -1,0 +1,117 @@
+
+.viewdetail {
+
+    .modal-header {
+        display: flex;
+        align-items: center;
+        h3 {
+            font-size: 16px;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        a {
+            
+        }
+    }
+
+    .modal-container1,
+    .modal-reason,
+    .modal-pin{
+        display: none;
+        min-width: 800px;
+        min-height: 200px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        background-color: #fff;
+        transform: translate(-50%,-50%);
+        z-index: 999;
+    }
+
+    .modal-reason, .modal-pin {
+        min-width: 400px;
+    }
+     
+    .detail-close, .pin-close, .reason-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 3px 6px;
+        color: #fff;
+
+        &:hover{
+            background-color: #f44336;
+            cursor: pointer;
+        }
+    }
+
+    
+    .modal-body {
+        display: flex;
+        padding: 10px 30px 30px 30px;
+    }
+    .edit-form {
+        width: 100%;
+        .info {
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .form-lable {
+            font-size: 12px;
+            min-width: 200px;
+            color: #373b3e;
+            padding-bottom: 5px;
+            padding-top: 16px;
+        }
+
+        .form-input {
+            width: 100%;
+            font-size: 14px;
+            border:1px solid #D3D3D4;
+            border-radius: 5px;
+            outline: none;
+            color: #4D5154;
+            padding: 6px 12px;
+            height: 44px;
+            line-height: 2;
+        }
+    }
+
+    .btn {
+        width: 100%;
+        display: flex;
+    }
+    .btn-save, .btn-re {
+        margin: auto;
+        min-height: 38px;
+        margin-top: 28px;
+        text-align: center;
+        min-width: 200px;
+        border: none;
+        background-color: #ff902f;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+        border-radius: 20px;
+
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
+
+    }
+
+    .wrong {
+        display: none;
+    }
+}
+
+#text-lock {
+    color: red;
+    display: none;
+}

@@ -1,0 +1,208 @@
+
+html { 
+    background: #fff; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.main {
+    margin:20px;
+    background-color: #fff;
+}
+
+.header {
+    padding: 0 0 16px 0;
+
+    .head-top {
+        width: 100%;
+        height: auto;
+
+        .logo {
+            background: url("http://127.0.0.1:5500/assets/imgs/logo.webp") no-repeat 0 0;
+            height: 107px;
+            width: 220px;
+            float: left;
+        }
+
+        .info-seller {
+            width: calc(100% - 220px);
+            font-size: 14px;
+            padding: 16px 0;
+            float: left;
+            b {
+                display: block;
+            }
+            
+        }
+
+    }
+    
+}
+
+
+
+.serial-form {
+    font-size: 14px;
+    float: left;
+    span {
+        margin-right: 4px;
+        margin-left: 4px;
+    }
+
+    p {
+        padding: 4px 0 ;
+
+    }
+    
+}
+
+.combo {
+    overflow: hidden;
+    width: calc(100% - 200px);
+    clear: both;
+    float: right;
+
+}
+
+.title {
+    width: 100%;
+    height: 75px;
+    clear: both;
+    text-align: center;
+    .name {
+        width: 100%;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.1;
+        text-align: center;
+        text-transform: uppercase;
+        color: #c80f05;
+    }
+
+    .desc {
+
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.1;
+        text-align: center;
+        text-transform: uppercase;
+        color: #c80f05;
+        display: block;
+        width: 100%;
+        font-style: italic;
+
+    }
+
+    .date-time {
+        margin-top: 8px;
+        font-size: 14px;
+
+        span {
+            font-size: 13px;
+            font-style: italic;
+
+        }
+        p {
+            margin-right: 4px;
+            margin-left: 4px;
+        }
+    }
+
+}
+
+.info {
+    font-size: 14px;
+    margin-top: 4px;
+    padding: 4px;
+    display: flex;
+    .lable {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .desc {
+        margin-left: 4px;
+        font-weight: 400;
+
+        &.space {
+            letter-spacing: 5px;
+        }line-height: 1.5;
+    }
+}
+
+
+.data_table {
+    margin-top: 16px;
+    td,th {
+
+        font-size: 14px;
+        padding: 5px 2px;
+        white-space: wrap;
+        text-align: left;
+    }
+
+    .odd {
+        background-color: #f2f2f2;
+    }
+
+    .edd {
+        background-color: #fff;
+    }
+
+}
+
+.total {
+    margin-top: 16px;
+    font-size: 14px;
+    font-style: italic;
+   
+}
+
+.border-btm {
+    margin: 16px 0;
+    width: 100%;
+    border: #ccc 1px solid;
+}
+
+.sign {
+    margin-top: 20px;
+    min-height: 200px;
+    font-size: 14px;
+    width: 100%;
+    font-weight: 500;
+
+    p {
+        font-weight: 400;
+        margin-top: 4px;
+        font-style: italic;
+    }
+
+    div:nth-child(1) {
+        margin-left: 0.5in;
+        width: 200px;
+        text-align: left;
+        float: left;
+    }
+
+    div:nth-child(2) {
+        float: right;
+        width: 50%;
+        margin-right: 0.5in;
+        text-align: right;
+    }
+}
+
+table { font-size: 13px; table-layout: fixed; width: 100%; }
+table { border-collapse: separate;  }
+th, td {  padding: 0.5em; position: relative; text-align: left; }
+th { background: #EEE; border-color: #BBB; }
+
+td, th { border-bottom: 1px solid #000; 
+    border-left: 1px solid #000
+}
+ 
+
+table { border-top: 1px solid #000; 
+    border-right: 1px solid #000
+}

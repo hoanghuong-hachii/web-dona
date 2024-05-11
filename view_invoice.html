@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin tra cứu</title>
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=La+Belle+Aurore&family=Sacramento&display=swap" rel="stylesheet">
+    // ======================
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/view_invoice.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
+
+    <style>
+        
+    </style>
+    
+</head>
+<body>
+    
+    <div class="main" style="background-color: #fff;">
+        <div class="grid">
+            <header class="header">
+                <h3>Thông tin hóa đơn</h3>
+            </header>
+
+            <div class="container">
+                <div class="row">
+                    <div class="invoice">
+                        <iframe id="pdfViewer" title="file hóa đơn" src="http://localhost:8080/images/20240509225835290.pdf" type="application/pdf" >
+                        </iframe>
+                    </div>
+                    <div class="action">
+                        <h3>Thông tin hóa đơn</h3>
+
+                        <a href="#" class="verify-btn" style="margin-top: 32px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                                <g fill="none" stroke="#fff">
+                                    <path d="M14.049 5.54a1 1 0 0 1 1.071.443l.994 1.587a1 1 0 0 0 .316.316l1.587.994a1 1 0 0 1 .444 1.072l-.42 1.824a1 1 0 0 0 0 .448l.42 1.825a1 1 0 0 1-.444 1.07l-1.587.995a.993.993 0 0 0-.316.316l-.994 1.587a1 1 0 0 1-1.071.444l-1.825-.42a1 1 0 0 0-.447 0l-1.825.42a1 1 0 0 1-1.071-.444l-.994-1.587a1.001 1.001 0 0 0-.317-.316l-1.586-.994a1 1 0 0 1-.444-1.071l.419-1.825a1 1 0 0 0 0-.448l-.42-1.824a1 1 0 0 1 .445-1.072l1.586-.994a1 1 0 0 0 .317-.316l.994-1.587a1 1 0 0 1 1.07-.443l1.826.419a1 1 0 0 0 .447 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m9.515 12.536l2.035 1.949l2.935-4.97" />
+                                </g>
+                            </svg>
+                            Kiểm tra tính hợp lệ của hóa đơn
+                        </a>
+                        <a href="#" class="sign-btn" style="margin-bottom: 32px;">
+                            <svg class="mr-4" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                <g fill="none">
+                                    <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                    <path fill="#fff" d="M12.138 4.538a2 2 0 0 1 2.031.328l.126.115l4.724 4.724a2 2 0 0 1 .5 1.997l-.057.16l-2.365 5.913a1.999 1.999 0 0 1-1.605 1.24l-5.079.635c-.13.015-.268.034-.41.056l-.444.072l-.232.042l-.723.14l-.495.106l-.745.167l-.955.228l-1.552.396l-.646.174a1.01 1.01 0 0 1-1.265-1.134l.034-.146l.295-1.112l.264-1.048l.228-.955l.167-.745l.105-.496l.141-.722l.08-.457l.064-.428l.66-5.28a1.999 1.999 0 0 1 1.09-1.536l.151-.069zm.742 1.857L6.968 8.76l-.584 4.672l-.048.396a26.886 26.886 0 0 1-.385 2.192l-.171.786l3.288-3.288a2 2 0 1 1 1.414 1.414L7.194 18.22l.392-.087l.784-.165a27.455 27.455 0 0 1 1.473-.26l5.397-.676l2.365-5.912zm2.363-3.294a1 1 0 0 1 1.32-.084l.094.084l4.242 4.242a1 1 0 0 1-1.32 1.498l-.094-.084l-4.242-4.242a1 1 0 0 1 0-1.414" />
+                                </g>
+                            </svg>
+                            Người mua ký hóa đơn
+                        </a>
+
+                        <a href="#" id="downloadButton" class="btn mt-16">
+                            <svg class="mr-8" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                <path fill="#2c8ecc" d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z" />
+                            </svg>
+                            Tải hóa đơn
+                        </a>
+
+                        <!-- <a href="#" class="btn">
+                            <svg class="mr-8" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                <path fill="#2c8ecc" d="m13 21l2-1l2 1v-7h-4m4-5V7l-2 1l-2-1v2l-2 1l2 1v2l2-1l2 1v-2l2-1m1-7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7v-2H4V5h16v10h-1v2h1a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5H5V6h6m-2 5H5V9h4m2 5H5v-2h6Z" />
+                            </svg>
+                            Xem chứng thư số người bán
+                        </a> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="overlay" style="display: none"></div>
+
+    <div class="modal-check"  style="display: none">
+        <header class="head-modal">
+            <h3>Kết quả kiểm tra hóa đơn</h3>
+            <svg  class="close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 7l10 10M7 17L17 7" />
+            </svg>
+        </header>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col l-8 m-8 c-12">
+
+                    <div class="info">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                <path fill="#1152e8" fill-rule="evenodd" d="M5.574 4.691c-.833.692-1.053 1.862-1.492 4.203l-.75 4c-.617 3.292-.925 4.938-.026 6.022C4.206 20 5.88 20 9.23 20h5.54c3.35 0 5.024 0 5.924-1.084c.9-1.084.59-2.73-.026-6.022l-.75-4c-.44-2.34-.659-3.511-1.492-4.203C17.593 4 16.402 4 14.02 4H9.98c-2.382 0-3.573 0-4.406.691m4.304 3.06a2.251 2.251 0 0 0 4.245 0a.75.75 0 0 1 1.414.499a3.751 3.751 0 0 1-7.073 0a.75.75 0 1 1 1.414-.5" clip-rule="evenodd" />
+                            </svg>
+                            Đơn vị bán hàng</h3>
+                        <p>Đơn vị/Tên: <span>DINO BEAUTE SHOP</span></p>
+                        <p>Mã số thuế: <span>1023001071</span></p>
+                        <p>Địa chỉ: <span>8 Ng. 52 P. Quan Nhân, Trung Hoà, Cầu Giấy, Hà Nội</span></p>
+                    </div>
+        
+                    <div class="info">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16">
+                                <path fill="#1152e8" d="M2.5 2a.5.5 0 0 0 0 1h.246a.5.5 0 0 1 .48.363l1.586 5.55A1.5 1.5 0 0 0 6.254 10h4.569a1.5 1.5 0 0 0 1.393-.943l1.474-3.686A1 1 0 0 0 12.762 4H4.448l-.261-.912A1.5 1.5 0 0 0 2.746 2zm4 12a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m4 0a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3" />
+                            </svg>
+                            Đơn vị mua hàng</h3>
+                        <p>Đơn vị/Tên: <span>Công ty CP Thành Thái</span></p>
+                        <p>SDT: <span>0100455885</span></p>
+                        <p>Địa chỉ: <span>Số 93 Nguyễn Trãi, Thanh Xuân, Hà Nội</span></p>
+                    </div>
+
+                    <div class="info">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                <path fill="#1152e8" d="M3 6h18v12H3zm9 3a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3M7 8a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2v-4a2 2 0 0 1-2-2z" />
+                            </svg>
+                            Thông tin thanh toán</h3>
+                        <p>Trạng thái thanh toán: <span>Đã thanh toán</span></p>
+                        <p>Phương thức thanh toán: <span>Thanh toán online</span></p>
+                        <p>Tổng tiền thanh toán: <span>đ400,000</span></p>
+                    </div>
+                </div>
+                <div class="col l-4 m-4 c-12">
+
+                    <div class="col-left">
+                        <h3>Đã kiểm tra</h3>
+                        <span>Kết quả tra cứu ngày <span id="date-time">29/04/2024</span></span>
+                        <p>Mẫu số: <span>01GTKT0/003</span></p>
+                        <p>Ký hiệu: <span>AB/21E</span></p>
+                        <p>Số hóa đơn: <span>0000024</span></p>
+                        <!-- <p>Ngày hóa đơn: <span>02/04/2024</span></p> -->
+                        <!-- <p>Ngày ký: <span>02/04/2024</span></p> -->
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="result">
+                <h3>Kết quả kiểm tra hóa đơn</h3>
+
+                <div class="valid">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="#1d9f4f" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd" />
+                        </svg>
+                        Thông tin trên hóa đơn chính xác</h3>
+
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 20 20">
+                            <path fill="#1d9f4f" d="M19 5.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m-2.146-1.854a.5.5 0 0 0-.708 0L13.5 6.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708M14.5 11q.168 0 .335-.01a2.5 2.5 0 0 1-.198.425l-3.463 5.907a1.37 1.37 0 0 1-.674.58v-7.036a1 1 0 0 0 .456-1.16A5.48 5.48 0 0 0 14.5 11M9 5.5c0 1.35.486 2.587 1.294 3.544a1 1 0 0 0-.794 1.822v7.044a1.37 1.37 0 0 1-.694-.588l-3.463-5.907a2.5 2.5 0 0 1-.102-2.335L6.7 6h-.2A1.5 1.5 0 0 1 5 4.5v-2a.5.5 0 0 1 1 0v2a.5.5 0 0 0 .5.5h2.522A6 6 0 0 0 9 5.5" />
+                        </svg>
+                        
+                        Chữ ký số hợp lệ</h3>
+
+                </div>
+
+                <div class="invalid" style="display: none;" >
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+                            <defs>
+                                <mask id="ipSFileFailed0">
+                                    <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                                        <path fill="#fff" stroke="#fff" d="M10 44h28a2 2 0 0 0 2-2V14H30V4H10a2 2 0 0 0-2 2v36a2 2 0 0 0 2 2" />
+                                        <path stroke="#fff" d="m30 4l10 10" />
+                                        <path stroke="#000" d="m18 22l12 12m0-12L18 34" />
+                                    </g>
+                                </mask>
+                            </defs>
+                            <path fill="#fe1706" d="M0 0h48v48H0z" mask="url(#ipSFileFailed0)" />
+                        </svg>
+                        Thông tin trên hóa đơn đã bị chỉnh sửa</h3>
+
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20">
+                            <path fill="#fe1706" d="M19 5.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0M14.5 3a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0v-2a.5.5 0 0 0-.5-.5m0 5.125a.625.625 0 1 0 0-1.25a.625.625 0 0 0 0 1.25m0 2.875q.174 0 .345-.01a2.5 2.5 0 0 1-.198.425l-3.463 5.907c-.158.27-.401.473-.684.584v-7.04a1 1 0 0 0 .456-1.16A5.48 5.48 0 0 0 14.5 11M9 5.5c0 1.35.486 2.587 1.294 3.544a1 1 0 0 0-.794 1.822v7.04a1.37 1.37 0 0 1-.684-.584l-3.463-5.907a2.5 2.5 0 0 1-.102-2.335l1.232-2.6A1.75 1.75 0 0 1 5 4.75v-2a.75.75 0 0 1 1.5 0v2c0 .138.112.25.25.25h2.272A6 6 0 0 0 9 5.5" />
+                        </svg>
+                        
+                        Chữ ký số không hợp lệ</h3>
+
+                </div>
+
+                
+            </div>
+            
+        </div>
+    </div>
+    <!-- Begin Modal Sign -->
+    <div class="modal-sign" style="display: none;">
+        
+        <header class="head-modal">
+
+            <h3>
+                <i class="fa-solid fa-file-signature"></i>
+                Digital Signature - Digital ID Selection</h3>
+            
+            <svg style="width: 40px; height: 42px;" class="close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 7l10 10M7 17L17 7" />
+            </svg>
+
+        </header>
+        <div class="modal-body" style="padding: 0 16px;">
+            <div class="body-list_id">
+            <h3 style="font-size: 15px; margin-left: 20px; width:300px">Chọn Digital ID bạn muốn sử dụng để ký số:</h3>
+                <ul class="digital-id"></ul>
+            </div>
+        </div>
+
+        <footer class="modal-footer" style="float: right; margin-right: 16px; margin-bottom: 16px">
+            
+            <input id="btn-add" style="background-color: #009688;" type="button" value="Configure New Digital ID" class="modal-body__btn">
+            <input style="background-color: #736f6f;" type="button" value="Cancel" class="modal-body__btn ml-8 btn-cancel">
+            <input id="btn-continue" type="button" value="Continue" class="modal-body__btn ml-8">
+            
+        </footer>
+    </div>
+    <!-- End Modal Sign -->
+    
+
+    <!-- Begin Modal Sign -->
+    <div class="modal-draw" style="display: none;">
+        
+        <header class="head-modal">
+            <h3>
+                <i class="fa-solid fa-pencil"></i>
+                Your Signature</h3>
+            
+            <svg style="width: 40px; height: 42px;" class="close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 7l10 10M7 17L17 7" />
+            </svg>
+
+        </header>
+        <div class="modal-body" style="padding: 16px 16px;     max-width: 600px;
+        margin: auto;">
+            <ul class="list-type">
+                <li id="type" class="item active">
+                    <a href="#" class="btn-type ">Type</a>
+                </li>
+                <li id="draw" class="item">
+                    <a href="#" class="btn-type">Draw</a>
+                </li>
+                <li id="upload" class="item ">
+                    <a href="#" class="btn-type">Upload</a>
+                </li>
+            </ul>
+            
+            <div class="box-type" style="display: block;">
+
+                <input id="input-name" type="text" class="input-type" placeholder="Type name here" value="">
+                <div class="row no-gutter mt-16">
+
+                <div  class="text-sign col l-6 m-6 c-6 labe select"></div>
+                <div  class="text-sign col l-6 m-6 c-6 caveat" ></div>
+                <div class="text-sign col l-6 m-6 c-6 vibe"></div>
+                <div class="text-sign col l-6 m-6 c-6 sacra"></div>
+            </div>
+            </div>
+
+            <div class="box-draw" style="display: none; text-align:center">
+
+                <div class="box-d" style="position: relative;">
+                    <canvas id="signatureCanvas" width="400" height="200" style="border:1px solid #009688;"></canvas><br>
+                    <a href="#" class="modal__btn" id="clearBtn">Clear</a>
+                    
+                </div>
+                
+                <!-- <input type="button" class="modal-body__btn" id="saveBtn" value="Save"> -->
+
+            </div>
+
+            <div class="box-upload" style="display: none;">
+
+                <img id="signatureImg" src="#" alt="Uploaded Signature Image" style="display:none; max-width: 400px; max-height: 200px;">
+
+                <div class="box-btn" style="display: flex; justify-content:center; align-items:center; min-height: 100px">
+
+                    <div class="btn-all"> 
+                        <svg class="mr-4" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                            <path fill="#fff" d="M19 13a1 1 0 0 0-1 1v.38l-1.48-1.48a2.79 2.79 0 0 0-3.93 0l-.7.7l-2.48-2.48a2.85 2.85 0 0 0-3.93 0L4 12.6V7a1 1 0 0 1 1-1h7a1 1 0 0 0 0-2H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-5a1 1 0 0 0-1-1M5 20a1 1 0 0 1-1-1v-3.57l2.9-2.9a.79.79 0 0 1 1.09 0l3.17 3.17l4.3 4.3Zm13-1a.89.89 0 0 1-.18.53L13.31 15l.7-.7a.77.77 0 0 1 1.1 0L18 17.21Zm4.71-14.71l-3-3a1 1 0 0 0-.33-.21a1 1 0 0 0-.76 0a1 1 0 0 0-.33.21l-3 3a1 1 0 0 0 1.42 1.42L18 4.41V10a1 1 0 0 0 2 0V4.41l1.29 1.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42" />
+                        </svg>
+                        Chọn ảnh
+                        <input class="js-image" onclick="upFile();" id="file-upload" type="file" multiple accept="image/*">
+                    </div> 
+                    <!-- <a href="#" id="upload-btn" class="btn-all ml-8" >Upload</a> -->
+
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <footer class="modal-footer" style="float: right; margin-right: 16px; margin-bottom: 16px">
+            
+            <input style="background-color: #736f6f;" type="button" value="Cancel" class="modal-body__btn ml-8 btn-cancel">
+            <!-- <input  id="btn-continue1" type="button" value="Continue" class="modal-body__btn ml-8"> -->
+            <input  id="btn-save" type="button" value="Save" class="modal-body__btn ml-8">
+            
+        </footer>
+    </div>
+    <!-- End Modal Sign -->
+
+    <!-- Begin Modal Sign -->
+    <div class="modal-design" style="display: none;">
+        
+        <header class="head-modal">
+            <h3>
+                <i class="fa-solid fa-pencil"></i>
+                Edit Your Digital Sign</h3>
+            
+            <svg style="width: 40px; height: 42px;" class="close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 7l10 10M7 17L17 7" />
+            </svg>
+
+        </header>
+        <div class="modal-body" style="padding: 16px 16px;     max-width: 600px;
+        margin: auto;">
+        
+            <div class="box-type">
+
+                <h3>Chọn form chữ ký của bạn:</h3>
+                <div class="row no-gutter mt-16">
+                    <div class="col l-6 m-6 c-6 ">
+                        <img id="sign-form1" class="img-sign select" src="./assets/imgs/sign1.png" alt="sign-form1">
+                    </div>
+                    <div class="col l-6 m-6 c-6 ">
+                        <img id="sign-form2" class="img-sign" src="./assets/imgs/sign2.png" alt="sign-form2">
+                    </div>
+                    <div class="col l-6 m-6 c-6 " style="margin-top: 12px;">
+                        <img id="sign-form3" class="img-sign" src="./assets/imgs/sign3.png" alt="sign-form3">
+                    </div>
+                    <div class="col l-6 m-6 c-6 " style="margin-top: 12px;">
+                        <img id="sign-form4" class="img-sign" src="./assets/imgs/sign4.png" alt="sign-form4">
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <footer class="modal-footer" style="float: right; margin-right: 16px; margin-bottom: 16px">
+            
+            <input style="background-color: #736f6f;" type="button" value="Cancel" class="modal-body__btn ml-8 btn-cancel">
+            <input id="btn-continue-to-sign" type="button" value="Continue" class="modal-body__btn ml-8">
+            
+        </footer>
+    </div>
+    <!-- End Modal Sign -->
+
+    <!-- Begin Modal Sign -->
+    <div class="modal-pass" style="display: none;">
+        
+        <header class="head-modal">
+            <h3>
+                <i class="fa-solid fa-pencil"></i>
+                Verify Password</h3>
+            
+            <svg style="width: 40px; height: 42px;" class="close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 7l10 10M7 17L17 7" />
+            </svg>
+
+        </header>
+        <div class="modal-body" style="padding: 16px 16px;     max-width: 600px;
+        margin: auto;">
+        
+            <input id="text-pass" type="password" class="input-type" placeholder="Nhập mật khẩu tại đây" value=""autocomplete="off">
+            <p class="mt-8" style="font-size: 13px; color: #4c4747c3">Chứng chỉ tài khoản sẽ bị khóa sau 3 lần nhập sai mật khẩu</p>
+            <p class="mt-8 text-wrong" style="font-size: 13px; color: #ca0909c3; display: none">Bạn đã nhập sai <span class="sai"></span></p>
+            <p class="mt-8 text-lock" style="font-size: 13px; color: #ca0909c3; display: none">Bạn đã nhập sai 3/3 lần! Chứng chỉ bị khóa, vui lòng liên hệ admin để được hỗ trợ</p>
+        </div>
+
+        <footer class="modal-footer" style="float: right; margin-right: 16px; margin-bottom: 16px">
+            
+            <input style="background-color: #736f6f;" type="button" value="Cancel" class="modal-body__btn ml-8 btn-cancel">
+            <input id="btn-sign" type="button" value="Sign" class="modal-body__btn ml-8">
+            
+        </footer>
+    </div>
+    <!-- End Modal Sign -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+`   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/vi.min.js"></script>
+    <script src="./assets/js/invoice.js"></script>
+
+   
+</body>
+</html>

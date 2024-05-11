@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send Email</title>
+  
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    html {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .header {
+      background-color: #2babe3;
+      color: #fff;
+      padding: 16px 20px;
+      font-size: 16px;
+    }
+
+    .body, .info {
+      padding-left: 20px;
+      margin-top: 16px;
+    }
+
+    .info {
+      
+      background-color: rgb(190, 219, 244);
+      padding: 16px 60px;
+      width: 500px;
+      
+    }
+
+    .bold {
+      font-weight: 600;
+    }
+
+    .mt-32 {
+      margin-top: 32px;
+    }
+
+    .mt-16 {
+      margin-top: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background-color: #fdb91a;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      margin: 16px 0;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="main">
+    <div class="header">
+      <h3>Beaute Shop thông báo gửi Hóa đơn GTGT cho quý khách</h3>
+    </div>
+    <div class="body">
+      <h3>Kính gửi: Quý khách <span class="name">Nguyễn Hải Anh</span></h3>
+      <p class="mt-16">Beaute Shop xin gửi cho Quý khách Hóa đơn GTGT cho đơn hàng số 33 (Theo hình thức hóa đơn điện tử) với các thông tin như sau (Chi tiết xem trong file đính kèm):</p>
+
+      <div class="info">
+        <ul>
+          <li>Số: <span class="no bold">0000009</span></li>
+          <li>Mẫu số: <span class="ex-no bold">01GTKT0/001</span></li>
+          <li>Ký hiệu: <span class="sign-no bold">AB/19E</span></li>
+        </ul>
+      </div>
+
+      <p class="mt-16">Để tra cứu và ký điện tử trên hóa đơn, Quý khách vui lòng nhấn nút:</p>
+
+      <a class="btn" href="http://127.0.0.1:5500/tracuuhd.html">Tra cứu</a>
+
+      <p>Hoặc truy cập vào đường dẫn <a href="http://127.0.0.1:5500/tracuuhd.html">http://127.0.0.1:5500/tracuuhd.html</a> và nhập mã số: <span class="serial bold">DGF0FR_3ER</span></p>
+      <p>Quý khách vui lòng kiểm tra, đối chiếu nội dung ghi trên hóa đơn.</p>
+
+      <p class="mt-32">Trân trọng kính chào</p>
+      <p class="bold">BEAUTE SHOP</p>
+    </div>
+
+  </div>
+
+ 
+</body>
+</html>

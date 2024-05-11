@@ -1,0 +1,19 @@
+{
+  "name": "web-techstore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass assets/sass:assets/css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dompurify": "^3.1.0",
+    "dotenv": "^16.4.5",
+    "jspdf": "^2.5.1",
+    "pdfkit": "^0.15.0",
+    "wkhtmltopdf": "^0.4.0"
+  }
+}

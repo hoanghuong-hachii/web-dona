@@ -1,0 +1,98 @@
+.viewdetail .modal-header {
+  display: flex;
+  align-items: center;
+}
+.viewdetail .modal-header h3 {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+.viewdetail .modal-container1,
+.viewdetail .modal-reason,
+.viewdetail .modal-pin {
+  display: none;
+  min-width: 800px;
+  min-height: 200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.viewdetail .modal-reason, .viewdetail .modal-pin {
+  min-width: 400px;
+}
+.viewdetail .detail-close, .viewdetail .pin-close, .viewdetail .reason-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px 6px;
+  color: #fff;
+}
+.viewdetail .detail-close:hover, .viewdetail .pin-close:hover, .viewdetail .reason-close:hover {
+  background-color: #f44336;
+  cursor: pointer;
+}
+.viewdetail .modal-body {
+  display: flex;
+  padding: 10px 30px 30px 30px;
+}
+.viewdetail .edit-form {
+  width: 100%;
+}
+.viewdetail .edit-form .info {
+  display: flex;
+  flex-direction: column;
+}
+.viewdetail .edit-form .form-lable {
+  font-size: 12px;
+  min-width: 200px;
+  color: #373b3e;
+  padding-bottom: 5px;
+  padding-top: 16px;
+}
+.viewdetail .edit-form .form-input {
+  width: 100%;
+  font-size: 14px;
+  border: 1px solid #D3D3D4;
+  border-radius: 5px;
+  outline: none;
+  color: #4D5154;
+  padding: 6px 12px;
+  height: 44px;
+  line-height: 2;
+}
+.viewdetail .btn {
+  width: 100%;
+  display: flex;
+}
+.viewdetail .btn-save, .viewdetail .btn-re {
+  margin: auto;
+  min-height: 38px;
+  margin-top: 28px;
+  text-align: center;
+  min-width: 200px;
+  border: none;
+  background-color: #ff902f;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 20px;
+}
+.viewdetail .btn-save:hover, .viewdetail .btn-re:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.viewdetail .wrong {
+  display: none;
+}
+
+#text-lock {
+  color: red;
+  display: none;
+}
+
+/*# sourceMappingURL=sign_digital.css.map */
