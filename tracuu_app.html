@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu</title>
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/digitalsign.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/product_detail.css">
+    <link rel="stylesheet" href="./assets/css/shoping_cart.css">
+    <link rel="stylesheet" href="./assets/css/tracuu.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
+</head>
+<body>
+    
+    <div class="main">
+       
+        <div id="container" style="margin-top: 0">
+            <div class="grid wide">
+
+                <div class="container-body" style="margin-top: 30px;">
+
+                    <header class="title">Tra cứu hóa đơn điện tử</header>
+                    <div class="hd-body">
+                        <p>Thông tin hóa đơn điện tử của bạn. Vui lòng nhập Số hóa đơn để lấy hóa đơn điện tử</p>
+
+                        <input type="text" name="" id="hoadon" class="input-form" placeholder="Nhập số hóa đơn">
+
+                        <a href="#" id="view-invoice" class="btn-all" style="margin-top: 20px;">Xem hóa đơn</a>
+                    </div>
+                    <p class="mt-8">Hoặc xác minh hóa đơn điện tử <a href="./xacminhhd.html" style="color: var(--mainColor);">Tại đây</a></p> 
+                    
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="./assets/js/product_detail.js"></script>
+    <script src="./assets/js/placeholderTypewriter.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#check_invoice').click('active', function() {
+                $('#body-invoice').slideToggle()
+            })
+        })
+    </script>
+    <script>
+
+        $(document).ready(function() {
+            //$(".header").load("base.html")
+            $("#footer").load("footer.html")
+
+            $('#hoadon').keypress(function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault(); 
+                    performSearch(); 
+                }
+            });  
+
+            $('#view-invoice').click(function(event) {
+                event.preventDefault(); 
+                performSearch(); 
+            });
+        
+            function performSearch() {
+                var idInvoice = $('#hoadon').val()
+                console.log(idInvoice)
+
+                $.ajax({
+                    url: 'http://localhost:8080/api/v10/pdffile/uuid/'+ idInvoice,
+                    type: 'GET',
+                    success: function(respone) {
+                        console.log(respone)
+                        var file = respone.fileName
+                        localStorage.setItem('env_file', file);
+
+                        console.log(file)
+                        var url = './view_invoice.html?file=' + encodeURIComponent(file) + '&idInvoice=' + encodeURIComponent(idInvoice);
+
+                        window.location.href = url;
+
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error)
+                    }
+                })
+            }
+        });
+        
+    </script>
+  
+</body>
+</html>
