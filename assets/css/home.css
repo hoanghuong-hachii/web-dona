@@ -175,21 +175,34 @@
 }
 
 .discount-time__date {
-  display: flex;
   padding: 4px 12px;
-  border: 1px solid #fff;
-  background-color: #fff;
+  border: 5px solid #acf046;
+  background-color: #181f42;
   border-radius: 10px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--mainColor);
   font-weight: 500;
 }
-.discount-time__date span {
-  color: red;
-  font-weight: 900;
-}
 .discount-time__date .info-span {
+  text-align: center;
   margin-left: 8px;
+  padding: 4px 8px;
+}
+.discount-time__date .info-span span {
+  text-align: center;
+  color: #acf046;
+  font-weight: 900;
+  padding: 8px 0;
+}
+.discount-time__date .info-span span::after {
+  content: ":";
+  display: inline-block;
+  font-size: 20px;
+  padding: 0 8px;
+}
+.discount-time__date .info-span span:last-of-type::after {
+  content: "";
+  display: inline-block;
 }
 
 .btn_view-all {
