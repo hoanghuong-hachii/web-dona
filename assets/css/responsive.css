@@ -3,6 +3,20 @@
     
 }
 
+
+@media (min-width: 1024px){
+    
+    .container1.view_invoice_mb {
+        display: none;
+    }
+
+    .container.view_invoice_web {
+        display: block;
+    }
+
+    
+}
+
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
     
@@ -14,6 +28,8 @@
     .product-body__img:hover .add_cart {
         display: block;
     }
+
+    
 }
 
 @media (max-width: 1023px) {
@@ -52,8 +68,19 @@
         padding: 6px 0px;
 
     }
-
     
+    .container1.view_invoice_mb {
+        display: block;
+    }
+
+    .container.view_invoice_web {
+        display: none;
+    }
+
+    a#clearBtn {
+        top: -35px;
+        right: 10px;
+    }
 
 }
 @media (max-width: 500px) {
@@ -97,4 +124,20 @@
     #view-invoice {
         margin-top: 16px;
     }
+
+    .modal-check .result .valid {
+        display: block;
+    }
+
+    .modal-sign, .modal-draw, .modal-design, .modal-pass {
+        width: calc(100% - 20px);
+        min-width: 0;
+
+    }
+
+    a#clearBtn {
+        top: -30px;
+        right: -15px;
+    }
+
 }
