@@ -1,14 +1,19 @@
 var ID_USER = localStorage.getItem('env_id');
+var env_Url = localStorage.getItem('env_url');
+
 $(document).ready(function(){
- 
-    var env_Url = localStorage.getItem('env_url');
+    console.log(env_Url)
+
     fetchData();
     function fetchData() {
         $.ajax({
-            url: 'http://localhost:8080/api/v1/Products/roleUser/coupons',
+            url: env_Url+ '/api/v1/Products/roleUser/coupons',
             type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(response) {
-                //console.log(response)
+                console.log(response)
                 updateUI(response)
             },
             error: function(xhr, status, error) {
@@ -53,10 +58,6 @@ $(document).ready(function(){
             productList.append(productHtml);
         }
     }
-    
-
-
-    
 
 
     $(document).on('click', '.open-modal-view', function(event){
@@ -91,7 +92,7 @@ $(document).ready(function(){
 
 //==============\
 $(document).ready(function() {
-    var startDate = new Date('2024-05-13T00:00:00').getTime();
+    var startDate = new Date('2024-06-10T00:00:00').getTime();
     var endDate = new Date('2024-06-21T00:00:00').getTime();
 
     var x = setInterval(function() {

@@ -1,4 +1,4 @@
-
+var env_Url = localStorage.getItem('env_url');
 function upFile(){
 
     async function uploadFile(event) {
@@ -10,14 +10,16 @@ function upFile(){
         formData.append('file',files[0]);
     
         try {
-            const respone = await axios.post('http://localhost:8080/api/v10/pdf/upload', formData,{
+            const respone = await axios.post(env_Url +'/api/v10/pdf/upload', formData,{
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    'ngrok-skip-browser-warning': 'true'
                 }
+                
             });
     
             console.log(respone.data);
-            const pdfUrl = 'http://localhost:8080/images/'+ respone.data;
+            const pdfUrl = env_Url + '/images/'+ respone.data;
             
             if(respone.status === 200){
                 window.location.href= 'signDigital.html?pdfUrl='+ encodeURIComponent(pdfUrl);
@@ -131,7 +133,7 @@ $(document).ready(function() {
       page: 0
     };
 
-    var pathFile = 'http://localhost:8080/images/20240304233254839.pdf';
+    var pathFile = env_Url +'/images/20240304233254839.pdf';
   
     var _IS_DRAWING_SIGNATURE = false;
   
@@ -192,8 +194,11 @@ $(document).ready(function() {
     }
 
     $.ajax({
-        url: 'http://localhost:8080/api/v1/register-certificates/active',
+        url: env_Url +'/api/v1/register-certificates/active',
         method: 'GET',
+        headers: {
+            'ngrok-skip-browser-warning': 'true'
+        },
         success: function(data) {
             data.forEach(function(certificate) {
                 var listItem = `
@@ -244,8 +249,11 @@ $(document).ready(function() {
         console.log('Detail ID:', detailId);
 
         $.ajax({
-            url: 'http://localhost:8080/api/v1/register-certificates/'+ detailId,
+            url: env_Url +'/api/v1/register-certificates/'+ detailId,
             method: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(data) {
 
                 $('.edit-form input[name="username"]').val(data.name);
@@ -300,7 +308,10 @@ $(document).ready(function() {
 
             $.ajax({
                 type: 'POST',
-                url: 'http://localhost:8080/api/v1/register-certificates/verify-password',
+                headers: {
+                    'ngrok-skip-browser-warning': 'true'
+                },
+                url: env_Url +'/api/v1/register-certificates/verify-password',
                 data: {
                     id: id,
                     password: password
@@ -334,7 +345,10 @@ $(document).ready(function() {
                     console.log(requestData)
                     $.ajax({
                         type: 'POST',
-                        url: 'http://localhost:8080/api/v1/signDigital/sign',
+                        url:env_Url + '/api/v1/signDigital/sign',
+                        headers: {
+                            'ngrok-skip-browser-warning': 'true'
+                        },
                         contentType: 'application/json',
                         data: JSON.stringify(requestData),
                         success: function(respone) {

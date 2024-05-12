@@ -1,5 +1,5 @@
 var ID_USER = localStorage.getItem('env_id');
-
+var env_Url = localStorage.getItem('env_url');
 let isload = 0;
 $(window).on('scroll  mousemove touchstart',function(){
 	try{
@@ -176,7 +176,7 @@ $(window).on('scroll  mousemove touchstart',function(){
 
 	function addProductCart(data) {
         $.ajax({
-            url: 'http://localhost:8080/api/v4/shoppingCart',
+            url: env_Url+ '/api/v4/shoppingCart',
             type: 'POST',
             data: {
                 idUser: ID_USER,

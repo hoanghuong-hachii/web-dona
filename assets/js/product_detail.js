@@ -1,3 +1,4 @@
+var env_Url = localStorage.getItem('env_url');
 
 
 $(document).ready(function() {
@@ -109,8 +110,11 @@ $(document).ready(function(){
     fetchData();
     function fetchData() {
         $.ajax({
-            url: 'http://localhost:8080/api/v1/Products/roleUser/'+ id,
+            url: env_Url + '/api/v1/Products/roleUser/'+ id,
             type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(response) {
                 //console.log(response)
                 updateUI(response)
@@ -144,8 +148,11 @@ $(document).ready(function(){
 
     function fetchLayoutChild() {
         $.ajax({
-            url: 'http://localhost:8080/api/v1/product-images/'+id,
+            url: env_Url + '/api/v1/product-images/'+id,
             type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(response){
                 console.log(response)
                 updateLayoutChild(response)

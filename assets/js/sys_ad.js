@@ -1,3 +1,4 @@
+var env_Url = localStorage.getItem('env_url');
 
 $(document).ready(function(){
     $('.side-item').click(function(){
@@ -24,7 +25,7 @@ $(document).ready(function() {
 
     function fetchData(page, size) {
         $.ajax({
-            url: 'http://localhost:8080/api/v1/register-certificates/all/pagition',
+            url: env_Url + '/api/v1/register-certificates/all/pagition',
             type: 'GET',
             data: { page: page, size: size },
             dataType: 'json',
@@ -123,7 +124,7 @@ $(document).ready(function() {
         console.log("Clicked Edit button for ID: " + id);
 
         $.ajax({
-            url: 'http://localhost:8080/api/v1/register-certificates/'+ id,
+            url: env_Url + '/api/v1/register-certificates/'+ id,
             method: 'GET',
             success: function(data) {
 
@@ -144,7 +145,7 @@ $(document).ready(function() {
         $('.edit-form').submit(function(event) {
             event.preventDefault();
 
-            var url = 'http://localhost:8080/api/v1/register-certificates/'+id+'/update-status'
+            var url = env_Url + '/api/v1/register-certificates/'+id+'/update-status'
             var status = $(this).find('select[name="change-status"]').val();
 
             $.ajax({
@@ -167,7 +168,7 @@ $(document).ready(function() {
         });
 
         $(document).on('click', '#btn-delete', function(){
-            var url = 'http://localhost:8080/api/v1/register-certificates/'+id
+            var url = env_Url + '/api/v1/register-certificates/'+id
             var status = $(this).find('select[name="change-status"]').val();
 
             $.ajax({

@@ -26,11 +26,14 @@ $(document).ready(function() {
 
     var ID_USER = localStorage.getItem('env_id');
 
+    var env_Url = localStorage.getItem('env_url');
 
     $.ajax({
-        url:'http://localhost:8080/api/v2/users/id?idUser='+ ID_USER,
+        url: env_Url + '/api/v2/users/id?idUser='+ ID_USER,
         type: 'GET',
-        
+        headers: {
+            'ngrok-skip-browser-warning': 'true'
+        },
         success: function(response) {
             //console.log(response);
             updateData(response);
@@ -54,8 +57,11 @@ $(document).ready(function() {
         var cart = $('#productList')
         cart.empty()
         $.ajax({
-            url: 'http://localhost:8080/api/v4/shoppingCart/user/' +id,
+            url: env_Url + '/api/v4/shoppingCart/user/' +id,
             type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(respone) {
                 getProduct(respone)
             },
@@ -71,8 +77,11 @@ $(document).ready(function() {
                 quantity = product.quantityProd
     
                 $.ajax({
-                    url: 'http://localhost:8080/api/v1/Products/roleUser/' + id,
+                    url:env_Url +  '/api/v1/Products/roleUser/' + id,
                     type: 'GET',
+                    headers: {
+                        'ngrok-skip-browser-warning': 'true'
+                    },
                     success: function(respone,quantity){
                          
                         updateLayout(respone)
@@ -215,8 +224,11 @@ $(document).ready(function() {
     function postBill() {
 
         $.ajax({
-            url: 'http://localhost:8080/api/v4/shoppingCart/user/'+ID_USER,
+            url: env_Url+ '/api/v4/shoppingCart/user/'+ID_USER,
             type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(cartData) {
                 var productBillDTOS = cartData.map(function(item) {
                     return {
@@ -256,7 +268,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: 'http://localhost:8080/api/v5/Bill/bills',
+            url: env_Url + '/api/v5/Bill/bills',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(jsonData),
@@ -276,8 +288,11 @@ $(document).ready(function() {
 
     function sendInvoice(idBill){
         $.ajax({
-            url: 'http://localhost:8080/api/v10/pdf/sendInvoice?idBill='+ idBill,
+            url: env_Url +  '/api/v10/pdf/sendInvoice?idBill='+ idBill,
             type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(response) {
                 console.log('send invoice success')
                 //sendtoEmail(idBill)
@@ -295,12 +310,14 @@ $(document).ready(function() {
             window.location.href = 'home.html'
         },4000)
         $.ajax({
-            url: 'http://localhost:8080/api/testOTP/sendInvoice'+ 
+            url: env_Url + '/api/testOTP/sendInvoice'+ 
             '?email=' + Invoice.email +
             '&idBill=' + idBill +
             '&invoice=' + invoicePath,  
             type: 'GET',
-            
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(response) {
                 console.log('send invoice success')
                 
@@ -334,8 +351,11 @@ $(document).ready(function() {
         var orderInfo = 'test';
         
         $.ajax({
-            url: 'http://localhost:8080/api/v9/pay/submitOrder',
+            url: env_Url + '/api/v9/pay/submitOrder',
             type: 'POST',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             dataType: 'text', 
             data: {
                 amount: amount,

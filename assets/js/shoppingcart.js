@@ -1,4 +1,5 @@
 var ID_USER = localStorage.getItem('env_id');
+var env_Url = localStorage.getItem('env_url');
 var isInvoice = false;
 $(document).ready(function() {
 
@@ -8,8 +9,11 @@ $(document).ready(function() {
         var cart = $('#product-cart')
         cart.empty()
         $.ajax({
-            url: 'http://localhost:8080/api/v4/shoppingCart/user/' +id,
+            url: env_Url +'/api/v4/shoppingCart/user/' +id,
             type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(respone) {
                 getProduct(respone)
             },
@@ -25,8 +29,11 @@ $(document).ready(function() {
                 quantity = product.quantityProd
     
                 $.ajax({
-                    url: 'http://localhost:8080/api/v1/Products/roleUser/' + id,
+                    url: env_Url +'/api/v1/Products/roleUser/' + id,
                     type: 'GET',
+                    headers: {
+                        'ngrok-skip-browser-warning': 'true'
+                    },
                     success: function(respone,quantity){
                         if(respone != null) {
                             $('.emptycart').hide()
@@ -183,8 +190,11 @@ $(document).ready(function() {
 function updateShopCart(data) {
     var idUser = localStorage.getItem('env_id');
     $.ajax({
-        url: 'http://localhost:8080/api/v4/shoppingCart',
+        url: env_Url +'/api/v4/shoppingCart',
         type: 'PUT', 
+        headers: {
+            'ngrok-skip-browser-warning': 'true'
+        },
         data: {
             idUser: idUser,
             idProd: data.idProd,
@@ -202,8 +212,11 @@ function updateShopCart(data) {
 
 function deleteProductCart(data) {
     $.ajax({
-        url: 'http://localhost:8080/api/v4/shoppingCart',
+        url: env_Url +'/api/v4/shoppingCart',
         type: 'DELETE',
+        headers: {
+            'ngrok-skip-browser-warning': 'true'
+        },
         data: {
             idUser: ID_USER,
             idProd: data.idProd

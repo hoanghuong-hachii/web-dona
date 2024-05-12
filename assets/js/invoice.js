@@ -2,6 +2,7 @@ var is_Status = 0;
 var nameImageSign = '20240507232203812.png'
 var numDesign = 1;
 var idCer = 1;
+var env_Url = localStorage.getItem('env_url');
 
 
 $(document).ready(function() {
@@ -21,7 +22,7 @@ $(document).ready(function() {
     // $('#date-time').text(currentDatetime);
 
     if (filePdf) {
-        $('#pdfViewer').attr('src', 'http://localhost:8080/images/' + filePdf);
+        $('#pdfViewer').attr('src', env_Url+ '/images/' + filePdf);
     } else {
         console.error('File parameter not found.');
     }
@@ -115,8 +116,11 @@ $(document).ready(function() {
     var idUser =localStorage.getItem('env_id');
     console.log(idUser)
     $.ajax({
-        url: 'http://localhost:8080/api/v1/register-certificates/user/' + idUser,
+        url:  env_Url + '/api/v1/register-certificates/user/' + idUser,
         method: 'GET',
+        headers: {
+            'ngrok-skip-browser-warning': 'true'
+        },
         success: function(data) {
 
             //data.forEach(function(certificate) {
@@ -281,8 +285,11 @@ $(document).ready(function() {
 
             // Make a POST request to upload the image using Axios
             $.ajax({
-                url: 'http://localhost:8080/api/v10/pdffile/upload-image',
+                url: env_Url+'/api/v10/pdffile/upload-image',
                 type: 'POST',
+                headers: {
+                    'ngrok-skip-browser-warning': 'true'
+                },
                 data: formData,
                 processData: false,
                 contentType: false,
@@ -308,8 +315,11 @@ $(document).ready(function() {
                 }
     
                 $.ajax({
-                    url: 'http://localhost:8080/api/v10/pdffile/upload-image',
+                    url: env_Url+ '/api/v10/pdffile/upload-image',
                     type: 'POST',
+                    headers: {
+                        'ngrok-skip-browser-warning': 'true'
+                    },
                     data: formData,
                     processData: false,
                     contentType: false,
@@ -345,7 +355,10 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:8080/api/v1/register-certificates/verify-password',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
+            url: env_Url + '/api/v1/register-certificates/verify-password',
             data: {
                 id: id,
                 password: password
@@ -411,11 +424,13 @@ $(document).ready(function() {
             numDesign: numDesign
         };
 
-        axios.post('http://localhost:8080/api/v1/signDigital/signClient', requestData, {
+        axios.post(env_Url + '/api/v1/signDigital/signClient', requestData, {
             headers: {
                 'Content-Type': 'application/json',
-                'accept': '*/*'
-            }
+                'accept': '*/*',
+                'ngrok-skip-browser-warning': 'true'
+            },
+        
         })
         .then(function (response) {
             $('.overlay').hide();
@@ -427,7 +442,7 @@ $(document).ready(function() {
             //showAlertSuccess("thành công")
             console.log(response.data);
             localStorage.setItem('env_file', response.data);
-            $('#pdfViewer').attr('src', 'http://localhost:8080/images/' + response.data);
+            $('#pdfViewer').attr('src', env_Url+  '/images/' + response.data);
             
         })
         .catch(function (error) {

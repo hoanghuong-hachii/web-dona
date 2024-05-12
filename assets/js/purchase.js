@@ -1,3 +1,4 @@
+var env_Url = localStorage.getItem('env_url');
 function getCurrentDateTime() {
     var currentDate = new Date();
 
@@ -27,9 +28,11 @@ $(document).ready(function() {
     loadCart();
 
     $.ajax({
-        url:'http://localhost:8080/api/v2/users/id?idUser='+ ID_USER,
+        url: env_Url + '/api/v2/users/id?idUser='+ ID_USER,
         type: 'GET',
-        
+        headers: {
+            'ngrok-skip-browser-warning': 'true'
+        },
         success: function(response) {
             //console.log(response);
             updateData(response);
@@ -52,8 +55,11 @@ $(document).ready(function() {
         var cart = $('#productList')
         cart.empty()
         $.ajax({
-            url: 'http://localhost:8080/api/v4/shoppingCart/user/' +id,
+            url: env_Url +'/api/v4/shoppingCart/user/' +id,
             type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(respone) {
                 getProduct(respone)
             },
@@ -69,8 +75,11 @@ $(document).ready(function() {
                 quantity = product.quantityProd
     
                 $.ajax({
-                    url: 'http://localhost:8080/api/v1/Products/roleUser/' + id,
+                    url: env_Url + '/api/v1/Products/roleUser/' + id,
                     type: 'GET',
+                    headers: {
+                        'ngrok-skip-browser-warning': 'true'
+                    },
                     success: function(respone,quantity){
                          
                         updateLayout(respone)
@@ -164,8 +173,11 @@ $(document).ready(function() {
         var orderInfo = 'test';
         
         $.ajax({
-            url: 'http://localhost:8080/api/v9/pay/submitOrder',
+            url: env_Url +'/api/v9/pay/submitOrder',
             type: 'POST',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             dataType: 'text', 
             data: {
                 amount: amount,
@@ -189,8 +201,11 @@ $(document).ready(function() {
         showSuccessToast({msg: 'Đặt hàng thành công'})
 
         $.ajax({
-            url: 'http://localhost:8080/api/v4/shoppingCart/user/'+ID_USER,
+            url: env_Url +'/api/v4/shoppingCart/user/'+ID_USER,
             type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(cartData) {
                 var productBillDTOS = cartData.map(function(item) {
                     return {
@@ -230,8 +245,11 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: 'http://localhost:8080/api/v5/Bill/bills',
+            url: env_Url + '/api/v5/Bill/bills',
             type: 'POST',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             contentType: 'application/json',
             data: JSON.stringify(jsonData),
             success: function(response) {
