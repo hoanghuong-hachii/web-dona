@@ -126,6 +126,9 @@ $(document).ready(function() {
         $.ajax({
             url: env_Url + '/api/v1/register-certificates/'+ id,
             method: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function(data) {
 
                 $('.edit-form input[name="username"]').val(data.name);
@@ -150,6 +153,9 @@ $(document).ready(function() {
 
             $.ajax({
                 url: url + '?status=' + status,
+                headers: {
+                    'ngrok-skip-browser-warning': 'true'
+                },
                 method: 'PUT',
                 success: function(data) {
                     console.log('Status updated successfully');
@@ -173,6 +179,9 @@ $(document).ready(function() {
 
             $.ajax({
                 url: url ,
+                headers: {
+                    'ngrok-skip-browser-warning': 'true'
+                },
                 method: 'DELETE',
                 success: function(data) {
                     console.log('Delete successfully');

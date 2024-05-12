@@ -156,9 +156,10 @@
                 var fileInput = $('#file-upload')[0].files[0]; 
                 var formData = new FormData();
                 formData.append('file', fileInput);
-        
+                var env_Url = localStorage.getItem('env_url');
+
                 $.ajax({
-                    url: 'http://localhost:8080/api/v1/signDigital/verify?alias=' + alias,
+                    url: env_Url +'/api/v1/signDigital/verify?alias=' + alias,
                     type: 'POST',
                     data: formData,
                     processData: false,

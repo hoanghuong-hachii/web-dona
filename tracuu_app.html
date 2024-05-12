@@ -97,7 +97,7 @@
                         console.log(file)
                         var url = './view_invoice.html?file=' + encodeURIComponent(file) + '&idInvoice=' + encodeURIComponent(idInvoice);
 
-                        window.location.href = url;
+                        window.location.replace(url);
 
                     },
                     error: function(xhr, status, error) {

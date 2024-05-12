@@ -209,6 +209,33 @@ $(document).ready(function() {
             isDrawing = false;
             savePaths();
         });
+
+        canvas.addEventListener('touchstart', function(e) {
+            isDrawing = true;
+            var touch = e.touches[0];
+            [lastX, lastY] = [touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop];
+        });
+        
+        canvas.addEventListener('touchmove', function(e) {
+            if (!isDrawing) return;
+            var touch = e.touches[0];
+            var currentX = touch.clientX - canvas.offsetLeft;
+            var currentY = touch.clientY - canvas.offsetTop;
+            paths.push({ x: currentX, y: currentY });
+            draw();
+            [lastX, lastY] = [currentX, currentY];
+        });
+        
+        canvas.addEventListener('touchend', function() {
+            isDrawing = false;
+            savePaths();
+        });
+        
+        canvas.addEventListener('touchcancel', function() {
+            isDrawing = false;
+            savePaths();
+        });
+        
     
         $('#clearBtn').click(function(e) {
             e.preventDefault()
