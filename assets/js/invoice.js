@@ -76,6 +76,7 @@ $(document).ready(function() {
 
     $('#downloadButton').click(function(){
         var pdfSrc = $('#pdfViewer').attr('src');
+        console.log(pdfSrc)
         downloadFile(pdfSrc);
     });
 
@@ -98,20 +99,31 @@ $(document).ready(function() {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
         xhr.responseType = 'blob';
+    
+        xhr.setRequestHeader('ngrok-skip-browser-warning', 'true');
+    
         xhr.onload = function () {
-            var blob = xhr.response;
-            var url = window.URL.createObjectURL(blob);
-            var a = document.createElement('a');
-            a.style.display = 'none';
-            a.href = url;
-            a.download = 'invoice_'+currentTime+ '.pdf';
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
+            if (xhr.status === 200) {
+                var blob = xhr.response;
+                var url = window.URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'invoice_'+currentTime+ '.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            } else {
+                console.error('Failed to download file. Status:', xhr.status);
+            }
         };
-        xhr.send(null);
+    
+        xhr.onerror = function () {
+            console.error('Error occurred while downloading file.');
+        };
+    
+        xhr.send();
     }
-
     //==========================Begin ===============================================================================================
     var idUser =localStorage.getItem('env_id');
     console.log(idUser)
