@@ -179,7 +179,7 @@
   border: 5px solid #acf046;
   background-color: #181f42;
   border-radius: 10px;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   color: var(--mainColor);
   font-weight: 500;
 }
@@ -197,7 +197,7 @@
 .discount-time__date .info-span span::after {
   content: ":";
   display: inline-block;
-  font-size: 20px;
+  font-size: 26px;
   padding: 0 8px;
 }
 .discount-time__date .info-span span:last-of-type::after {
