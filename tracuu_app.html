@@ -86,9 +86,13 @@
                 var idInvoice = $('#hoadon').val()
                 console.log(idInvoice)
 
+                var env_Url = localStorage.getItem('env_url')
                 $.ajax({
-                    url: 'http://localhost:8080/api/v10/pdffile/uuid/'+ idInvoice,
+                    url: env_Url + '/api/v10/pdffile/uuid/'+ idInvoice,
                     type: 'GET',
+                    headers: {
+                        'ngrok-skip-browser-warning': 'true'
+                    },
                     success: function(respone) {
                         console.log(respone)
                         var file = respone.fileName
