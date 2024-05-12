@@ -1,12 +1,11 @@
 var ID_USER = localStorage.getItem('env_id');
-var env_Url = localStorage.getItem('env_url');
 $(document).ready(function(){
  
     var env_Url = localStorage.getItem('env_url');
     fetchData();
     function fetchData() {
         $.ajax({
-            url: env_Url+ '/api/v1/Products/roleUser/coupons',
+            url: 'http://localhost:8080/api/v1/Products/roleUser/coupons',
             type: 'GET',
             success: function(response) {
                 //console.log(response)
