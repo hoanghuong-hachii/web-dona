@@ -93,4 +93,8 @@
     div#price-item-total {
         display: none;
     }
+
+    #view-invoice {
+        margin-top: 16px;
+    }
 }
