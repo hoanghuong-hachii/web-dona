@@ -29,6 +29,9 @@
         display: block;
     }
 
+    footer.modal-footer {
+        float: right;
+    }
     
 }
 
@@ -83,9 +86,7 @@
     }
 
 }
-@media (max-width: 500px) {
-    
-}
+
 
 /* mb */
 @media (max-width: 739px) {
@@ -140,4 +141,30 @@
         right: -15px;
     }
 
+    footer.modal-footer {
+        float: none;
+    }
+    
+    input#btn-continue {
+        width: 100%;
+        margin-top: 16px;
+        
+    }
+    input#btn-add {
+        width: 100%;
+        margin-left: 8px;
+    }
+
+}
+
+@media (max-width: 300px) {
+    input#btn-continue {
+        width: 100%;
+        margin-top: 16px;
+        
+    }
+    input#btn-add {
+        width: 100%;
+        margin-left: 8px;
+    }
 }
