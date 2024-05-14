@@ -24,12 +24,22 @@ $(document).ready(function() {
     // console.log(currentDatetime)
     // $('#date-time').text(currentDatetime);
 
-    if (filePdf) {
-        console.log(env_Url + '/images/' + filePdf)
-        $('.pdfViewer').attr('src', env_Url + '/images/' + filePdf);
-    } else {
-        console.error('File parameter not found.');
-    }
+    document.addEventListener("adobe_dc_view_sdk.ready", function()
+    
+        {
+            if (filePdf) {
+                var adobeDCView = new AdobeDC.View({clientId: "8835e2187c274269b42707ea71590877", divId: "adobe-dc-view"});
+                adobeDCView.previewFile({
+                    content:   {location: {url: filePdf}},
+                    metaData: {fileName: "invoice.pdf"}
+                });
+                
+            } else {
+                console.error('File parameter not found.');
+            }
+        
+            
+    });
 
     $('.overlay').on('click', function() {
         $('.overlay').hide()
