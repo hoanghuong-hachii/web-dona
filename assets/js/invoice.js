@@ -11,10 +11,13 @@ $(document).ready(function() {
     const fileParam = urlParams.get('file');
     const idInvoice = urlParams.get('idInvoice');
 
-    var filePdf =localStorage.getItem('env_file');
+    if(fileParam) {
+        var filePdf = localStorage.setItem('env_file', fileParam);
+    }
+    var filePdf = localStorage.getItem('env_file');
 
     var currentTime = Date.now();
-    console.log(currentTime);
+    console.log(fileParam);
 
     console.log(idInvoice)
     // var currentDatetime = moment().format('DD/MM/YYYY');
@@ -22,7 +25,8 @@ $(document).ready(function() {
     // $('#date-time').text(currentDatetime);
 
     if (filePdf) {
-        $('#pdfViewer').attr('src', env_Url+ '/images/' + filePdf);
+        console.log(env_Url + '/images/' + filePdf)
+        $('.pdfViewer').attr('src', env_Url + '/images/' + filePdf);
     } else {
         console.error('File parameter not found.');
     }
@@ -273,9 +277,7 @@ $(document).ready(function() {
             savePaths();
         });
 
-
         draw();
-
 
         function signDraw() {
             draw();
@@ -475,7 +477,8 @@ $(document).ready(function() {
             page: 1,
             x: 0,
             y: 0,
-            numDesign: numDesign
+            numDesign: numDesign,
+            uuid: idInvoice
         };
 
         axios.post(env_Url + '/api/v1/signDigital/signClient', requestData, {
@@ -494,9 +497,10 @@ $(document).ready(function() {
             $('.modal-pass').hide()
             //console.log(requestData)
             //showAlertSuccess("thành công")
+            alert('Ký file thành công')
             console.log(response.data);
             localStorage.setItem('env_file', response.data);
-            $('#pdfViewer').attr('src', env_Url+  '/images/' + response.data);
+            $('.pdfViewer').attr('src', env_Url+  '/images/' + response.data);
             
         })
         .catch(function (error) {
@@ -594,6 +598,7 @@ $(document).ready(function() {
             reader.readAsDataURL(file);
         }
     });
+
     
 
     //==========================END =========================================

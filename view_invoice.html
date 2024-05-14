@@ -8,10 +8,10 @@
     <link href="assets/fonts/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet">
     <link href="assets/fonts/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=La+Belle+Aurore&family=Sacramento&display=swap" rel="stylesheet">
-    // ======================
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=La+Belle+Aurore&family=Sacramento&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
@@ -73,7 +73,7 @@
 
                 </div>
                 <div class="invoice">
-                    <iframe id="pdfViewer" title="file hóa đơn" src="http://localhost:8080/images/20240509225835290.pdf" type="application/pdf" >
+                    <iframe id="pdfViewer" class="pdfViewer" title="file hóa đơn" src="http://localhost:8080/images/20240509225835290.pdf" type="application/pdf" >
                     </iframe>
                 </div>
 
@@ -83,7 +83,7 @@
             <div class="container view_invoice_web" >
                 <div class="row">
                     <div class="invoice">
-                        <iframe id="pdfViewer" title="file hóa đơn" src="http://localhost:8080/images/20240509225835290.pdf" type="application/pdf" >
+                        <iframe id="pdfViewer" class="pdfViewer" title="file hóa đơn" src="http://localhost:8080/images/20240509225835290.pdf" type="application/pdf" >
                         </iframe>
                     </div>
                     <div class="action" >
@@ -260,7 +260,7 @@
             </div>
         </div>
 
-        <footer class="modal-footer" style=" margin-right: 16px; margin-bottom: 16px">
+        <footer class="modal-footer" style="margin-right: 16px; margin-bottom: 16px">
             
             <input id="btn-add" style="background-color: #009688;" type="button" value="Configure New Digital ID" class="modal-body__btn">
             <input id="btn-continue" type="button" value="Continue" class="modal-body__btn ml-8">
