@@ -176,91 +176,106 @@ $(document).ready(function() {
         var canvas = document.getElementById('signatureCanvas');
         var context = canvas.getContext('2d');
         var isDrawing = false;
-        var lastX = 0;
-        var lastY = 0;
         var paths = JSON.parse(localStorage.getItem('savedPaths')) || [];
-    
+
+        function getMousePos(canvas, evt) {
+            var rect = canvas.getBoundingClientRect();
+            return {
+                x: (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width,
+                y: (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height
+            };
+        }
+
         function draw() {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.fillStyle = 'white';
             context.fillRect(0, 0, canvas.width, canvas.height);
-            context.beginPath();
-            context.moveTo(paths[0].x, paths[0].y);
-            for (var i = 1; i < paths.length; i++) {
-                context.lineTo(paths[i].x, paths[i].y);
-            }
             context.strokeStyle = '#000';
             context.lineWidth = 2;
-            context.stroke();
+
+            paths.forEach(path => {
+                context.beginPath();
+                if (path.length > 0) {
+                    context.moveTo(path[0].x, path[0].y);
+                    for (var i = 1; i < path.length; i++) {
+                        context.lineTo(path[i].x, path[i].y);
+                    }
+                }
+                context.stroke();
+            });
         }
-    
+
         function savePaths() {
             localStorage.setItem('savedPaths', JSON.stringify(paths));
         }
-    
+
         canvas.addEventListener('mousedown', function(e) {
             isDrawing = true;
-            [lastX, lastY] = [e.offsetX, e.offsetY];
+            var pos = getMousePos(canvas, e);
+            paths.push([{ x: pos.x, y: pos.y }]);
         });
-    
+
         canvas.addEventListener('mousemove', function(e) {
             if (!isDrawing) return;
-            var currentX = e.offsetX;
-            var currentY = e.offsetY;
-            paths.push({ x: currentX, y: currentY });
+            var pos = getMousePos(canvas, e);
+            paths[paths.length - 1].push({ x: pos.x, y: pos.y });
             draw();
-            [lastX, lastY] = [currentX, currentY];
         });
-    
+
         canvas.addEventListener('mouseup', function() {
             isDrawing = false;
             savePaths();
         });
-    
+
         canvas.addEventListener('mouseout', function() {
             isDrawing = false;
             savePaths();
         });
 
         canvas.addEventListener('touchstart', function(e) {
-            isDrawing = true;
+            if (e.target === canvas) {
+                e.preventDefault();
+            }
             var touch = e.touches[0];
-            [lastX, lastY] = [touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop];
-        });
-        
+            var mouseEvent = new MouseEvent('mousedown', {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }, { passive: false });
+
+        canvas.addEventListener('touchend', function(e) {
+            if (e.target === canvas) {
+                e.preventDefault();
+            }
+            var mouseEvent = new MouseEvent('mouseup', {});
+            canvas.dispatchEvent(mouseEvent);
+        }, { passive: false });
+
         canvas.addEventListener('touchmove', function(e) {
-            if (!isDrawing) return;
+            if (e.target === canvas) {
+                e.preventDefault();
+            }
             var touch = e.touches[0];
-            var currentX = touch.clientX - canvas.offsetLeft;
-            var currentY = touch.clientY - canvas.offsetTop;
-            paths.push({ x: currentX, y: currentY });
-            draw();
-            [lastX, lastY] = [currentX, currentY];
-        });
-        
-        canvas.addEventListener('touchend', function() {
-            isDrawing = false;
-            savePaths();
-        });
-        
-        canvas.addEventListener('touchcancel', function() {
-            isDrawing = false;
-            savePaths();
-        });
-        
-    
-        $('#clearBtn').click(function(e) {
-            e.preventDefault()
+            var mouseEvent = new MouseEvent('mousemove', {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }, { passive: false });
+
+        //===========================
+
+        document.getElementById('clearBtn').addEventListener('click', function(e) {
+            e.preventDefault();
             context.clearRect(0, 0, canvas.width, canvas.height);
             paths = [];
             savePaths();
         });
-    
-        // $('#saveBtn').click(function() {
-        //     signDraw()
-        // });
-    
+
+
         draw();
+
 
         function signDraw() {
             draw();
@@ -579,7 +594,6 @@ $(document).ready(function() {
             reader.readAsDataURL(file);
         }
     });
-
     
 
     //==========================END =========================================
