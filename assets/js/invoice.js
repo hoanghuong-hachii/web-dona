@@ -604,6 +604,27 @@ $(document).ready(function() {
             localStorage.setItem('env_file', response.data);
             $('.pdfViewer').attr('src', env_Url+  '/images/' + response.data);
             
+            const $pdf1 = env_Url + '/images/' + response.data;
+
+            pdfjsLib.getDocument({
+                url: $pdf1,
+                httpHeaders: {
+                    'ngrok-skip-browser-warning': 'true'
+                }
+            }).promise.then((doc) => {
+                $initialState.pdfDoc = doc;
+                console.log('pdfDocument', $initialState.pdfDoc);
+
+                $('#page_count').html($initialState.pdfDoc.numPages);
+
+                $initialState.currentPage = 1; // Reset currentPage to 1
+                $('#current_page').val($initialState.currentPage);
+
+                renderPage();
+            }).catch((err) => {
+                alert(err.message);
+            });
+                    
         })
         .catch(function (error) {
             console.error(error);
