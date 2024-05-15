@@ -23,14 +23,14 @@ $(document).ready(function() {
     // var currentDatetime = moment().format('DD/MM/YYYY');
     // console.log(currentDatetime)
     // $('#date-time').text(currentDatetime);
-
+    var urlPDF = 'http://localhost:8080' + '/images/'+ filePdf;
     document.addEventListener("adobe_dc_view_sdk.ready", function()
     
         {
             if (filePdf) {
                 var adobeDCView = new AdobeDC.View({clientId: "8835e2187c274269b42707ea71590877", divId: "adobe-dc-view"});
                 adobeDCView.previewFile({
-                    content:   {location: {url: filePdf}},
+                    content:   {location: {url: urlPDF}},
                     metaData: {fileName: "invoice.pdf"}
                 });
                 

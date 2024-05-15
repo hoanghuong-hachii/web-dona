@@ -124,6 +124,7 @@
                 </div>
             </div>
         </div>
+    <div style="margin: 0px" id="adobe-dc-view"></div>
        
     </div>
     <div class="overlay" style="display: none"></div>
@@ -428,7 +429,6 @@
     </div>
     <!-- <embed src="https://slowly-ideal-corgi.ngrok-free.app/images/20240514235644598.pdf" width="500" height="375"
    type="application/pdf"> -->
-    <div style="margin: 0px" id="adobe-dc-view"></div>
     <!-- End Modal Sign -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -437,34 +437,7 @@
 `   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/vi.min.js"></script>
     <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
 
-    <!-- <script src="./assets/js/invoice.js"></script> -->
+    <script src="./assets/js/invoice.js"></script>
 
-    <script type="text/javascript"> 
-        const urlParams = new URLSearchParams(window.location.search);
-        const fileParam = urlParams.get('file');
-        const idInvoice = urlParams.get('idInvoice');
-        var env_Url = localStorage.getItem('env_url');
-
-        if(fileParam) {
-            //console.log(fileParam)
-            localStorage.setItem('env_file', fileParam);
-        }
-        var filePdf = localStorage.getItem('env_file');
-        console.log(fileParam);
-
-        var urlPDF = 'http://localhost:8080' + '/images/'+ filePdf;
-        console.log('urlPDF: ' + urlPDF)
-        document.addEventListener("adobe_dc_view_sdk.ready", function()
-        {
-            var adobeDCView = new AdobeDC.View({clientId: "8835e2187c274269b42707ea71590877", divId: "adobe-dc-view"});
-            adobeDCView.previewFile(
-           {
-              content:   {location: {url: urlPDF}},
-              metaData: {fileName: "Bodea Brochure.pdf"}
-           }).catch(function(error) {
-            console.error('Error:', error);
-        });
-        });
-     </script>
 </body>
 </html>
