@@ -444,19 +444,20 @@
         var env_Url = localStorage.getItem('env_url');
 
         if(fileParam) {
-            console.log(fileParam)
+            //console.log(fileParam)
             localStorage.setItem('env_file', fileParam);
         }
         var filePdf = localStorage.getItem('env_file');
-
-        var currentTime = Date.now();
         console.log(fileParam);
+
+        var urlPDF = env_Url+ '/images/'+ filePdf;
+        console.log('urlPDF: ' + urlPDF)
         document.addEventListener("adobe_dc_view_sdk.ready", function()
         {
             var adobeDCView = new AdobeDC.View({clientId: "8835e2187c274269b42707ea71590877", divId: "adobe-dc-view"});
             adobeDCView.previewFile(
            {
-              content:   {location: {url: env_Url+ '/images/'+ filePdf}},
+              content:   {location: {url: urlPDF}},
               metaData: {fileName: "Bodea Brochure.pdf"}
            });
         });
