@@ -97,6 +97,12 @@ $(document).ready(function() {
         renderPage();
     }
 
+    $('#fullButton').on('click', function() {
+        filePdf = localStorage.getItem('env_file');
+        var urlNew = env_Url + '/images/' + filePdf;
+        window.open(urlNew, '_blank');
+    })
+
     $('#prev-page').click(showPrevPage);
     $('#next-page').click(showNextPage);
 
