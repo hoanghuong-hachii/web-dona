@@ -450,16 +450,22 @@
         var filePdf = localStorage.getItem('env_file');
         console.log(fileParam);
 
-        var urlPDF = 'http://localhost:8080'+ '/images/'+ filePdf;
+        var urlPDF = env_Url + '/images/'+ filePdf;
         console.log('urlPDF: ' + urlPDF)
-        document.addEventListener("adobe_dc_view_sdk.ready", function()
-        {
+        document.addEventListener("adobe_dc_view_sdk.ready", function() {
             var adobeDCView = new AdobeDC.View({clientId: "8835e2187c274269b42707ea71590877", divId: "adobe-dc-view"});
             adobeDCView.previewFile(
-           {
-              content:   {location: {url: urlPDF}},
-              metaData: {fileName: "Bodea Brochure.pdf"}
-           });
+            {
+                content: {
+                    location: {
+                        url: urlPDF,
+                        headers: {
+                            'ngrok-skip-browser-warning': 'true'
+                        }
+                    }
+                },
+                metaData: {fileName: "Bodea Brochure.pdf"}
+            });
         });
      </script>
 </body>
