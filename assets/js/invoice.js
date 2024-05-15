@@ -23,7 +23,7 @@ $(document).ready(function() {
     // var currentDatetime = moment().format('DD/MM/YYYY');
     // console.log(currentDatetime)
     // $('#date-time').text(currentDatetime);
-    var urlPDF = 'http://localhost:8080' + '/images/'+ filePdf;
+    var urlPDF = env_Url + '/images/'+ filePdf;
     document.addEventListener("adobe_dc_view_sdk.ready", function()
     
         {
