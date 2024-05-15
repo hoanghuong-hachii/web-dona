@@ -15,32 +15,124 @@ $(document).ready(function() {
         var filePdf = localStorage.setItem('env_file', fileParam);
     }
     var filePdf = localStorage.getItem('env_file');
+    if (filePdf) {
+        $('#pdfViewer').attr('src', env_Url+ '/images/' + filePdf);
+    } else {
+        console.error('File parameter not found.');
+    }
 
     var currentTime = Date.now();
     console.log(fileParam);
 
     console.log(idInvoice)
-    // var currentDatetime = moment().format('DD/MM/YYYY');
-    // console.log(currentDatetime)
-    // $('#date-time').text(currentDatetime);
-    var urlPDF = env_Url + '/images/'+ filePdf;
-    document.addEventListener("adobe_dc_view_sdk.ready", function()
-    
-        {
-            if (filePdf) {
-                var adobeDCView = new AdobeDC.View({clientId: "8835e2187c274269b42707ea71590877", divId: "adobe-dc-view"});
-                adobeDCView.previewFile({
-                    content:   {location: {url: urlPDF}},
-                    metaData: {fileName: "invoice.pdf"}
-                });
-                
-            } else {
-                console.error('File parameter not found.');
-            }
-        
-            
+
+    //==========index.js====================================================================================================================
+    const $pdf = env_Url+ '/images/' + filePdf;
+
+    const $initialState = {
+        pdfDoc: null,
+        currentPage: 1,
+        pageCount: 0,
+        zoom: 1,
+    };
+
+    const renderPage = () => {
+
+        $initialState.pdfDoc.getPage($initialState.currentPage).then((page) => {
+            console.log('page', page);
+
+            const canvas = $('#canvas')[0];
+            const $ctx = canvas.getContext('2d');
+            const $viewport = page.getViewport({ scale: $initialState.zoom });
+
+            canvas.height = $viewport.height;
+            canvas.width = $viewport.width;
+
+            const renderCtx = {
+            canvasContext: $ctx,
+            viewport: $viewport,
+            };
+
+            page.render(renderCtx);
+
+            $('#page_num').html($initialState.currentPage);
+        });
+    };
+
+    const headers = {
+        'ngrok-skip-browser-warning': 'true'
+    };
+
+    pdfjsLib.getDocument({
+        url: $pdf,
+        httpHeaders: headers 
+        }).promise.then((doc) => {
+        $initialState.pdfDoc = doc;
+        console.log('pdfDocument', $initialState.pdfDoc);
+
+        $('#page_count').html($initialState.pdfDoc.numPages);
+
+        renderPage();
+        })
+        .catch((err) => {
+        alert(err.message);
     });
 
+    function showPrevPage() {
+        if ($initialState.pdfDoc === null || $initialState.currentPage <= 1) return;
+        $initialState.currentPage--;
+        $('#current_page').val($initialState.currentPage);
+        renderPage();
+    }
+
+    function showNextPage() {
+        if (
+            $initialState.pdfDoc === null ||
+            $initialState.currentPage >= $initialState.pdfDoc._pdfInfo.numPages
+        )
+            return;
+
+        $initialState.currentPage++;
+        $('#current_page').val($initialState.currentPage);
+        renderPage();
+    }
+
+    $('#prev-page').click(showPrevPage);
+    $('#next-page').click(showNextPage);
+
+    $('#current_page').on('keypress', (event) => {
+        if ($initialState.pdfDoc === null) return;
+        const $keycode = event.keyCode ? event.keyCode : event.which;
+        if ($keycode === 13) {
+            let desiredPage = $('#current_page')[0].valueAsNumber;
+
+            $initialState.currentPage = Math.min(
+            Math.max(desiredPage, 1),
+            $initialState.pdfDoc._pdfInfo.numPages
+            );
+            renderPage();
+
+            $('#current_page').val($initialState.currentPage);
+        }
+    });
+
+    $('#zoom_in').on('click', () => {
+        if ($initialState.pdfDoc === null) return;
+        $initialState.zoom *= 4 / 3;
+
+        renderPage();
+    });
+
+    $('#zoom_out').on('click', () => {
+        if ($initialState.pdfDoc === null) return;
+        $initialState.zoom *= 2 / 3;
+        renderPage();
+    });
+
+
+    //============================================================================================================================================================================
+
+    
     $('.overlay').on('click', function() {
         $('.overlay').hide()
         $('.modal-check ').hide()

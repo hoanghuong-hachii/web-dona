@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin tra cứu</title>
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
-    
+    <link rel="stylesheet" href="assets/css/ts.css" />
     <link rel="stylesheet" href="./assets/css/view_invoice.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
     
@@ -26,9 +26,6 @@
     <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
 
-    <style>
-        
-    </style>
     
 </head>
 <body>
@@ -66,16 +63,42 @@
                         Tải hóa đơn
                     </a>
 
-                    <!-- <a href="#" class="btn">
-                        <svg class="mr-8" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                            <path fill="#2c8ecc" d="m13 21l2-1l2 1v-7h-4m4-5V7l-2 1l-2-1v2l-2 1l2 1v2l2-1l2 1v-2l2-1m1-7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7v-2H4V5h16v10h-1v2h1a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5H5V6h6m-2 5H5V9h4m2 5H5v-2h6Z" />
-                        </svg>
-                        Xem chứng thư số người bán
-                    </a> -->
-
                 </div>
                 <div class="invoice">
-                    <!-- <div id="adobe-dc-view"></div> -->
+                    
+                    <header>
+                        <ul class="navigation">
+                            <li class="navigation__item">
+                                <a href="#" class=" previous round a_pdf" id="prev-page">
+                                    <i class="fas fa-arrow-left"></i>
+                                </a>
+            
+                                <input type="number" value="1" id="current_page" />
+            
+                                <a href="#" class="next round a_pdf" id="next-page">
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+            
+                                Trang
+                                <span id="page_num"></span>
+                                /
+                                <span id="page_count"></span>
+                            </li>
+            
+                            <li class="navigation__item">
+                                <button class="zoom" id="zoom_in">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+            
+                                <button class="zoom" id="zoom_out">
+                                    <i class="fas fa-search-minus"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </header>
+            
+                    <canvas id="canvas" class="canvas__container"></canvas>
+            
                 </div>
 
                 
@@ -84,7 +107,8 @@
             <div class="container view_invoice_web" >
                 <div class="row">
                     <div class="invoice">
-                        <div id="adobe-dc-view" style="width: 500px; height: 700px"></div>
+                        <iframe id="pdfViewer" class="pdfViewer" title="file hóa đơn" src="http://localhost:8080/images/20240509225835290.pdf" type="application/pdf" >
+                        </iframe>
                     </div>
                     <div class="action" >
                         <h3>Thông tin hóa đơn</h3>
@@ -126,11 +150,8 @@
                 </div>
             </div>
         </div>
-    
        
     </div>
-
-    <!-- <div style="margin: 0px" id="adobe-dc-view"></div> -->
     <div class="overlay" style="display: none"></div>
 
     <div class="modal-check"  style="display: none">
@@ -431,15 +452,14 @@
             
         </footer>
     </div>
-    <!-- <embed src="https://slowly-ideal-corgi.ngrok-free.app/images/20240514235644598.pdf" width="500" height="375"
-   type="application/pdf"> -->
     <!-- End Modal Sign -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 `   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/vi.min.js"></script>
-    <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.10.377/build/pdf.min.js"></script>
 
     <script src="./assets/js/invoice.js"></script>
 
