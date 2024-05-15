@@ -426,7 +426,7 @@
             
         </footer>
     </div>
-    <div style="margin: 0px" id="adobe-dc-view"></div>
+    <div style="margin: 0px" class="adobe-dc-view"></div>
     <!-- End Modal Sign -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -438,12 +438,23 @@
     <!-- <script src="./assets/js/invoice.js"></script> -->
 
     <script type="text/javascript"> 
+
+        const fileParam = urlParams.get('file');
+        const idInvoice = urlParams.get('idInvoice');
+
+        if(fileParam) {
+            localStorage.setItem('env_file', fileParam);
+        }
+        var filePdf = localStorage.getItem('env_file');
+
+        var currentTime = Date.now();
+        console.log(fileParam);
         document.addEventListener("adobe_dc_view_sdk.ready", function()
         {
-            var adobeDCView = new AdobeDC.View({clientId: "8835e2187c274269b42707ea71590877", divId: "adobe-dc-view"});
+            var adobeDCView = new AdobeDC.View({clientId: "8835e2187c274269b42707ea71590877", divClass: "adobe-dc-view"});
             adobeDCView.previewFile(
            {
-              content:   {location: {url: "http://localhost:8080/images/20240509225835290.pdf"}},
+              content:   {location: {url: filePdf}},
               metaData: {fileName: "Bodea Brochure.pdf"}
            });
         });
