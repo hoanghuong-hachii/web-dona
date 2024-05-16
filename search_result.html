@@ -84,11 +84,15 @@
                         </div>
 
                         <div class="col l-10 m-10 c-12">
-
-                            <h3 class="empty_key" style="text-align: center; display: none">Rất tiếc, chúng tôi không tìm thấy kết quả nào cho từ khóa bạn tìm kiếm. Vui lòng thử lại với từ khóa khác</h3>
-
                             <div class="container__trend">
+
                                 <div class="trend-body">
+                                    <h3 class="empty_key" style="
+                                        text-align: center;
+                                        margin-top: 30px;
+                                        display: none;
+                                    "
+                                    >Rất tiếc, chúng tôi không tìm thấy kết quả nào cho từ khóa bạn tìm kiếm. Vui lòng thử lại với từ khóa khác</h3>
                                     <div id="product-search" class="row">
                                         
                                         <div class="col l-3 m-4 c-6 mt-8">
@@ -141,9 +145,34 @@
     <script>
 
         $(document).ready(function() {
-            $(".header").load("base.html")
-            $("#footer").load("footer.html")
+            var keyword = getParameterByName('search');
+            $(".header").load("base.html", function() {
+                // Sau khi header được load, gán từ khóa vào ô tìm kiếm
+                if (keyword) {
+                    $('.navbar__search-input').val(keyword);
+                }
 
+                // Thêm sự kiện cho ô tìm kiếm sau khi nội dung header được load
+                $('.navbar__search-input').keypress(function(event) {
+                    if (event.keyCode === 13) {
+                        console.log('enter');
+                        event.preventDefault(); 
+                        performSearch(); 
+                    }
+                });
+
+                $('.navbar__search-btn').click(function() {
+                    performSearch(); 
+                });
+
+                function performSearch() {
+                    var keyword = $('.navbar__search-input').val(); 
+                    console.log('Bạn đang tìm kiếm: ' + keyword);
+                    window.location.href = './search_result.html?search=' + encodeURIComponent(keyword);
+                }
+            });
+
+            $("#footer").load("footer.html")
         });
         
         
@@ -161,19 +190,28 @@
 
         var keyword = getParameterByName('search');
         if (keyword) {
+            
             console.log('Đang tìm kiếm với từ khóa: ' + keyword);
             var env_Url = localStorage.getItem('env_url');
             $.ajax({ 
-                url: env_Url+ '/api/v1/Products/roleUser/priceAndFilter?productName=' + keyword + '&sortDirection=asc',
+                url:  env_Url+ '/api/v1/Products/roleUser/priceAndFilter?productName=' + keyword + '&sortDirection=asc',
                 type: 'GET',
                 headers: {
                     'ngrok-skip-browser-warning': 'true'
                 },
                 success: function(response) {
-                    $('.empty_key').hide()
-
                     console.log(response)
-                    updateUI(response)
+                    if(Array.isArray(response) && response.length === 0){
+                        $('.empty_key').show();
+                        var productList = $('#product-search')
+                        productList.empty();
+
+                        $('.btn_view-all').hide()
+
+                    } else {
+                        $('.empty_key').hide(); 
+                        updateUI(response);
+                    }
                 },
                 error: function(xhr, status, error) {
                     console.log(error)
@@ -181,9 +219,6 @@
             })
         } else {
             console.log('Không có từ khóa tìm kiếm được cung cấp trong URL.');
-            var productList = $('#product-search')
-            productList.empty();
-            $('.empty_key').show()
         }
 
         function updateUI(products) {
