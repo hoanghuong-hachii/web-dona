@@ -171,10 +171,59 @@ $(window).on('scroll  mousemove touchstart',function(){
 			console.log('view details');
 			window.location.href = './product_detail.html';
 		});
+
+		$(document).on('click', '.product-like', function(event){
+			var thisPro = $(this).closest('.product-body')
+        	console.log(thisPro.attr('id'))
+			var idPro = thisPro.attr('id');
+			addProductLike(idPro)
+			event.preventDefault(); 
+        	event.stopPropagation(); 
+		});
 		
 	});
 
+	function addProductLike(data) {
+
+        $.ajax({
+            url: env_Url+ '/api/v6/ProdLike',
+            type: 'POST',
+            data: {
+                idUser: ID_USER,
+                idProd: data
+            },
+            success: function(response) {
+                console.log('yeu thích'+response);
+				getProLike()
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
+            }
+        });
+    }
+
+	function getProLike() {
+		$.ajax({
+			url: env_Url + '/api/v6/ProdLike/user/' + env_ID,
+			type: 'GET',
+			headers: {
+				'ngrok-skip-browser-warning': 'true'
+			},
+			success: function(response) {
+				console.log('Độ dài của mảng: ' + response.length);
+				localStorage.setItem('num-like', response.length)
+				setNumLike()
+
+			},
+			error: function(xhr, status, error) {
+				console.log(error)
+			}
+		
+		})
+	}
+
 	function addProductCart(data) {
+
         $.ajax({
             url: env_Url+ '/api/v4/shoppingCart',
             type: 'POST',
@@ -184,12 +233,31 @@ $(window).on('scroll  mousemove touchstart',function(){
                 price: 20000
             },
             success: function(response) {
-                console.log(response);
+                //console.log(response);
+				getProCart()
+
             },
             error: function(xhr, status, error) {
                 console.log(error);
             }
         });
     }
+
+	function getProCart() {
+		$.ajax({
+			url: env_Url +'/api/v4/shoppingCart/user/' + ID_USER,
+			type: 'GET',
+			headers: {
+				'ngrok-skip-browser-warning': 'true'
+			},
+			success: function(respone) {
+				localStorage.setItem('num-cart', respone.length)
+				setNumCart()
+			},
+			error: function(xhr, status, error) {
+				console.log(error)
+			}
+		})
+	}
     
 

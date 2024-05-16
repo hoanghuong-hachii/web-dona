@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.ngrok.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline';">
-
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -13,6 +11,8 @@
     <link href="assets/fonts/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/contruct.css">
+
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/digitalsign.css">
@@ -68,20 +68,71 @@
                                     </div>
                                 </li>
 
+
                                 <li class="navbar__item">
                                     <div class="navbar__item-acount">
                                         <div class="navbar__item-acount-avatar">
-                                            <svg class="navbar__item-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20"><path fill="currentColor" d="M9.993 10.573a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9M10 0a6 6 0 0 1 3.04 11.174c3.688 1.11 6.458 4.218 6.955 8.078c.047.367-.226.7-.61.745c-.383.045-.733-.215-.78-.582c-.54-4.19-4.169-7.345-8.57-7.345c-4.425 0-8.101 3.161-8.64 7.345c-.047.367-.397.627-.78.582c-.384-.045-.657-.378-.61-.745c.496-3.844 3.281-6.948 6.975-8.068A6 6 0 0 1 10 0"/></svg>
+                                            <svg style="display: block;" class="navbar__item-icon avatar-normal" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20"><path fill="currentColor" d="M9.993 10.573a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9M10 0a6 6 0 0 1 3.04 11.174c3.688 1.11 6.458 4.218 6.955 8.078c.047.367-.226.7-.61.745c-.383.045-.733-.215-.78-.582c-.54-4.19-4.169-7.345-8.57-7.345c-4.425 0-8.101 3.161-8.64 7.345c-.047.367-.397.627-.78.582c-.384-.045-.657-.378-.61-.745c.496-3.844 3.281-6.948 6.975-8.068A6 6 0 0 1 10 0"/></svg>
+                                            <img class="avatar-account" style="border-radius: 50%; display: none" src="./assets/imgs/avatar-1.jpg" alt="">
                                         </div>
                                         <div class="navbar__item-acount-content">
-                                            <a href="#">Tài khoản</a>
+                                            <a href="./login.html" class="account-not-login" style="display: block;">Đăng nhập</a>
+                                            <a href="#" class="account-login"style="display:none;">HoangHuong</a>
+
                                         </div>
+
+                                      
                                     </div>
                                 </li>
+                                <li class="navbar__item">
+                                    <div class="menu-chill">
+                                        <svg class="btn-menu-chill" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16">
+                                            <g fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                                                <circle cx="8" cy="2.5" r=".75" />
+                                                <circle cx="8" cy="8" r=".75" />
+                                                <circle cx="8" cy="13.5" r=".75" />
+                                            </g>
+                                        </svg>
 
-                                <li class="navbar__item ">
+                                        <div class="menu-chill-container" style="display: none;">
+                                            <ul>
+                                                <li>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                                        <g fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                                                            <path d="M20 12V5.749a.6.6 0 0 0-.176-.425l-3.148-3.148A.6.6 0 0 0 16.252 2H4.6a.6.6 0 0 0-.6.6v18.8a.6.6 0 0 0 .6.6H11M8 10h8M8 6h4m-4 8h3m9.5 6.5L22 22" />
+                                                            <path d="M15 18a3 3 0 1 0 6 0a3 3 0 0 0-6 0m1-16v3.4a.6.6 0 0 0 .6.6H20" />
+                                                        </g>
+                                                    </svg>
+                                                    <a href="./tracuuhd.html">Tra cứu hóa đơn</a></li>
+                                                <li>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                                        <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="#000">
+                                                            <path d="M4 10c0-3.771 0-5.657 1.172-6.828S8.229 2 12 2h1.5c3.771 0 5.657 0 6.828 1.172S21.5 6.229 21.5 10v4c0 3.771 0 5.657-1.172 6.828S17.271 22 13.5 22H12c-3.771 0-5.657 0-6.828-1.172S4 17.771 4 14z" />
+                                                            <path d="M9.8 11.974c-.427-.744-.633-1.351-.757-1.967c-.184-.91.237-1.8.933-2.368c.295-.24.632-.158.806.155l.393.705c.311.558.467.838.436 1.134c-.03.296-.24.537-.66 1.02zm0 0a10.36 10.36 0 0 0 3.726 3.726m0 0c.744.427 1.351.633 1.967.757c.91.184 1.8-.237 2.368-.933c.24-.295.158-.632-.155-.806l-.704-.393c-.56-.311-.839-.467-1.135-.436c-.296.03-.537.24-1.02.66zM5 6H2.5M5 12H2.5M5 18H2.5" />
+                                                        </g>
+                                                    </svg>
+                                                    <a href="#">Liên hệ</a></li>
+                                                <li>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                                        <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v1" />
+                                                    </svg>
+                                                    <a id="logout" href="./home.html">Đăng xuất</a></li>
+                                            </ul>
+
+                                            <div class="close-menu-chill">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                                                    <path fill="#219a00" fill-rule="evenodd" d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10M8.97 8.97a.75.75 0 0 1 1.06 0L12 10.94l1.97-1.97a.75.75 0 0 1 1.06 1.06L13.06 12l1.97 1.97a.75.75 0 0 1-1.06 1.06L12 13.06l-1.97 1.97a.75.75 0 0 1-1.06-1.06L10.94 12l-1.97-1.97a.75.75 0 0 1 0-1.06" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                    
+
+                                </li>
+                                <!-- <li class="navbar__item ">
                                     <div class="navbar__item-notify--show">
-                                        <a href="#">
+                                        <a href="#" style="display: none;">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                                 <g fill="none" stroke="#313131" stroke-linecap="round" stroke-width="2">
                                                     <g>
@@ -142,7 +193,7 @@
                                             </footer>
                                         </div>
                                     </div>
-                                </li>
+                                </li> -->
 
                                 <li class="navbar__item">
                                     <div class="navbar__item-like">
@@ -416,16 +467,66 @@
                         </div>
                     </div>
                 </div>
-            </header>
+            </header
         </div>
 
-        
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/common.js"></script>
 
     <script>
         $(document).ready(function() {
+            localStorage.setItem('env_url',' https://slowly-ideal-corgi.ngrok-free.app');
+
+            var status = localStorage.getItem('login-status')
+            var env_Url = localStorage.getItem('env_url')
+            var env_ID = localStorage.getItem('env_id')
+
+            if(status == 'true'){
+                $('.account-not-login').hide()
+                
+                $('.avatar-normal').hide()
+
+                getInfo();
+                getProLike();
+                getProCart();
+            } 
+
+            function getInfo() {
+
+                $.ajax({
+                    url: env_Url+ '/api/v2/users/id?idUser=' + env_ID,
+                    type: 'GET',
+                    headers: {
+                        'ngrok-skip-browser-warning': 'true'
+                    },
+                    success: function(response) {
+                        $('.account-login').text(response.userName)
+                        $('.account-login').show()
+                        $(".avatar-account").attr("src", env_Url+ '/images/' +response.avatar);
+                        $('.avatar-account').show()
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error)
+                    }
+                
+                })
+            }
+
+            $('#logout').on('click', function(){
+                localStorage.setItem('login-status', false);
+                localStorage.setItem('env_id', '');
+               
+            })
+
+            $('.btn-menu-chill').on('click', function(){
+                $('.menu-chill-container').show()
+            })
+
+            $('.close-menu-chill').on('click', function(){
+                $('.menu-chill-container').hide()
+            })
             $('.navbar__search-input').keypress(function(event) {
                 if (event.keyCode === 13) {
                     console.log('enter')
@@ -433,16 +534,18 @@
                     performSearch($(this)); 
                 }
             });
+        
             $('#search-button').click(function() {
-                var inputValue = $(this).closest('.navbar__search').find('.navbar__search-input').val(); // Lấy giá trị của ô input
-                if (inputValue.trim() !== '') { // Kiểm tra xem input có giá trị không trống không
-                    //var keyword = inputElement.val(); 
+                var inputValue = $(this).closest('.navbar__search').find('.navbar__search-input').val(); 
+                if (inputValue.trim() !== '') { 
+                     
                     console.log('Bạn đang tìm kiếm: ' + inputValue);
                     window.location.href = './search_result.html?search=' + encodeURIComponent(inputValue);
                 } else {
-                    // Xử lý khi không có giá trị được nhập
+                    
                 }
             });
+
         
             function performSearch(inputElement) {
                 var keyword = inputElement.val(); 
@@ -450,8 +553,43 @@
                 window.location.href = './search_result.html?search=' + encodeURIComponent(keyword);
                 
             }
-//ngrok http --domain=slowly-ideal-corgi.ngrok-free.app 8080
-            localStorage.setItem('env_url', 'https://slowly-ideal-corgi.ngrok-free.app')
+
+            function getProLike() {
+                $.ajax({
+                    url: env_Url + '/api/v6/ProdLike/user/' + env_ID,
+                    type: 'GET',
+                    headers: {
+                        'ngrok-skip-browser-warning': 'true'
+                    },
+                    success: function(response) {
+                        console.log('Độ dài của mảng: ' + response.length);
+                        localStorage.setItem('num-like', response.length)
+                        setNumLike()
+
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error)
+                    }
+                
+                })
+            }
+
+            function getProCart() {
+                $.ajax({
+                    url: env_Url +'/api/v4/shoppingCart/user/' + env_ID,
+                    type: 'GET',
+                    headers: {
+                        'ngrok-skip-browser-warning': 'true'
+                    },
+                    success: function(respone) {
+                        localStorage.setItem('num-cart', respone.length)
+                        setNumCart()
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error)
+                    }
+                })
+            }
 
         });
        

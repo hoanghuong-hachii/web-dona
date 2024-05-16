@@ -326,11 +326,12 @@
 }
 
 .navbar__item .count-item {
+    font-weight: 500;
     position: absolute;
     top: -4px;
     right: -10px;
     font-size: 1rem;
-    background-color: var(--mainColor);
+    background-color: #f90c0c;
     color: var(--white-color);
     width: 16px;
     height: 16px;

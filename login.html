@@ -56,7 +56,7 @@
 
                     <div class="login-body">
                         <input type="text" name="" id="name" class="input-form" placeholder="Email/Tên đăng nhập">
-                        <input type="text" name="" id="pass" class="input-form mt-16" placeholder="Mật khẩu">
+                        <input type="password" name="" id="pass" class="input-form mt-16" placeholder="Mật khẩu">
 
                         <a href="#" onclick="RequestLogin();" class="btn-all mt-16">Đăng nhập</a>
                     </div>
@@ -110,11 +110,12 @@
 
     <script>
 
+        var env_Url = localStorage.getItem('env_url')
         function RequestLogin() {
             let name = $('#name').val();
             let pass = $('#pass').val();
             $.ajax({
-                url: 'http://localhost:8080/api/v2/users/login',
+                url: env_Url+ '/api/v2/users/login',
                 type: 'POST',
                 data: JSON.stringify({
                     "username": name,
@@ -126,6 +127,7 @@
                     let dataUser = response.data
                     let id = dataUser.idUser
                     localStorage.setItem('env_id', id);
+                    localStorage.setItem('login-status', true)
                     window.location.href='/home.html'
 
                 },

@@ -1,5 +1,7 @@
 var env_Url = localStorage.getItem('env_url');
-
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
+console.log('ID sản phẩm:', id);
 
 $(document).ready(function() {
     $('#control-menu__left').click(function(){
@@ -97,13 +99,19 @@ $(document).ready(function(){
         })
     })
 
+    $('.btn_addcart').click(function() {
+
+        addProductCart({
+            idProd: id
+        })
+    })
+
+
 
 });
 
 
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
-console.log('ID sản phẩm:', id);
+
 
 $(document).ready(function(){
 

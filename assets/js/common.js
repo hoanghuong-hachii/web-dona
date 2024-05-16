@@ -8,3 +8,14 @@ $('.btn-continue').click(function() {
 $('.btn-view-cart').click(function() {
     window.location.href= 'shoping_cart.html'
 })
+
+function setNumLike() {
+    var num = localStorage.getItem('num-like')
+    $('#count-like').text(num)
+}
+
+function setNumCart() {
+    var num = localStorage.getItem('num-cart')
+    $('#count-cart').text(num)
+}
+
