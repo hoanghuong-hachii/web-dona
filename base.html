@@ -55,7 +55,7 @@
                                     <button class="navbar__search-btn">
                                         <i class="navbar__search-btn-icon fa-solid fa-magnifying-glass"></i>
                                     </button>
-                                    <input class="navbar__search-input search-auto" type="text" placeholder="Bạn muốn tìm gì?">
+                                    <input class="navbar__search-input web search-auto" type="text" placeholder="Bạn muốn tìm gì?">
                                     
                                 </div>
                             </div>
@@ -430,16 +430,23 @@
                 if (event.keyCode === 13) {
                     console.log('enter')
                     event.preventDefault(); 
-                    performSearch(); 
+                    performSearch($(this)); 
                 }
             });
         
+            // Sự kiện click cho nút tìm kiếm
             $('.navbar__search-btn').click(function() {
-                performSearch(); 
+                var activeInput = $('.navbar__search-input:focus'); 
+                if (activeInput.length > 0) {
+                    performSearch(activeInput);
+                } else {
+                    // Nếu không có ô input nào được focus, mặc định lấy ô input của web
+                    performSearch($('.navbar__search-input.web'));
+                }
             });
         
-            function performSearch() {
-                var keyword = $('.navbar__search-input').val(); 
+            function performSearch(inputElement) {
+                var keyword = inputElement.val(); 
                 console.log('Bạn đang tìm kiếm: ' + keyword);
                 window.location.href = './search_result.html?search=' + encodeURIComponent(keyword);
                 
