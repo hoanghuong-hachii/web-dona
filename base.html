@@ -434,11 +434,12 @@
                 }
             });
             $('.navbar__search-btn').click(function() {
+                console.log('click btn search')
                 var inputValue = $(this).siblings('.navbar__search-input').val(); // Lấy giá trị của ô input cạnh nút được click
                 if (inputValue.trim() !== '') { // Kiểm tra xem input có giá trị không trống không
                     performSearch(inputValue);
                 } else {
-                    // Xử lý khi không có giá trị được nhập
+                    console.log('input trống')
                 }
             });
         
