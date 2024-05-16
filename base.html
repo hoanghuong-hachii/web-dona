@@ -433,15 +433,12 @@
                     performSearch($(this)); 
                 }
             });
-        
-            // Sự kiện click cho nút tìm kiếm
             $('.navbar__search-btn').click(function() {
-                var activeInput = $('.navbar__search-input:focus'); 
-                if (activeInput.length > 0) {
-                    performSearch(activeInput);
+                var inputValue = $(this).siblings('.navbar__search-input').val(); // Lấy giá trị của ô input cạnh nút được click
+                if (inputValue.trim() !== '') { // Kiểm tra xem input có giá trị không trống không
+                    performSearch(inputValue);
                 } else {
-                    // Nếu không có ô input nào được focus, mặc định lấy ô input của web
-                    performSearch($('.navbar__search-input.web'));
+                    // Xử lý khi không có giá trị được nhập
                 }
             });
         
