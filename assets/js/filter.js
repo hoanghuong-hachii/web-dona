@@ -90,9 +90,9 @@ $(document).ready(function() {
         products.forEach(product => {
 
             var coupon = product.coupons;
-            var price_pro = product.retailPrice * (100 - coupon) / 100;
+            var price_pro =  product.retailPrice * (100 - coupon) / 100;
             
-            //console.log(' gia' + price_pro)
+            console.log(' gia' + price_pro)
 
             if(coupon != 0 && price_pro >= priceFrom && price_pro <= priceTo) {
                 var productHtml = `
