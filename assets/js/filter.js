@@ -48,7 +48,7 @@ $(document).ready(function() {
     function fetchData(page) {
         var { priceFrom, priceTo } = getPriceRange();
 
-       // console.log('gia: '+priceFrom+ ' - '+ priceTo)
+       console.log('gia: '+priceFrom+ ' - '+ priceTo)
         $.ajax({
             url: `${env_Url}/api/v1/Products/roleUser/filter?page=${page}&size=20`,
             type: 'POST',
