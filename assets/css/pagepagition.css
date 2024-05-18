@@ -1,0 +1,27 @@
+.trend_btn-all ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.trend_btn-all ul li {
+  padding: 0 2px;
+}
+.trend_btn-all ul li a {
+  border: 1px solid #118b2f;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #000;
+  padding: 8px 10px;
+  display: inline-block;
+}
+.trend_btn-all ul li a:hover {
+  color: #fff;
+  background-color: rgba(56, 142, 60, 0.6);
+}
+.trend_btn-all ul li .active {
+  background-color: #388e3c;
+  color: #fff;
+}
+
+/*# sourceMappingURL=pagepagition.css.map */
