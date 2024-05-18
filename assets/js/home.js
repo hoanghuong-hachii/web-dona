@@ -46,7 +46,7 @@ $(document).ready(function(){
                                         <path fill="#ff0000" fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15C-7.534 4.736 3.562-3.248 8 1.314" />
                                     </svg>
                                 </a>
-                                <img src="./assets/imgs/freeship_tag.webp" alt="" class="freeship_tag">
+                                <img src="../assets/imgs/freeship_tag.webp" alt="" class="freeship_tag">
 
                                 <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
                                 <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
