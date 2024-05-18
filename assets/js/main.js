@@ -6,10 +6,10 @@ $(window).on('scroll  mousemove touchstart',function(){
 		if(!isload){
 			isload = 1
 
-            $(document).ready(function(){
-				var placeholderText = ['Bạn muốn tìm gì?','Trang điểm', 'Dưỡng thể', 'Chăm sóc cá nhân', 'Chăm sóc cơ thể'];
-				$('.search-auto').placeholderTypewriter({text: placeholderText});
-			});
+            // $(document).ready(function(){
+			// 	var placeholderText = ['Bạn muốn tìm gì?','Trang điểm', 'Dưỡng thể', 'Chăm sóc cá nhân', 'Chăm sóc cơ thể'];
+			// 	$('.search-auto').placeholderTypewriter({text: placeholderText});
+			// });
 
 			$(document).ready(function() {
 				$('#control-menu__left').click(function(){
@@ -107,16 +107,10 @@ $(window).on('scroll  mousemove touchstart',function(){
 		})
 	}
 
-
 	$(document).ready(function(){
 		$('.icon-down').show()
 		$('.menu-item').click(function(){
-			// $('.menu-item').not(this).find('.submenu-item').removeClass('active');
-			// $('.menu-item').not(this).find('.icon-down').show()
-			// $('.menu-item').not(this).find('.icon-up').hide()
-			// $(this).find('.submenu-item').toggleClass('active');
-			// $(this).find('.icon-up').show()
-			// $(this).find('.icon-down').hide()
+			
 			$(this).find('.submenu-item').slideToggle("slow")
 		});
 
@@ -125,9 +119,7 @@ $(window).on('scroll  mousemove touchstart',function(){
 			$('.modal-container').show()
 			event.stopPropagation();
 		})
-
 		
-
 		$('.open-modal-cart').click(function(event) {
 			$('.modal-overlay').show()
 			$('.modal-addCart').show()
@@ -151,8 +143,6 @@ $(window).on('scroll  mousemove touchstart',function(){
 			$('.movie-container').hide()
 			$('.modal-container').hide()
 		})
-
-		
 
 		$('.modal-close').click(function() {
 			$('.modal-overlay').hide()
@@ -180,47 +170,49 @@ $(window).on('scroll  mousemove touchstart',function(){
 			event.preventDefault(); 
         	event.stopPropagation(); 
 		});
+		function addProductLike(data) {
+
+			$.ajax({
+				url: env_Url+ '/api/v6/ProdLike',
+				type: 'POST',
+				data: {
+					idUser: ID_USER,
+					idProd: data
+				},
+				success: function(response) {
+					console.log('yeu thích'+response);
+					getProLike()
+				},
+				error: function(xhr, status, error) {
+					console.log(error);
+				}
+			});
+		}
+	
+		function getProLike() {
+			$.ajax({
+				url: env_Url + '/api/v6/ProdLike/user/' + env_ID,
+				type: 'GET',
+				headers: {
+					'ngrok-skip-browser-warning': 'true'
+				},
+				success: function(response) {
+					console.log('Độ dài của mảng: ' + response.length);
+					localStorage.setItem('num-like', response.length)
+					var num = response.length;
+					$('#count-like').text(num)
+	
+				},
+				error: function(xhr, status, error) {
+					console.log(error)
+				}
+			
+			})
+		}
 		
 	});
 
-	function addProductLike(data) {
-
-        $.ajax({
-            url: env_Url+ '/api/v6/ProdLike',
-            type: 'POST',
-            data: {
-                idUser: ID_USER,
-                idProd: data
-            },
-            success: function(response) {
-                console.log('yeu thích'+response);
-				getProLike()
-            },
-            error: function(xhr, status, error) {
-                console.log(error);
-            }
-        });
-    }
-
-	function getProLike() {
-		$.ajax({
-			url: env_Url + '/api/v6/ProdLike/user/' + env_ID,
-			type: 'GET',
-			headers: {
-				'ngrok-skip-browser-warning': 'true'
-			},
-			success: function(response) {
-				console.log('Độ dài của mảng: ' + response.length);
-				localStorage.setItem('num-like', response.length)
-				setNumLike()
-
-			},
-			error: function(xhr, status, error) {
-				console.log(error)
-			}
-		
-		})
-	}
+	
 
 	function addProductCart(data) {
 
@@ -261,3 +253,123 @@ $(window).on('scroll  mousemove touchstart',function(){
 	}
     
 
+	function ProductLike() {
+        $('.product-body').each(function(event){
+            var thisPro = $(this);
+            var idPro = thisPro.attr('id');
+            //console.log($(this))
+            if(idPro){
+                checkProductLike(idPro, thisPro);
+            }
+        });
+    }
+
+	function productDetailLike(idPro){
+		var thisPro = $('.btn-heart')
+		console.log('btn-heart detail')
+		if(idPro){
+			checkProductLike(idPro, thisPro);
+		}
+	}
+
+    function checkProductLike(idPro, productElement){
+        $.ajax({
+            url: env_Url+ '/api/v6/ProdLike/check?idUser='+ ID_USER + '&idProd='+ idPro,
+            type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
+            success: function(response) {
+                //console.log('checklike: '+ response)
+                if(response == true) {
+                    productElement.find('.not-like').hide();
+                    productElement.find('.like-item').show();
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle error
+                console.error('Error:', error);
+            }
+        })
+    }
+
+    $(document).on('click', '.like-icon', function(event){
+        var thisIcon = $(this);
+        var thisPro = thisIcon.closest('.product-body');
+        var idPro = thisPro.attr('id');
+		console.log('click like')
+        if(thisIcon.hasClass('like-item')) {
+            removeProductLike(idPro, thisPro);
+        } else {
+            addProductLike(idPro, thisPro);
+        }
+
+        event.preventDefault(); 
+        event.stopPropagation(); 
+    });
+
+
+    function addProductLike(productId, productElement) {
+        $.ajax({
+            url: env_Url + '/api/v6/ProdLike',
+            type: 'POST',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
+            data: {
+                idUser: ID_USER,
+                idProd: productId
+            },
+            success: function(response) {
+                //console.log('Yêu thích: ' + response);
+                productElement.find('.not-like').hide();
+                productElement.find('.like-item').show();
+                getProLike(); // Cập nhật số lượng likes
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
+            }
+        });
+    }
+
+    function removeProductLike(productId, productElement) {
+        $.ajax({
+            url: env_Url + '/api/v6/ProdLike',
+            type: 'DELETE',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
+            data: {
+                idUser: ID_USER,
+                idProd: productId
+            },
+            success: function(response) {
+                //console.log('Bỏ yêu thích: ' + response);
+                productElement.find('.not-like').show();
+                productElement.find('.like-item').hide();
+                getProLike(); 
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
+            }
+        });
+    }
+
+    function getProLike() {
+        $.ajax({
+            url: env_Url + '/api/v6/ProdLike/user/' + ID_USER,
+            type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
+            success: function(response) {
+                //console.log('Độ dài của mảng: ' + response.length);
+                localStorage.setItem('num-like', response.length);
+                var num = response.length;
+                $('#count-like').text(num);
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
+            }
+        });
+    }

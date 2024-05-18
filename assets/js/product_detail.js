@@ -106,6 +106,20 @@ $(document).ready(function(){
         })
     })
 
+    $('.like-icon').click( function(event){
+        var thisIcon = $(this);
+        var thisPro = $('.btn-heart')
+		console.log('click like')
+        if(thisIcon.hasClass('like-item')) {
+            removeProductLike(id, thisPro);
+        } else {
+            addProductLike(id, thisPro);
+        }
+
+        event.preventDefault(); 
+        event.stopPropagation(); 
+    });
+
 
 
 });
@@ -150,9 +164,12 @@ $(document).ready(function(){
         $('.band').text(product.brand)
         $('.discount-percent').text('Giảm '+product.coupons+'%')
 
+        productDetailLike(id)
 
         fetchLayoutChild()
     }
+
+   
 
     function fetchLayoutChild() {
         $.ajax({
