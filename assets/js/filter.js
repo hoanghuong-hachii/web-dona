@@ -27,16 +27,16 @@ $(document).ready(function() {
         var priceFrom = 0;
         var priceTo = 10000000;
 
-        if ($('#price_under_100k').is(':checked')) {
+        if ($('.price_under_100k').is(':checked')) {
             priceFrom = 0;
             priceTo = 100000;
-        } else if ($('#price_100k_500k').is(':checked')) {
+        } else if ($('.price_100k_500k').is(':checked')) {
             priceFrom = 100000;
             priceTo = 500000;
-        } else if ($('#price_500k_1mil').is(':checked')) {
+        } else if ($('.price_500k_1mil').is(':checked')) {
             priceFrom = 500000;
             priceTo = 1000000;
-        } else if ($('#price_above_1mil').is(':checked')) {
+        } else if ($('.price_above_1mil').is(':checked')) {
             priceFrom = 1000000;
             priceTo = 10000000;
         }
