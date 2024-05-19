@@ -69,12 +69,12 @@ $(document).ready(function() {
                 console.log(error)
             }
         })
-        var quantity=0;
+     
         function getProduct(data) {
             
             data.forEach(function(product) {
                 var id = product.idProd
-                quantity = product.quantityProd
+                 var quantity = product.quantityProd
     
                 $.ajax({
                     url:env_Url +  '/api/v1/Products/roleUser/' + id,
@@ -82,9 +82,9 @@ $(document).ready(function() {
                     headers: {
                         'ngrok-skip-browser-warning': 'true'
                     },
-                    success: function(respone,quantity){
+                    success: function(respone){
                          
-                        updateLayout(respone)
+                        updateLayout(respone, quantity)
     
                     },
                     error: function(xhr, status, error) {
@@ -94,7 +94,7 @@ $(document).ready(function() {
             });
         }
 
-        function updateLayout(data) {
+        function updateLayout(data, quantity) {
             
             var productHtml = `
                 <li  class="item proItem">
@@ -237,8 +237,8 @@ $(document).ready(function() {
                         "unitName": "cai", 
                         "totalPriceProd": item.totalPrice,
                         "productId": item.idProd,
-                        "productName": "Unknown", 
-                        "discount": 0 
+                        "productName": "namePro", 
+                        "discount": 10
                     };
                 });
     

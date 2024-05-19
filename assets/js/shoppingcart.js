@@ -4,29 +4,35 @@ var isInvoice = false;
 $(document).ready(function() {
 
     loadCart();
+
     function loadCart(){
+        
         var id = localStorage.getItem('env_id');
         var cart = $('#product-cart')
         cart.empty()
+        const cacheBuster = new Date().getTime();
+
         $.ajax({
-            url: env_Url +'/api/v4/shoppingCart/user/' +id,
+            url: env_Url +'/api/v4/shoppingCart/user/' +id + `?cb=${cacheBuster}`,
             type: 'GET',
             headers: {
                 'ngrok-skip-browser-warning': 'true'
             },
             success: function(respone) {
+                
+                console.log(respone)
                 getProduct(respone)
             },
             error: function(xhr, status, error) {
                 console.log(error)
             }
         })
-        var quantity=0;
+       
         function getProduct(data) {
             
             data.forEach(function(product) {
                 var id = product.idProd
-                quantity = product.quantityProd
+                var quantity = product.quantityProd
     
                 $.ajax({
                     url: env_Url +'/api/v1/Products/roleUser/' + id,
@@ -34,11 +40,11 @@ $(document).ready(function() {
                     headers: {
                         'ngrok-skip-browser-warning': 'true'
                     },
-                    success: function(respone,quantity){
+                    success: function(respone){
                         if(respone != null) {
                             $('.emptycart').hide()
                             $('.container-body').show()
-                            updateLayout(respone)
+                            updateLayout(respone, quantity)
     
                         } else {
                             $('.emptycart').show()
@@ -52,7 +58,7 @@ $(document).ready(function() {
             });
         }
 
-        function updateLayout(data) {
+        function updateLayout(data, quantity) {
             console.log(quantity)
             var productHtml = `
                 <li id="${data.idProd}" class="item " >
@@ -188,6 +194,7 @@ $(document).ready(function() {
 
 
 function updateShopCart(data) {
+    console.log('add '+ data.idProd +" " + data.quantity1,)
     var idUser = localStorage.getItem('env_id');
     $.ajax({
         url: env_Url +'/api/v4/shoppingCart',
@@ -202,7 +209,7 @@ function updateShopCart(data) {
             price: 20000
         },
         success: function(respone){
-            //console.log(respone)
+            console.log(respone)
         },
         error: function(xhr,status, error) {
             console.log(error)
