@@ -34,6 +34,12 @@ $(document).ready(function() {
 
             var product = productContent.product;
 
+            var priceRetail = product.retailPrice;
+            var coupon = product.coupons;
+            var formattedRetail = priceRetail.toLocaleString('vi-VN');
+
+            var priceDiscount = priceRetail * (100 - coupon)/100;
+            var formattedPrice = priceDiscount.toLocaleString('vi-VN');
             var productHtml = `
                 <div class="col l-3 m-4 c-6 mt-8">
                     <a href="/product_detail.html?id=${product.idProd}">
@@ -54,8 +60,8 @@ $(document).ready(function() {
                                 <h3 class="product-band">${product.brand}</h3>
                                 <h3 class="product-name">${product.productName}</h3>
                                 <div class="product-price">
-                                    <span class="product-price__new">${product.formattedDiscountedPrice}đ</span>
-                                    <span class="product-price__old">${product.formattedPrice}đ</span>
+                                    <span class="product-price__new">${formattedPrice}đ</span>
+                                    <span class="product-price__old">${formattedRetail}đ</span>
                                 </div>
                             </div>
                         </div>
