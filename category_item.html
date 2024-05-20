@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh mục sản phẩm</title>
+    <title>Dona Beauty</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link href="assets/fonts/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
@@ -17,6 +17,8 @@
 
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/product_detail.css">
+    <link rel="stylesheet" href="./assets/css/pagepagition.css">
+    
     <link rel="stylesheet" href="./assets/css/responsive.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +45,7 @@
                         </li>
                         <li class="item">
                             <a href="#">
-                                <h3>Phân loại</h3>
+                                <h3 class="bread-title">Danh mục</h3>
                             </a>
                         </li>
                         
@@ -54,19 +56,19 @@
                     <h3 class="title">Chọn mức giá</h3>
                     <ul>
                         <li class="item">
-                            <input type="checkbox" name="item_price" id="">
+                            <input type="radio" name="item_price" class="price_under_100k">
                             <p>Dưới 100.000đ</p>
                         </li>
                         <li class="item">
-                            <input type="checkbox" name="item_price" id="">
+                            <input type="radio" name="item_price" class="price_100k_500k">
                             <p>Từ 100.000đ - 500.000đ</p>
                         </li>
                         <li class="item">
-                            <input type="checkbox" name="item_price" id="">
+                            <input type="radio" name="item_price" class="price_500k_1mil">
                             <p>Từ 500.000đ - 1.000.000đ</p>
                         </li>
                         <li class="item">
-                            <input type="checkbox" name="item_price" id="">
+                            <input type="radio" name="item_price" class="price_above_1mil">
                             <p>Trên 1.000.000đ</p>
                         </li>
                         
@@ -79,19 +81,19 @@
                                 <h3 class="title">Chọn mức giá</h3>
                                 <ul>
                                     <li class="item">
-                                        <input type="checkbox" name="item_price" id="">
+                                        <input type="radio" name="item_price" class="price_under_100k">
                                         <p>Dưới 100.000đ</p>
                                     </li>
                                     <li class="item">
-                                        <input type="checkbox" name="item_price" id="">
+                                        <input type="radio" name="item_price" class="price_100k_500k">
                                         <p>Từ 100.000đ - 500.000đ</p>
                                     </li>
                                     <li class="item">
-                                        <input type="checkbox" name="item_price" id="">
+                                        <input type="radio" name="item_price" class="price_500k_1mil">
                                         <p>Từ 500.000đ - 1.000.000đ</p>
                                     </li>
                                     <li class="item">
-                                        <input type="checkbox" name="item_price" id="">
+                                        <input type="radio" name="item_price" class="price_above_1mil">
                                         <p>Trên 1.000.000đ</p>
                                     </li>
                                     
@@ -103,224 +105,35 @@
 
                             <div class="container__trend">
                         
+                                <h3 class="none-pro" style="background-color: blanchedalmond;     padding: 8px 12px;
+                                font-size: 15px;
+                                font-weight: 500; display: none">Sản phẩm đang được cập nhật</h3>
                         
                                 <div class="trend-body">
-                                    <div class="row">
-                                        
-                                        <div class="col l-3 m-4 c-6 mt-8">
-                                            <div class="product-body">
-                                                <div class="product-body__img">
-                                                    <img src="./assets/imgs/google-shopping-gel-rua-mat-svr.webp" alt="" class="product-img">
-                                                    <a href="#" class="product-like"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#000000" d="M31.91 61.67L29.62 60c-9.4-6.7-16.72-13.49-21.74-20.17C3.11 33.5.48 27.39.06 21.7A17.63 17.63 0 0 1 5.45 7.16a17 17 0 0 1 11.86-4.81c3.46 0 7.93.39 11.8 3.4A19.09 19.09 0 0 1 32 8.41a19.91 19.91 0 0 1 2.91-2.67c3.89-3 8.37-3.41 11.84-3.41a16.86 16.86 0 0 1 11.85 4.8 17.51 17.51 0 0 1 5.33 14.53c-.44 5.7-3.1 11.81-7.9 18.14C51 46.5 43.63 53.3 34.21 60zM8.51 10.38a13.31 13.31 0 0 0-4 11c.35 4.83 2.69 10.15 6.94 15.79 4.7 6.24 11.59 12.65 20.48 19 8.92-6.39 15.84-12.81 20.58-19.08 4.28-5.65 6.64-11 7-15.8a13.25 13.25 0 0 0-4-11 12.53 12.53 0 0 0-8.76-3.57c-2.76 0-6.29.29-9.11 2.48a12.37 12.37 0 0 0-3.09 3.15v.07L32 16l-2.5-3.56a12.68 12.68 0 0 0-3.11-3.2c-2.8-2.17-6.32-2.46-9.07-2.46a12.58 12.58 0 0 0-8.8 3.59z"></path></svg></i></a>
-                                                    <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
-                                                    <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
-                                                </div>
-                                                <div class="product-body-content">
-                                                    <h3 class="product-band">Maybelline</h3>
-                                                    <h3 class="product-name">Son Lì Maybelline Mịn Môi Siêu Nhẹ 1299 Đỏ Cam Đất 1.7g</h3>
-                                                    <div class="product-price">
-                                                        <span class="product-price__new">170.000đ</span>
-                                                        <span class="product-price__old">270.000đ</span>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <div class="col l-3 m-4 c-6 mt-8">
-                                            <div class="product-body">
-                                                <div class="product-body__img">
-                                                    <img src="./assets/imgs/danhmuc_1.webp" alt="" class="product-img">
-                                                    <a href="#" class="product-like"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#000000" d="M31.91 61.67L29.62 60c-9.4-6.7-16.72-13.49-21.74-20.17C3.11 33.5.48 27.39.06 21.7A17.63 17.63 0 0 1 5.45 7.16a17 17 0 0 1 11.86-4.81c3.46 0 7.93.39 11.8 3.4A19.09 19.09 0 0 1 32 8.41a19.91 19.91 0 0 1 2.91-2.67c3.89-3 8.37-3.41 11.84-3.41a16.86 16.86 0 0 1 11.85 4.8 17.51 17.51 0 0 1 5.33 14.53c-.44 5.7-3.1 11.81-7.9 18.14C51 46.5 43.63 53.3 34.21 60zM8.51 10.38a13.31 13.31 0 0 0-4 11c.35 4.83 2.69 10.15 6.94 15.79 4.7 6.24 11.59 12.65 20.48 19 8.92-6.39 15.84-12.81 20.58-19.08 4.28-5.65 6.64-11 7-15.8a13.25 13.25 0 0 0-4-11 12.53 12.53 0 0 0-8.76-3.57c-2.76 0-6.29.29-9.11 2.48a12.37 12.37 0 0 0-3.09 3.15v.07L32 16l-2.5-3.56a12.68 12.68 0 0 0-3.11-3.2c-2.8-2.17-6.32-2.46-9.07-2.46a12.58 12.58 0 0 0-8.8 3.59z"></path></svg></i></a>
-                                                    <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
-                                                    <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
-                                                </div>
-                                                <div class="product-body-content">
-                                                    <h3 class="product-band">Maybelline</h3>
-                                                    <h3 class="product-name">Son Lì Maybelline Mịn Môi Siêu Nhẹ 1299 Đỏ Cam Đất 1.7g</h3>
-                                                    <div class="product-price">
-                                                        <span class="product-price__new">170.000đ</span>
-                                                        <span class="product-price__old">270.000đ</span>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <div class="col l-3 m-4 c-6 mt-8">
-                                            <div class="product-body">
-                                                <div class="product-body__img">
-                                                    <img src="./assets/imgs/danhmuc_2.webp" alt="" class="product-img">
-                                                    <a href="#" class="product-like"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#000000" d="M31.91 61.67L29.62 60c-9.4-6.7-16.72-13.49-21.74-20.17C3.11 33.5.48 27.39.06 21.7A17.63 17.63 0 0 1 5.45 7.16a17 17 0 0 1 11.86-4.81c3.46 0 7.93.39 11.8 3.4A19.09 19.09 0 0 1 32 8.41a19.91 19.91 0 0 1 2.91-2.67c3.89-3 8.37-3.41 11.84-3.41a16.86 16.86 0 0 1 11.85 4.8 17.51 17.51 0 0 1 5.33 14.53c-.44 5.7-3.1 11.81-7.9 18.14C51 46.5 43.63 53.3 34.21 60zM8.51 10.38a13.31 13.31 0 0 0-4 11c.35 4.83 2.69 10.15 6.94 15.79 4.7 6.24 11.59 12.65 20.48 19 8.92-6.39 15.84-12.81 20.58-19.08 4.28-5.65 6.64-11 7-15.8a13.25 13.25 0 0 0-4-11 12.53 12.53 0 0 0-8.76-3.57c-2.76 0-6.29.29-9.11 2.48a12.37 12.37 0 0 0-3.09 3.15v.07L32 16l-2.5-3.56a12.68 12.68 0 0 0-3.11-3.2c-2.8-2.17-6.32-2.46-9.07-2.46a12.58 12.58 0 0 0-8.8 3.59z"></path></svg></i></a>
-                                                    <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
-                                                    <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
-                                                </div>
-                                                <div class="product-body-content">
-                                                    <h3 class="product-band">Maybelline</h3>
-                                                    <h3 class="product-name">Son Lì Maybelline Mịn Môi Siêu Nhẹ 1299 Đỏ Cam Đất 1.7g</h3>
-                                                    <div class="product-price">
-                                                        <span class="product-price__new">170.000đ</span>
-                                                        <span class="product-price__old">270.000đ</span>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <div class="col l-3 m-4 c-6 mt-8">
-                                            <div class="product-body">
-                                                <div class="product-body__img">
-                                                    <img src="./assets/imgs/danhmuc_3.webp" alt="" class="product-img">
-                                                    <a href="#" class="product-like"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#000000" d="M31.91 61.67L29.62 60c-9.4-6.7-16.72-13.49-21.74-20.17C3.11 33.5.48 27.39.06 21.7A17.63 17.63 0 0 1 5.45 7.16a17 17 0 0 1 11.86-4.81c3.46 0 7.93.39 11.8 3.4A19.09 19.09 0 0 1 32 8.41a19.91 19.91 0 0 1 2.91-2.67c3.89-3 8.37-3.41 11.84-3.41a16.86 16.86 0 0 1 11.85 4.8 17.51 17.51 0 0 1 5.33 14.53c-.44 5.7-3.1 11.81-7.9 18.14C51 46.5 43.63 53.3 34.21 60zM8.51 10.38a13.31 13.31 0 0 0-4 11c.35 4.83 2.69 10.15 6.94 15.79 4.7 6.24 11.59 12.65 20.48 19 8.92-6.39 15.84-12.81 20.58-19.08 4.28-5.65 6.64-11 7-15.8a13.25 13.25 0 0 0-4-11 12.53 12.53 0 0 0-8.76-3.57c-2.76 0-6.29.29-9.11 2.48a12.37 12.37 0 0 0-3.09 3.15v.07L32 16l-2.5-3.56a12.68 12.68 0 0 0-3.11-3.2c-2.8-2.17-6.32-2.46-9.07-2.46a12.58 12.58 0 0 0-8.8 3.59z"></path></svg></i></a>
-                                                    <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
-                                                    <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
-                                                </div>
-                                                <div class="product-body-content">
-                                                    <h3 class="product-band">Maybelline</h3>
-                                                    <h3 class="product-name">Son Lì Maybelline Mịn Môi Siêu Nhẹ 1299 Đỏ Cam Đất 1.7g</h3>
-                                                    <div class="product-price">
-                                                        <span class="product-price__new">170.000đ</span>
-                                                        <span class="product-price__old">270.000đ</span>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <div class="col l-3 m-4 c-6 mt-8">
-                                            <div class="product-body">
-                                                <div class="product-body__img">
-                                                    <img src="./assets/imgs/danhmuc_4.webp" alt="" class="product-img">
-                                                    <a href="#" class="product-like"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#000000" d="M31.91 61.67L29.62 60c-9.4-6.7-16.72-13.49-21.74-20.17C3.11 33.5.48 27.39.06 21.7A17.63 17.63 0 0 1 5.45 7.16a17 17 0 0 1 11.86-4.81c3.46 0 7.93.39 11.8 3.4A19.09 19.09 0 0 1 32 8.41a19.91 19.91 0 0 1 2.91-2.67c3.89-3 8.37-3.41 11.84-3.41a16.86 16.86 0 0 1 11.85 4.8 17.51 17.51 0 0 1 5.33 14.53c-.44 5.7-3.1 11.81-7.9 18.14C51 46.5 43.63 53.3 34.21 60zM8.51 10.38a13.31 13.31 0 0 0-4 11c.35 4.83 2.69 10.15 6.94 15.79 4.7 6.24 11.59 12.65 20.48 19 8.92-6.39 15.84-12.81 20.58-19.08 4.28-5.65 6.64-11 7-15.8a13.25 13.25 0 0 0-4-11 12.53 12.53 0 0 0-8.76-3.57c-2.76 0-6.29.29-9.11 2.48a12.37 12.37 0 0 0-3.09 3.15v.07L32 16l-2.5-3.56a12.68 12.68 0 0 0-3.11-3.2c-2.8-2.17-6.32-2.46-9.07-2.46a12.58 12.58 0 0 0-8.8 3.59z"></path></svg></i></a>
-                                                    <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
-                                                    <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
-                                                </div>
-                                                <div class="product-body-content">
-                                                    <h3 class="product-band">Maybelline</h3>
-                                                    <h3 class="product-name">Son Lì Maybelline Mịn Môi Siêu Nhẹ 1299 Đỏ Cam Đất 1.7g</h3>
-                                                    <div class="product-price">
-                                                        <span class="product-price__new">170.000đ</span>
-                                                        <span class="product-price__old">270.000đ</span>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <div class="col l-3 m-4 c-6 mt-8">
-                                            <div class="product-body">
-                                                <div class="product-body__img">
-                                                    <img src="./assets/imgs/dm1_item1.webp" alt="" class="product-img">
-                                                    <a href="#" class="product-like"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#000000" d="M31.91 61.67L29.62 60c-9.4-6.7-16.72-13.49-21.74-20.17C3.11 33.5.48 27.39.06 21.7A17.63 17.63 0 0 1 5.45 7.16a17 17 0 0 1 11.86-4.81c3.46 0 7.93.39 11.8 3.4A19.09 19.09 0 0 1 32 8.41a19.91 19.91 0 0 1 2.91-2.67c3.89-3 8.37-3.41 11.84-3.41a16.86 16.86 0 0 1 11.85 4.8 17.51 17.51 0 0 1 5.33 14.53c-.44 5.7-3.1 11.81-7.9 18.14C51 46.5 43.63 53.3 34.21 60zM8.51 10.38a13.31 13.31 0 0 0-4 11c.35 4.83 2.69 10.15 6.94 15.79 4.7 6.24 11.59 12.65 20.48 19 8.92-6.39 15.84-12.81 20.58-19.08 4.28-5.65 6.64-11 7-15.8a13.25 13.25 0 0 0-4-11 12.53 12.53 0 0 0-8.76-3.57c-2.76 0-6.29.29-9.11 2.48a12.37 12.37 0 0 0-3.09 3.15v.07L32 16l-2.5-3.56a12.68 12.68 0 0 0-3.11-3.2c-2.8-2.17-6.32-2.46-9.07-2.46a12.58 12.58 0 0 0-8.8 3.59z"></path></svg></i></a>
-                                                    <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
-                                                    <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
-                                                </div>
-                                                <div class="product-body-content">
-                                                    <h3 class="product-band">Maybelline</h3>
-                                                    <h3 class="product-name">Son Lì Maybelline Mịn Môi Siêu Nhẹ 1299 Đỏ Cam Đất 1.7g</h3>
-                                                    <div class="product-price">
-                                                        <span class="product-price__new">170.000đ</span>
-                                                        <span class="product-price__old">270.000đ</span>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <div class="col l-3 m-4 c-6 mt-8">
-                                            <div class="product-body">
-                                                <div class="product-body__img">
-                                                    <img src="./assets/imgs/dm1_item2.webp" alt="" class="product-img">
-                                                    <a href="#" class="product-like"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#000000" d="M31.91 61.67L29.62 60c-9.4-6.7-16.72-13.49-21.74-20.17C3.11 33.5.48 27.39.06 21.7A17.63 17.63 0 0 1 5.45 7.16a17 17 0 0 1 11.86-4.81c3.46 0 7.93.39 11.8 3.4A19.09 19.09 0 0 1 32 8.41a19.91 19.91 0 0 1 2.91-2.67c3.89-3 8.37-3.41 11.84-3.41a16.86 16.86 0 0 1 11.85 4.8 17.51 17.51 0 0 1 5.33 14.53c-.44 5.7-3.1 11.81-7.9 18.14C51 46.5 43.63 53.3 34.21 60zM8.51 10.38a13.31 13.31 0 0 0-4 11c.35 4.83 2.69 10.15 6.94 15.79 4.7 6.24 11.59 12.65 20.48 19 8.92-6.39 15.84-12.81 20.58-19.08 4.28-5.65 6.64-11 7-15.8a13.25 13.25 0 0 0-4-11 12.53 12.53 0 0 0-8.76-3.57c-2.76 0-6.29.29-9.11 2.48a12.37 12.37 0 0 0-3.09 3.15v.07L32 16l-2.5-3.56a12.68 12.68 0 0 0-3.11-3.2c-2.8-2.17-6.32-2.46-9.07-2.46a12.58 12.58 0 0 0-8.8 3.59z"></path></svg></i></a>
-                                                    <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
-                                                    <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
-                                                </div>
-                                                <div class="product-body-content">
-                                                    <h3 class="product-band">Maybelline</h3>
-                                                    <h3 class="product-name">Son Lì Maybelline Mịn Môi Siêu Nhẹ 1299 Đỏ Cam Đất 1.7g</h3>
-                                                    <div class="product-price">
-                                                        <span class="product-price__new">170.000đ</span>
-                                                        <span class="product-price__old">270.000đ</span>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <div class="col l-3 m-4 c-6 mt-8">
-                                            <div class="product-body">
-                                                <div class="product-body__img">
-                                                    <img src="./assets/imgs/dm1_item3.webp" alt="" class="product-img">
-                                                    <a href="#" class="product-like"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#000000" d="M31.91 61.67L29.62 60c-9.4-6.7-16.72-13.49-21.74-20.17C3.11 33.5.48 27.39.06 21.7A17.63 17.63 0 0 1 5.45 7.16a17 17 0 0 1 11.86-4.81c3.46 0 7.93.39 11.8 3.4A19.09 19.09 0 0 1 32 8.41a19.91 19.91 0 0 1 2.91-2.67c3.89-3 8.37-3.41 11.84-3.41a16.86 16.86 0 0 1 11.85 4.8 17.51 17.51 0 0 1 5.33 14.53c-.44 5.7-3.1 11.81-7.9 18.14C51 46.5 43.63 53.3 34.21 60zM8.51 10.38a13.31 13.31 0 0 0-4 11c.35 4.83 2.69 10.15 6.94 15.79 4.7 6.24 11.59 12.65 20.48 19 8.92-6.39 15.84-12.81 20.58-19.08 4.28-5.65 6.64-11 7-15.8a13.25 13.25 0 0 0-4-11 12.53 12.53 0 0 0-8.76-3.57c-2.76 0-6.29.29-9.11 2.48a12.37 12.37 0 0 0-3.09 3.15v.07L32 16l-2.5-3.56a12.68 12.68 0 0 0-3.11-3.2c-2.8-2.17-6.32-2.46-9.07-2.46a12.58 12.58 0 0 0-8.8 3.59z"></path></svg></i></a>
-                                                    <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
-                                                    <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
-                                                </div>
-                                                <div class="product-body-content">
-                                                    <h3 class="product-band">Maybelline</h3>
-                                                    <h3 class="product-name">Son Lì Maybelline Mịn Môi Siêu Nhẹ 1299 Đỏ Cam Đất 1.7g</h3>
-                                                    <div class="product-price">
-                                                        <span class="product-price__new">170.000đ</span>
-                                                        <span class="product-price__old">270.000đ</span>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <div class="col l-3 m-4 c-6 mt-8">
-                                            <div class="product-body">
-                                                <div class="product-body__img">
-                                                    <img src="./assets/imgs/dm1_item4.webp" alt="" class="product-img">
-                                                    <a href="#" class="product-like"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#000000" d="M31.91 61.67L29.62 60c-9.4-6.7-16.72-13.49-21.74-20.17C3.11 33.5.48 27.39.06 21.7A17.63 17.63 0 0 1 5.45 7.16a17 17 0 0 1 11.86-4.81c3.46 0 7.93.39 11.8 3.4A19.09 19.09 0 0 1 32 8.41a19.91 19.91 0 0 1 2.91-2.67c3.89-3 8.37-3.41 11.84-3.41a16.86 16.86 0 0 1 11.85 4.8 17.51 17.51 0 0 1 5.33 14.53c-.44 5.7-3.1 11.81-7.9 18.14C51 46.5 43.63 53.3 34.21 60zM8.51 10.38a13.31 13.31 0 0 0-4 11c.35 4.83 2.69 10.15 6.94 15.79 4.7 6.24 11.59 12.65 20.48 19 8.92-6.39 15.84-12.81 20.58-19.08 4.28-5.65 6.64-11 7-15.8a13.25 13.25 0 0 0-4-11 12.53 12.53 0 0 0-8.76-3.57c-2.76 0-6.29.29-9.11 2.48a12.37 12.37 0 0 0-3.09 3.15v.07L32 16l-2.5-3.56a12.68 12.68 0 0 0-3.11-3.2c-2.8-2.17-6.32-2.46-9.07-2.46a12.58 12.58 0 0 0-8.8 3.59z"></path></svg></i></a>
-                                                    <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
-                                                    <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
-                                                </div>
-                                                <div class="product-body-content">
-                                                    <h3 class="product-band">Maybelline</h3>
-                                                    <h3 class="product-name">Son Lì Maybelline Mịn Môi Siêu Nhẹ 1299 Đỏ Cam Đất 1.7g</h3>
-                                                    <div class="product-price">
-                                                        <span class="product-price__new">170.000đ</span>
-                                                        <span class="product-price__old">270.000đ</span>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <div class="col l-3 m-4 c-6 mt-8">
-                                            <div class="product-body">
-                                                <div class="product-body__img">
-                                                    <img src="./assets/imgs/dm2_item1.webp" alt="" class="product-img">
-                                                    <a href="#" class="product-like"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#000000" d="M31.91 61.67L29.62 60c-9.4-6.7-16.72-13.49-21.74-20.17C3.11 33.5.48 27.39.06 21.7A17.63 17.63 0 0 1 5.45 7.16a17 17 0 0 1 11.86-4.81c3.46 0 7.93.39 11.8 3.4A19.09 19.09 0 0 1 32 8.41a19.91 19.91 0 0 1 2.91-2.67c3.89-3 8.37-3.41 11.84-3.41a16.86 16.86 0 0 1 11.85 4.8 17.51 17.51 0 0 1 5.33 14.53c-.44 5.7-3.1 11.81-7.9 18.14C51 46.5 43.63 53.3 34.21 60zM8.51 10.38a13.31 13.31 0 0 0-4 11c.35 4.83 2.69 10.15 6.94 15.79 4.7 6.24 11.59 12.65 20.48 19 8.92-6.39 15.84-12.81 20.58-19.08 4.28-5.65 6.64-11 7-15.8a13.25 13.25 0 0 0-4-11 12.53 12.53 0 0 0-8.76-3.57c-2.76 0-6.29.29-9.11 2.48a12.37 12.37 0 0 0-3.09 3.15v.07L32 16l-2.5-3.56a12.68 12.68 0 0 0-3.11-3.2c-2.8-2.17-6.32-2.46-9.07-2.46a12.58 12.58 0 0 0-8.8 3.59z"></path></svg></i></a>
-                                                    <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
-                                                    <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
-                                                </div>
-                                                <div class="product-body-content">
-                                                    <h3 class="product-band">Maybelline</h3>
-                                                    <h3 class="product-name">Son Lì Maybelline Mịn Môi Siêu Nhẹ 1299 Đỏ Cam Đất 1.7g</h3>
-                                                    <div class="product-price">
-                                                        <span class="product-price__new">170.000đ</span>
-                                                        <span class="product-price__old">270.000đ</span>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-        
-        
-                                        
-        
-                                        
-        
-                                        
-        
-                                        
-        
+                                    <div class="row" id="pro_hot">
                                     </div>
                                 </div>
         
                                 <div class="trend_btn-all">
-                                    <button  class="btn_view-all mb-40">Xem tất cả</button>
+                                    <ul id="pagination">
+                                        <li><a  href="#"  class="page-item prev" data-page="prev" >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 20 20">
+                                                <path fill="#000000" fill-rule="evenodd" d="M7.222 9.897c2.3-2.307 4.548-4.559 6.744-6.754a.65.65 0 0 0 0-.896c-.311-.346-.803-.316-1.027-.08c-2.276 2.282-4.657 4.667-7.143 7.156c-.197.162-.296.354-.296.574c0 .221.099.418.296.592l7.483 7.306a.749.749 0 0 0 1.044-.029c.358-.359.22-.713.058-.881a3407.721 3407.721 0 0 1-7.16-6.988" />
+                                            </svg>
+                                        </a></li>
+
+                                        <li><a class="active page-item" href="#" data-page="0">1</a></li>
+                                        <li><a class="page-item" href="#" data-page="1">2</a></li>
+                                        <li><a class="page-item" href="#" data-page="2">3</a></li>
+                                        <li><a class="page-item" href="#">...</a></li>
+                                        <li><a class="page-item" href="#" data-page="19">20</a></li>
+                                        <li><a class="page-item next"  href="#" data-page="next" >
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 20 20">
+                                                <path fill="#000000" fill-rule="evenodd" d="m7.053 2.158l7.243 7.256a.66.66 0 0 1 .204.483a.705.705 0 0 1-.204.497c-2.62 2.556-5.145 5.023-7.575 7.401c-.125.117-.625.408-1.011-.024c-.386-.433-.152-.81 0-.966l7.068-6.908l-6.747-6.759c-.246-.339-.226-.652.06-.939c.286-.287.607-.3.962-.04" />
+                                            </svg>
+                                        </a></li>
+
+                                    </ul>
                                 </div>
                                 
         
@@ -336,19 +149,20 @@
         <footer id="footer"></footer>
     </div>
 
-    <script src="/assets/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="./assets/js/product_detail.js"></script>
     <script src="./assets/js/placeholderTypewriter.js"></script>
     <script src="assets/js/common.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="./assets/js/category.js"></script>
 
     <script>
 
         $(document).ready(function() {
             $(".header").load("base.html")
             $("#footer").load("footer.html")
-
+            
         });
         
         

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tìm kiếm</title>
+    <title>Dona Beauty</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link href="assets/fonts/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/digitalsign.css">
 
-    <link rel="stylesheet" href="./assets/css/pagepagition.css">
-
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/product_detail.css">
+    <link rel="stylesheet" href="./assets/css/pagepagition.css">
+    
     <link rel="stylesheet" href="./assets/css/responsive.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +35,22 @@
 
         <div id="container">
             <div class="grid wide">
+
+                <div class="bread-crumb">
+                    <ul class="list">
+                        <li class="item">
+                            <a href="home.html">
+                                <h3>Trang chủ</h3>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#">
+                                <h3 class="bread-title">Danh mục</h3>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
 
                 <div class="category_fillter-mobile">
                     <h3 class="title">Chọn mức giá</h3>
@@ -86,21 +102,17 @@
                         </div>
 
                         <div class="col l-10 m-10 c-12">
-                            <div class="trend-body">
-                                <h3 class="empty_key" style="
-                                    line-height: 1.5;
-                                    max-width: 590px;
-                                    text-align: center;
-                                    margin-top: 30px;
-                                    color: #1B5E20;
-                                    display: none;
-                                "
-                                >Rất tiếc, chúng tôi không tìm thấy kết quả nào cho từ khóa bạn tìm kiếm. Vui lòng thử lại với từ khóa khác</h3>
-                                <div id="product-search" class="row">
-                                    
-                                    
+
+                            <div class="container__trend">
+                        
+                                <h3 class="none-pro" style="background-color: blanchedalmond;     padding: 8px 12px;
+                                font-size: 15px;
+                                font-weight: 500; display: none">Sản phẩm đang được cập nhật</h3>
+                        
+                                <div class="trend-body">
+                                    <div class="row" id="pro_hot">
+                                    </div>
                                 </div>
-                            </div>
         
                                 <div class="trend_btn-all">
                                     <ul id="pagination">
@@ -124,9 +136,11 @@
                                     </ul>
                                 </div>
                                 
+        
                             </div>
                         </div>
                     </div>
+                    
                    
                 </div>
             </div>
@@ -134,23 +148,25 @@
 
         <footer id="footer"></footer>
     </div>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/home.js"></script>
 
     <script src="./assets/js/product_detail.js"></script>
     <script src="./assets/js/placeholderTypewriter.js"></script>
     <script src="assets/js/common.js"></script>
-    <script src="assets/js/search.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="./assets/js/brand.js"></script>
 
     <script>
 
-        
+        $(document).ready(function() {
+            $(".header").load("base.html")
+            $("#footer").load("footer.html")
+            
+        });
         
         
     </script>
-
   
 </body>
 </html>
