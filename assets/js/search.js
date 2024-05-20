@@ -116,7 +116,7 @@ $(document).ready(function() {
 
                 updatePagination(page, response.totalPages);
 
-                if(Array.isArray(response) && response.length === 0){
+                if(Array.isArray(response.content) && response.content.length === 0){
                     $('.empty_key').show();
                     var productList = $('#product-search')
                     productList.empty();
