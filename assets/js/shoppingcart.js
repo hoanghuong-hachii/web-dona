@@ -59,7 +59,16 @@ $(document).ready(function() {
         }
 
         function updateLayout(data, quantity) {
-            console.log(quantity)
+            //console.log(data)
+            var price = data.retailPrice;
+            var coupon = data.coupons;
+            var priceTotal = price * (100 - coupon )/100 * quantity
+            var formattedPrice = priceTotal.toLocaleString('vi-VN');
+            // console.log('price: ' + price)
+            // console.log('coupon: ' + coupon)
+            // console.log('quantity: ' + quantity)
+            // console.log('priceTotal: ' + formattedPrice)
+            
             var productHtml = `
                 <li id="${data.idProd}" class="item " >
                     <div class="info">
@@ -84,7 +93,7 @@ $(document).ready(function() {
                         </a>
                     </div>
 
-                    <div id="price-item-total" class="price totalItem">${data.formattedDiscountedPrice}đ</div>
+                    <div id="price-item-total" class="price totalItem">${formattedPrice}đ</div>
 
                 </li>
             `;
@@ -94,8 +103,6 @@ $(document).ready(function() {
 
         }
     }
-    
-
     
     
     $(document).on('click', '#btn-min', function() {

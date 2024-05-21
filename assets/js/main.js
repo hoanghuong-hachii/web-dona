@@ -1,41 +1,29 @@
 var ID_USER = localStorage.getItem('env_id');
 var env_Url = localStorage.getItem('env_url');
 let isload = 0;
-$(window).on('scroll  mousemove touchstart',function(){
-	try{
-		if(!isload){
-			isload = 1
 
-            // $(document).ready(function(){
-			// 	var placeholderText = ['Bạn muốn tìm gì?','Trang điểm', 'Dưỡng thể', 'Chăm sóc cá nhân', 'Chăm sóc cơ thể'];
-			// 	$('.search-auto').placeholderTypewriter({text: placeholderText});
-			// });
 
-			$(document).ready(function() {
-				$('#control-menu__left').click(function(){
-					console.log('click left')
-					$(".nav-category").animate({scrollLeft: "-=100px"});
-				});
-				
-				$('#control-menu__right').click(function(){
-					$(".nav-category").animate({scrollLeft: "+=100px"});
-				});
-			
-				$('.left').click(function(){
-					console.log('click left')
-					$(".nav-category").animate({scrollLeft: "-=100px"});
-				});
-				
-				$('.right').click(function(){
-					$(".nav-category").animate({scrollLeft: "+=100px"});
-				});
+	$(document).ready(function() {
+		$('#control-menu__left').click(function(){
+			console.log('click left')
+			$(".nav-category").animate({scrollLeft: "-=100px"});
+		});
+		
+		$('#control-menu__right').click(function(){
+			$(".nav-category").animate({scrollLeft: "+=100px"});
+		});
+	
+		$('.left').click(function(){
+			console.log('click left')
+			$(".nav-category").animate({scrollLeft: "-=100px"});
+		});
+		
+		$('.right').click(function(){
+			$(".nav-category").animate({scrollLeft: "+=100px"});
+		});
 
-			})
-        }
-	}catch(e){
-		console.log(e);
-	}
-});
+	})
+
 
 
 
@@ -106,7 +94,70 @@ $(window).on('scroll  mousemove touchstart',function(){
 			type:"error"
 		})
 	}
+	
 
+	
+	function infoPro(idProd){
+		console.log('idProd main')
+		$.ajax({
+			url: env_Url + '/api/v1/Products/roleUser/' + idProd,
+			type: 'GET',
+			headers: {
+				'ngrok-skip-browser-warning': 'true'
+			}, 
+			success: function(respone){
+				console.log(respone)
+				$('.view-proName').text(respone.productName)
+				$('.view-price__current').text(respone.formattedDiscountedPrice)
+				$('.view-price__old').text(respone.formattedPrice) 
+				$('.view-desc').text(respone.detail) 
+				$('.view-main-img').attr('src', respone.imageAvatar);
+
+				fetchLayoutChild(idProd)
+
+			},
+			error: function(xhr, status, error){
+				console.log(error)
+			}
+		})
+
+
+	}
+
+	
+    function fetchLayoutChild(id) {
+        $.ajax({
+            url: env_Url + '/api/v1/product-images/'+id,
+            type: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
+            success: function(response){
+                console.log(response)
+                updateLayoutChild(response)
+            },
+            error: function(xhr,status, error) {
+                console.log(error)
+            }
+        })
+
+    }
+
+    function updateLayoutChild(images) {
+        var imageList = $('#imgchild-productDetail')
+        imageList.empty()
+        images.forEach(function(image) {
+            var imgChildHtml = `
+                <li class="chils-img__item">
+                    <a class="view-child-img" id="child-imgPro" href="#">
+                        <img src="${image.imageUrl}" alt="${image.imageName}">
+                    </a>
+                </li>
+            `;
+            imageList.append(imgChildHtml);
+        });
+    }
+    
 	$(document).ready(function(){
 		$('.icon-down').show()
 		$('.menu-item').click(function(){
@@ -115,14 +166,20 @@ $(window).on('scroll  mousemove touchstart',function(){
 		});
 
 		$('.open-modal-view').click(function(event) {
+			console.log('xem nhanh main')
+			var thisPro = $(this).closest('.product-body')
+			var idProduct = thisPro.attr('id')
+			console.log(idProduct)
 			$('.modal-overlay').show()
 			$('.modal-container').show()
+			
 			event.stopPropagation();
 		})
 		
 		$('.open-modal-cart').click(function(event) {
 			$('.modal-overlay').show()
 			$('.modal-addCart').show()
+			
 			event.stopPropagation();
 		})
 
@@ -227,6 +284,7 @@ $(window).on('scroll  mousemove touchstart',function(){
             success: function(response) {
                 //console.log(response);
 				getProCart()
+				infoPro(data.idProd)
 
             },
             error: function(xhr, status, error) {

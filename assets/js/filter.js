@@ -48,7 +48,7 @@ $(document).ready(function() {
     function fetchData(page) {
         var { priceFrom, priceTo } = getPriceRange();
 
-       console.log('gia: '+priceFrom+ ' - '+ priceTo)
+       // console.log('gia: '+priceFrom+ ' - '+ priceTo)
         $.ajax({
             url: `${env_Url}/api/v1/Products/roleUser/filter?page=${page}&size=20`,
             type: 'POST',
@@ -90,9 +90,9 @@ $(document).ready(function() {
         products.forEach(product => {
 
             var coupon = product.coupons;
-            var price_pro =  product.retailPrice * (100 - coupon) / 100;
+            var price_pro = product.retailPrice * (100 - coupon) / 100;
             
-            console.log(' gia' + price_pro)
+            //console.log(' gia' + price_pro)
 
             if(coupon != 0 && price_pro >= priceFrom && price_pro <= priceTo) {
                 var productHtml = `
@@ -108,7 +108,6 @@ $(document).ready(function() {
                                     </svg>
                                     </a>
                                     <img src="../assets/imgs/freeship_tag.webp" alt="" class="freeship_tag">
-                                    <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
                                     <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
                                 </div>
                                 <div class="product-body-content">
@@ -150,8 +149,10 @@ $(document).ready(function() {
     $(document).on('click', '.open-modal-view', function(event){
         $('.modal-overlay').show()
         $('.modal-container').show()
+        console.log('xem nhanh filter')
         var thisPro = $(this).closest('.product-body')
-        //console.log(thisPro.attr('id'))
+        var idProduct = thisPro.attr('id')
+        console.log(idProduct)
         event.stopPropagation(); 
     });
 

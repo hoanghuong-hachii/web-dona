@@ -434,26 +434,24 @@
             <div class="row">
                 <div class="col l-5 m-5 c-5">
                     <div class="view-btn__proImg">
-                        <img src="../assets/imgs/p09671-1-l-min.webp" alt="" class="main-img">
-                        <ul class="child-img">
-                            <li class="chils-img__item">
-                                <a href="#">
-                                    <img src="../assets/imgs/p09671-1-l-min.webp" alt="">
-                                </a>
-                            </li>
-                            <li class="child-img__item">
-                                <a href="#">
-                                    <img src="../assets/imgs/p09671-1-l-min.webp" alt="">
-                                </a>
-                            </li>
-                            
-                            <a class="btn_child-img left" href="">
+                        <img src="../assets/imgs/p09671-1-l-min.webp" alt="" class="view-main-img main-img">
+
+                        <div class="con" style="position: relative;">
+                            <ul id="imgchild-productDetail" class="child-img">
+                            </ul>
+    
+                            <a class="btn_child-img btn-left default" href="#" style="position: absolute;  top: 40%;
+                            transform: translateY(-50%);
+                            left: 0;">
                                 <i class="fa-solid fa-angle-left "></i>
                             </a>
-                            <a class="btn_child-img right" href="">
+                            <a class="btn_child-img btn-right default" href="#" style="position: absolute;  top: 40%;
+                            transform: translateY(-50%);
+                            right: 0;">
                                 <i class="fa-solid fa-angle-right "></i>
                             </a>
-                        </ul>
+                        </div>
+                       
                     </div>
                 </div>
                 <div class="col l-7 m-7 c-7">
@@ -468,21 +466,29 @@
                             <span class="view-price__old">395.000đ</span>
                         </div>
 
-                        <p class="view-desc">
+                        <p class="view-desc" style="
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 8;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                line-height: 1.5em;
+                                max-height: 12em;
+                        ">
                             khuyenmai_Tặng: Xịt Khoáng La Roche-Posay Làm Dịu Da 50g (SL có hạn);Quà tặng: [Gift] Kem Nền Australis Sáng Mỏng Mịn Màu Fair 30ml;[Deal Hời}Sữa Chống Nắng Anessa Cho Da Nhạy Cảm
                         </p>
                         <footer class="modal-footer">
 
                             <div class="view-count">
-                                <a href="#" class="btn-min">
+                                <a id="btn-min" href="#" class="btn-min">
                                     <i class="fa-solid fa-minus"></i>
                                 </a>
-                                <input type="text" name="" id="" class="input-number" value="1">
-                                <a href="#" class="btn-max">
+                                <input type="text" name="" class="input-number" value="1">
+                                <a id="btn-plus" href="#" class="btn-max">
                                     <i class="fa-solid fa-plus"></i>
                                 </a>
                             </div>
-                            <input type="button" value="Thêm vào giỏ hàng" class="modal-body__btn ml-8">
+                            <input id="btn_addcart" type="button" value="Thêm vào giỏ hàng" class= "  modal-body__btn ml-8">
                         </footer>
                     </div>
                 </div>
@@ -508,7 +514,7 @@
             <div class="row row-top">
                 <div class="col l-3 m-3 c-3">
                     <div class="view-btn__proImg">
-                        <img src="../assets/imgs/p09671-1-l-min.webp" alt="" class="main-img">
+                        <img src="../assets/imgs/p09671-1-l-min.webp" alt="" class="view-main-img main-img">
                     </div>
                 </div>
                 <div class="col l-9 m-9 c-9">
@@ -519,6 +525,7 @@
 
                         <div class="view-price">
                             <span class="view-price__current">315.000đ</span>
+                            <span class="view-price__old">395.000đ</span>
                         </div>
 
                     </div>
@@ -526,11 +533,11 @@
                 </div>
             </div>
 
-            <footer class="modal-addCart-footer">
-                <p class="number-pro">Giỏ hàng của bạn hiện có <span>6</span> sản phẩm</p>
+            <footer class="modal-addCart-footer" style="margin-top: 20px;">
+                <!-- <p class="number-pro">Giỏ hàng của bạn hiện có <span>6</span> sản phẩm</p> -->
                 <div class="add-cart-view__btn">
                     <input style="background: #646464;" type="button" value="Tiếp tục mua hàng" class="modal-body__btn modal-close__btn ml-8">
-                    <input type="button" value="Xem giỏ hàng" class="modal-body__btn btn-view-cart ml-8">
+                    <input id="btn-xemgio" type="button" value="Xem giỏ hàng" class="modal-body__btn btn-view-cart ml-8">
                 </div>
             </footer>
             
@@ -538,9 +545,24 @@
     </div>
     <!-- End thêm vào giỏ -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/product_detail.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script>
-        
+        $('#btn_addcart').click(function() {
+
+            console.log('them gio')
+            //showSuccessToast({msg: 'Thêm vào giỏ thành công'})
+            addProductCart({
+                idProd: id
+            })
+    
+            
+        })
         $(document).ready(function(){
+            $('#btn-xemgio').on('click', function() {
+                window.location.href="../shoping_cart.html"
+            })
+
             $('.icon-down').show()
             $('.menu-item').click(function(){
                 // $('.menu-item').not(this).find('.submenu-item').removeClass('active');
@@ -552,11 +574,7 @@
                 $(this).find('.submenu-item').slideToggle("slow")
             });
 
-            $('.open-modal-view').click(function() {
-                $('.modal-overlay').show()
-                $('.modal-container').show()
-            })
-
+      
             $('.open-modal-cart').click(function() {
                 $('.modal-overlay').show()
                 $('.modal-addCart').show()
@@ -613,13 +631,13 @@
                     "border-bottom": 'solid 2px var(--subColor)'
                 })
             })
-
+           
 
             $('.subnav-item.brand .item a').click(function(event) {
                 event.preventDefault(); 
                 var brandName = $(this).text();
                 console.log(brandName)
-                var url = 'brand_item.html?brand=' + encodeURIComponent(brandName);
+                var url = '/brand_item.html?brand=' + encodeURIComponent(brandName);
                 window.location.href = url; 
             });
     
@@ -628,7 +646,7 @@
                 var brandName = $(this).attr('class')
                 var categoryName = $(this).text()
                 console.log(brandName +"-"+ categoryName)
-                var url = 'category_item.html?category=' + encodeURIComponent(brandName)+ '&title=' + encodeURIComponent(categoryName);
+                var url = '/category_item.html?category=' + encodeURIComponent(brandName)+ '&title=' + encodeURIComponent(categoryName);
                 window.location.href = url;
             });
            

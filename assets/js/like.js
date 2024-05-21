@@ -53,7 +53,6 @@ $(document).ready(function() {
                                 </svg>
                                 </a>
                                 <img src="../assets/imgs/freeship_tag.webp" alt="" class="freeship_tag">
-                                <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
                                 <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
                             </div>
                             <div class="product-body-content">
@@ -94,9 +93,13 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.open-modal-view', function(event){
+        console.log('xem nhanh like')
+        var thisPro = $(this).closest('.product-body')
+        var idProduct = thisPro.attr('id')
+        console.log(idProduct)
         $('.modal-overlay').show()
         $('.modal-container').show()
-        var thisPro = $(this).closest('.product-body')
+        
         //console.log(thisPro.attr('id'))
         event.stopPropagation(); 
     });

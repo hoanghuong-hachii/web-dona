@@ -47,6 +47,11 @@ $(document).ready(function(){
     });
 
     $('.open-modal-view').click(function() {
+
+        console.log('xem nhanh pro detail')
+        var thisPro = $(this).closest('.product-body')
+        var idProduct = thisPro.attr('id')
+        console.log(idProduct)
         $('.modal-overlay').show()
         $('.modal-container').show()
     })
@@ -101,10 +106,43 @@ $(document).ready(function(){
 
     $('.btn_addcart').click(function() {
 
+        var cnt = $('.count-num').val()
+        console.log('SO LUONG: '+ cnt)
+        showSuccessToast({msg: 'Thêm vào giỏ thành công'})
         addProductCart({
             idProd: id
         })
+
+        if(cnt > 1){
+            updateShopCart({ idProd: id, quantity1: cnt})
+        }
+
+        
     })
+
+    function updateShopCart(data) {
+        console.log('add '+ data.idProd +" " + data.quantity1,)
+        var idUser = localStorage.getItem('env_id');
+        $.ajax({
+            url: env_Url +'/api/v4/shoppingCart',
+            type: 'PUT', 
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            },
+            data: {
+                idUser: idUser,
+                idProd: data.idProd,
+                quantityProd: data.quantity1,
+                price: 20000
+            },
+            success: function(respone){
+                console.log(respone)
+            },
+            error: function(xhr,status, error) {
+                console.log(error)
+            }
+        })
+    }
 
     $('.like-icon').click( function(event){
         var thisIcon = $(this);
@@ -223,17 +261,37 @@ $(document).ready(function(){
     })
 
     $('#btn-min').click(function() {
+        console.log('min')
         var cnt = $('.count-num').val(); 
-        if (cnt > 1) {
+        var number = $('.input-number').val()
+        
+        if (cnt > 1 || number >1) {
             cnt--;
             $('.count-num').val(cnt); 
+
+            number--;
+            $('.input-number').val(number)
         }
     });
     
     $('#btn_plus').click(function() {
+        console.log('add')
+
         var cnt = $('.count-num').val(); 
         cnt++;
         $('.count-num').val(cnt); 
+
+       
+    });
+    $('#btn-plus').click(function() {
+        console.log('add')
+
+        var cnt = $('.count-num').val(); 
+        cnt++;
+        $('.count-num').val(cnt); 
+        var number = $('.input-number').val()
+        number++;
+        $('.input-number').val(number)
     });
     
 

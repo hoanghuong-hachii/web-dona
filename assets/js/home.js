@@ -1,6 +1,8 @@
 var ID_USER = localStorage.getItem('env_id');
 var env_Url = localStorage.getItem('env_url');
 
+
+
 $(document).ready(function(){
     console.log(env_Url)
 
@@ -48,7 +50,6 @@ $(document).ready(function(){
                                 </a>
                                 <img src="../assets/imgs/freeship_tag.webp" alt="" class="freeship_tag">
 
-                                <a class="view_product btn_view-all open-modal-view">Xem nhanh</a>
                                 <a class="add_cart btn_view-all open-modal-cart">Thêm vào giỏ</a>
                             </div>
                             <div class="product-body-content">
@@ -72,13 +73,26 @@ $(document).ready(function(){
 
     }
 
-    
+    //==============================
+ 
+    $(document).on('click', '.view-child-img', function(event){
+        var imageUrl = $(this).find('img').attr('src');
+        console.log('Image URL:', imageUrl);
+        $('.view-main-img').attr('src', imageUrl).attr('alt', 'image-product');
+
+    })
+
+    $(document).on('click', '#btn-plus', function(){
+        console.log('them')
+        
+
+    })
+
 
     $(document).on('click', '.open-modal-view', function(event){
         $('.modal-overlay').show()
         $('.modal-container').show()
-        var thisPro = $(this).closest('.product-body')
-        //console.log(thisPro.attr('id'))
+  
         event.stopPropagation(); 
     });
     $(document).on('click', '.open-modal-cart', function(event){
@@ -86,23 +100,19 @@ $(document).ready(function(){
         $('.modal-addCart').show()
         var thisPro = $(this).closest('.product-body')
         var idProduct = thisPro.attr('id')
+        
         addProductCart({
             idProd: idProduct
         })
         event.stopPropagation();
     });
 
-
-    
-    
-
-   // $(document).on('click', '.product-body:not(.open-modal-view):not(.open-modal-cart)', function(){
-     //   console.log('view details');
+    // $(document).on('click', '.product-body:not(.open-modal-view):not(.open-modal-cart)', function(){
+    //   console.log('view details');
     //    window.location.href = './product_detail.html';
     //});
     
 })
-
 
 //==============\
 $(document).ready(function() {

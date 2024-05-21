@@ -499,7 +499,7 @@
     
         })
         $(document).ready(function() {
-            localStorage.setItem('env_url',' https://slowly-ideal-corgi.ngrok-free.app');
+            localStorage.setItem('env_url','https://united-actually-kid.ngrok-free.app');
 
             var status = localStorage.getItem('login-status')
             var env_Url = localStorage.getItem('env_url')
@@ -567,12 +567,11 @@
                     
                 }
             });
-
         
             function performSearch(inputElement) {
                 var keyword = inputElement.val(); 
                 console.log('Bạn đang tìm kiếm: ' + keyword);
-                window.location.href = './search_result.html?search=' + encodeURIComponent(keyword);
+                window.location.href = '../search_result.html?search=' + encodeURIComponent(keyword);
                 
             }
 
@@ -619,8 +618,8 @@
             event.preventDefault(); 
             var brandName = $(this).text();
             console.log(brandName)
-            var url = 'brand_item.html?brand=' + encodeURIComponent(brandName);
-            window.location.href = url; 
+            //var url = 
+            window.location.href = `/brand_item.html?brand=` + encodeURIComponent(brandName);
         });
 
         $('.subnav-item.category .item a').click(function(event) {
@@ -628,7 +627,7 @@
             var brandName = $(this).attr('class')
             var categoryName = $(this).text()
             console.log(brandName +"-"+ categoryName)
-            var url = 'category_item.html?category=' + encodeURIComponent(brandName)+ '&title=' + encodeURIComponent(categoryName);
+            var url = `/category_item.html?category=` + encodeURIComponent(brandName)+ '&title=' + encodeURIComponent(categoryName);
             window.location.href = url;
         });
 
@@ -637,7 +636,7 @@
             var brandName = $(this).attr('class')
             var categoryName = $(this).text()
             console.log(brandName +"-"+ categoryName)
-            var url = 'category_item.html?category=' + encodeURIComponent(brandName)+ '&title=' + encodeURIComponent(categoryName);
+            var url = '/category_item.html?category=' + encodeURIComponent(brandName)+ '&title=' + encodeURIComponent(categoryName);
             window.location.href = url;
         });
        

@@ -80,7 +80,6 @@
 }
 
 .container-tittle {
-  line-height: 1.5;
   text-align: center;
   font-size: 2.6rem;
   padding: 42px 0 36px 0;
@@ -180,7 +179,7 @@
   border: 5px solid #acf046;
   background-color: #181f42;
   border-radius: 10px;
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   color: var(--mainColor);
   font-weight: 500;
 }
@@ -198,7 +197,7 @@
 .discount-time__date .info-span span::after {
   content: ":";
   display: inline-block;
-  font-size: 26px;
+  font-size: 20px;
   padding: 0 8px;
 }
 .discount-time__date .info-span span:last-of-type::after {
@@ -267,7 +266,7 @@
 
 .add_cart {
   position: absolute;
-  bottom: 50%;
+  bottom: 30%;
   left: 50%;
   z-index: 20;
   display: none;
@@ -353,11 +352,13 @@
 }
 
 .child-img {
+  overflow: auto;
   display: flex;
   list-style-type: none;
   position: relative;
 }
 .child-img img {
+  min-width: 100px;
   width: 100%;
   height: auto;
   border: #000000 1px dotted;
