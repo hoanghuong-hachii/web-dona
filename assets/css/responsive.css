@@ -151,8 +151,16 @@
         
     }
     input#btn-add {
-        width: 100%;
+        width: 100%; 
         margin-left: 8px;
+    }
+
+    div .re-pass {
+        flex-direction: column;
+    }
+
+    .re-text {
+        margin-left: 0;
     }
 
 }

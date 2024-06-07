@@ -180,7 +180,32 @@
   top: 60px;
   left: 50%;
   transform: translateX(-50%);
-  min-width: calc(100% - 20px);
+  margin: 0 20px;
+  min-width: 650px;
+  border: #ccc 2px solid;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-viewcer {
+  background-color: #fff;
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 20px;
+  border: #ccc 2px solid;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-viewsign {
+  background-color: #fff;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 20px;
   border: #ccc 2px solid;
   border-radius: 10px;
   overflow: hidden;
@@ -267,6 +292,201 @@
   display: flex;
 }
 .modal-check .result .invalid h3 {
+  color: #fe1706;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 450px;
+  margin: 0 25px;
+}
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 450px;
+  margin: 0 25px;
+}
+
+.overlay2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.overlaycer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.grid-item {
+  border-bottom: 1px solid #000;
+  display: block;
+  height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  padding: 0 5px;
+  line-height: 40px;
+}
+
+.modal-viewcer .grid-item.ok:hover {
+  cursor: pointer;
+  background-color: rgba(44, 143, 204, 0.3607843137);
+}
+
+.active-cer {
+  background-color: rgba(44, 143, 204, 0.3607843137);
+}
+
+.modal-viewsign .container {
+  margin: 20px;
+  line-height: 2;
+  padding-bottom: 30px;
+}
+.modal-viewsign .container .col-left h3 {
+  text-align: center;
+  font-size: 16px;
+  color: #00b75a;
+  padding: 10px;
+  background-color: rgba(0, 183, 90, 0.2);
+}
+.modal-viewsign .container .col-left span {
+  margin-left: 4px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.modal-viewsign .container .col-left p {
+  margin-left: 16px;
+}
+.modal-viewsign .container .col-left p span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2c8ecc;
+}
+.modal-viewsign .info {
+  margin-bottom: 16px;
+  width: 95%;
+}
+.modal-viewsign .info h3 {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #2c8ecc;
+  padding: 10px;
+  background-color: rgba(204, 204, 204, 0.163);
+}
+.modal-viewsign .info h3 svg {
+  margin-right: 8px;
+}
+.modal-viewsign .info p {
+  margin-left: 16px;
+}
+.modal-viewsign .info p span {
+  font-weight: 500;
+}
+.modal-viewsign .result h3 {
+  font-weight: 500;
+  font-size: 15px;
+  color: #2c8ecc;
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+.modal-viewsign .result h3 svg {
+  margin-right: 8px;
+}
+.modal-viewsign .result .valid {
+  display: flex;
+}
+.modal-viewsign .result .valid h3 {
+  color: #1d9f4f;
+}
+.modal-viewsign .result .invalid {
+  display: flex;
+}
+.modal-viewsign .result .invalid h3 {
+  color: #fe1706;
+}
+
+.modal-viewcer .container {
+  margin: 20px;
+  height: 550px;
+  line-height: 2;
+  overflow: auto;
+  padding-bottom: 30px;
+}
+.modal-viewcer .container .col-left h3 {
+  text-align: center;
+  font-size: 16px;
+  color: #00b75a;
+  padding: 10px;
+  background-color: rgba(0, 183, 90, 0.2);
+}
+.modal-viewcer .container .col-left span {
+  margin-left: 4px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.modal-viewcer .container .col-left p {
+  margin-left: 16px;
+}
+.modal-viewcer .container .col-left p span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2c8ecc;
+}
+.modal-viewcer .info {
+  margin-bottom: 16px;
+  width: 95%;
+}
+.modal-viewcer .info h3 {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #2c8ecc;
+  padding: 10px;
+  background-color: rgba(204, 204, 204, 0.163);
+}
+.modal-viewcer .info h3 svg {
+  margin-right: 8px;
+}
+.modal-viewcer .info p {
+  margin-left: 16px;
+}
+.modal-viewcer .info p span {
+  font-weight: 500;
+}
+.modal-viewcer .result h3 {
+  font-weight: 500;
+  font-size: 15px;
+  color: #2c8ecc;
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+.modal-viewcer .result h3 svg {
+  margin-right: 8px;
+}
+.modal-viewcer .result .valid {
+  display: flex;
+}
+.modal-viewcer .result .valid h3 {
+  color: #1d9f4f;
+}
+.modal-viewcer .result .invalid {
+  display: flex;
+}
+.modal-viewcer .result .invalid h3 {
   color: #fe1706;
 }
 

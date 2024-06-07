@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
 
-    
 </head>
 <body>
     
@@ -34,7 +33,6 @@
         <div class="grid">
             <header class="header">
                 <h3>Thông tin hóa đơn</h3>
-
             </header>
             <div class="container1 view_invoice_mb" >
                 <div class="action" >
@@ -66,13 +64,12 @@
                         Tải hóa đơn
                     </a>
                     
-                    <!-- <a href="#" id="fullButton" class="btn ">
+                    <a href="#" id="fullButton" class="btn ">
                         <svg class="mr-8"  xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
                             <path fill="#2c8ecc" d="M20 20v1h1v-1zm-4.293-5.707a1 1 0 0 0-1.414 1.414zM19 14v6h2v-6zm1 5h-6v2h6zm.707.293l-5-5l-1.414 1.414l5 5zM4 20H3v1h1zm5.707-4.293a1 1 0 0 0-1.414-1.414zM3 14v6h2v-6zm1 7h6v-2H4zm.707-.293l5-5l-1.414-1.414l-5 5zM20 4h1V3h-1zm-5.707 4.293a1 1 0 0 0 1.414 1.414zM21 10V4h-2v6zm-1-7h-6v2h6zm-.707.293l-5 5l1.414 1.414l5-5zM4 4V3H3v1zm4.293 5.707a1 1 0 0 0 1.414-1.414zM5 10V4H3v6zM4 5h6V3H4zm-.707-.293l5 5l1.414-1.414l-5-5z" />
                         </svg>
                         Xem toàn màn hình
-                    </a> -->
-
+                    </a>
                 </div>
                 <div class="invoice">
                     
@@ -82,13 +79,11 @@
                                 <a href="#" class=" previous round a_pdf" id="prev-page">
                                     <i class="fas fa-arrow-left"></i>
                                 </a>
-            
                                 <input type="number" value="1" id="current_page" />
             
                                 <a href="#" class="next round a_pdf" id="next-page">
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
-            
                                 Trang
                                 <span id="page_num"></span>
                                 /
@@ -113,8 +108,6 @@
                     </div>
             
                 </div>
-
-                
             </div>
             
             <div class="container view_invoice_web" >
@@ -152,13 +145,6 @@
                             Tải hóa đơn
                         </a>
 
-                        <!-- <a href="#" class="btn">
-                            <svg class="mr-8" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path fill="#2c8ecc" d="m13 21l2-1l2 1v-7h-4m4-5V7l-2 1l-2-1v2l-2 1l2 1v2l2-1l2 1v-2l2-1m1-7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7v-2H4V5h16v10h-1v2h1a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5H5V6h6m-2 5H5V9h4m2 5H5v-2h6Z" />
-                            </svg>
-                            Xem chứng thư số người bán
-                        </a> -->
-
                     </div>
                 </div>
             </div>
@@ -177,103 +163,113 @@
         
         <div class="container">
             <div class="row">
-                <div class="col l-8 m-8 c-12">
-
-                    <div class="info">
+                <div class="col l-12 m-12 c-12">
+                    <h3 style="font-size: 15px;"><span>Kết quả tra cứu ngày <span id="date-time">29/04/2024</span></span></h3>
+                    
+                    <div id="info-sign-rev1" class="info ">
                         <h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-                                <path fill="#1152e8" fill-rule="evenodd" d="M5.574 4.691c-.833.692-1.053 1.862-1.492 4.203l-.75 4c-.617 3.292-.925 4.938-.026 6.022C4.206 20 5.88 20 9.23 20h5.54c3.35 0 5.024 0 5.924-1.084c.9-1.084.59-2.73-.026-6.022l-.75-4c-.44-2.34-.659-3.511-1.492-4.203C17.593 4 16.402 4 14.02 4H9.98c-2.382 0-3.573 0-4.406.691m4.304 3.06a2.251 2.251 0 0 0 4.245 0a.75.75 0 0 1 1.414.499a3.751 3.751 0 0 1-7.073 0a.75.75 0 1 1 1.414-.5" clip-rule="evenodd" />
+                            <svg class="check-sign1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+                                <defs>
+                                    <mask id="ipSCheckOne0">
+                                        <g fill="none" stroke-linejoin="round" stroke-width="4">
+                                            <path fill="#fff" stroke="#fff" d="M24 44a19.937 19.937 0 0 0 14.142-5.858A19.937 19.937 0 0 0 44 24a19.938 19.938 0 0 0-5.858-14.142A19.937 19.937 0 0 0 24 4A19.938 19.938 0 0 0 9.858 9.858A19.938 19.938 0 0 0 4 24a19.937 19.937 0 0 0 5.858 14.142A19.938 19.938 0 0 0 24 44Z" />
+                                            <path stroke="#000" stroke-linecap="round" d="m16 24l6 6l12-12" />
+                                        </g>
+                                    </mask>
+                                </defs>
+                                <path fill="#1b9b12" d="M0 0h48v48H0z" mask="url(#ipSCheckOne0)" />
                             </svg>
-                            Đơn vị bán hàng</h3>
-                        <p>Đơn vị/Tên: <span>DINO BEAUTE SHOP</span></p>
-                        <p>Mã số thuế: <span>1023001071</span></p>
-                        <p>Địa chỉ: <span>8 Ng. 52 P. Quan Nhân, Trung Hoà, Cầu Giấy, Hà Nội</span></p>
+
+                            <svg class="uncheck-sign1" style="display: none;"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024">
+                                <path fill="#eb3b00" d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896m0 192a58.43 58.43 0 0 0-58.24 63.744l23.36 256.384a35.072 35.072 0 0 0 69.76 0l23.296-256.384A58.43 58.43 0 0 0 512 256m0 512a51.2 51.2 0 1 0 0-102.4a51.2 51.2 0 0 0 0 102.4" />
+                            </svg>
+                            <span class="name-sign1">Rev.1: </span></h3>
+                        <p>
+                            <svg class="signature-sign1-iconcheck" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 512 512">
+                                <path fill="#2d9a0e" d="M17.47 250.9C88.82 328.1 158 397.6 224.5 485.5c72.3-143.8 146.3-288.1 268.4-444.37L460 26.06C356.9 135.4 276.8 238.9 207.2 361.9c-48.4-43.6-126.62-105.3-174.38-137z" />
+                           </svg>
+                           <svg style="display: none;" class="signature-sign1-iconuncheck" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
+                               <g fill="none" fill-rule="evenodd">
+                                   <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                   <path fill="#df2e01" d="m12 14.122l5.303 5.303a1.5 1.5 0 0 0 2.122-2.122L14.12 12l5.304-5.303a1.5 1.5 0 1 0-2.122-2.121L12 9.879L6.697 4.576a1.5 1.5 0 1 0-2.122 2.12L9.88 12l-5.304 5.304a1.5 1.5 0 1 0 2.122 2.12z" />
+                               </g>
+                           </svg>
+                        <span class="signature-sign1"></span></p>
+                        <p>
+                            <svg class="info-sign1-iconcheck" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 512 512">
+                                <path fill="#2d9a0e" d="M17.47 250.9C88.82 328.1 158 397.6 224.5 485.5c72.3-143.8 146.3-288.1 268.4-444.37L460 26.06C356.9 135.4 276.8 238.9 207.2 361.9c-48.4-43.6-126.62-105.3-174.38-137z" />
+                           </svg>
+                           <svg style="display: none;" class="info-sign1-iconuncheck" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
+                               <g fill="none" fill-rule="evenodd">
+                                   <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                   <path fill="#df2e01" d="m12 14.122l5.303 5.303a1.5 1.5 0 0 0 2.122-2.122L14.12 12l5.304-5.303a1.5 1.5 0 1 0-2.122-2.121L12 9.879L6.697 4.576a1.5 1.5 0 1 0-2.122 2.12L9.88 12l-5.304 5.304a1.5 1.5 0 1 0 2.122 2.12z" />
+                               </g>
+                           </svg>
+                            <span class="info-sign1"></span></p>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 512 512">
+                                <path fill="#2d9a0e" d="M17.47 250.9C88.82 328.1 158 397.6 224.5 485.5c72.3-143.8 146.3-288.1 268.4-444.37L460 26.06C356.9 135.4 276.8 238.9 207.2 361.9c-48.4-43.6-126.62-105.3-174.38-137z" />
+                            </svg>
+                            <span class="time-sign1">Thời gian ký: Mon May 06 16:49:27 ICT 2024</span></p>
+
+                        <a  href="#" style="margin-left: 30px; color: #069fff ; font-weight: 600" class="show-info-cer show-sign1">Signature properties</a>
                     </div>
         
-                    <div class="info">
+                    <div id="info-sign-rev2" style="display: none;"  class="info">
                         <h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16">
-                                <path fill="#1152e8" d="M2.5 2a.5.5 0 0 0 0 1h.246a.5.5 0 0 1 .48.363l1.586 5.55A1.5 1.5 0 0 0 6.254 10h4.569a1.5 1.5 0 0 0 1.393-.943l1.474-3.686A1 1 0 0 0 12.762 4H4.448l-.261-.912A1.5 1.5 0 0 0 2.746 2zm4 12a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m4 0a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3" />
+                            <svg class="check-sign2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+                                <defs>
+                                    <mask id="ipSCheckOne0">
+                                        <g fill="none" stroke-linejoin="round" stroke-width="4">
+                                            <path fill="#fff" stroke="#fff" d="M24 44a19.937 19.937 0 0 0 14.142-5.858A19.937 19.937 0 0 0 44 24a19.938 19.938 0 0 0-5.858-14.142A19.937 19.937 0 0 0 24 4A19.938 19.938 0 0 0 9.858 9.858A19.938 19.938 0 0 0 4 24a19.937 19.937 0 0 0 5.858 14.142A19.938 19.938 0 0 0 24 44Z" />
+                                            <path stroke="#000" stroke-linecap="round" d="m16 24l6 6l12-12" />
+                                        </g>
+                                    </mask>
+                                </defs>
+                                <path fill="#1b9b12" d="M0 0h48v48H0z" mask="url(#ipSCheckOne0)" />
                             </svg>
-                            Đơn vị mua hàng</h3>
-                        <p>Đơn vị/Tên: <span>Công ty CP Thành Thái</span></p>
-                        <p>SDT: <span>0100455885</span></p>
-                        <p>Địa chỉ: <span>Số 93 Nguyễn Trãi, Thanh Xuân, Hà Nội</span></p>
-                    </div>
 
-                    <div class="info">
-                        <h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-                                <path fill="#1152e8" d="M3 6h18v12H3zm9 3a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3M7 8a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2v-4a2 2 0 0 1-2-2z" />
+                            <svg class="uncheck-sign2" style="display: none;"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024">
+                                <path fill="#eb3b00" d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896m0 192a58.43 58.43 0 0 0-58.24 63.744l23.36 256.384a35.072 35.072 0 0 0 69.76 0l23.296-256.384A58.43 58.43 0 0 0 512 256m0 512a51.2 51.2 0 1 0 0-102.4a51.2 51.2 0 0 0 0 102.4" />
                             </svg>
-                            Thông tin thanh toán</h3>
-                        <p>Trạng thái thanh toán: <span>Đã thanh toán</span></p>
-                        <p>Phương thức thanh toán: <span>Thanh toán online</span></p>
-                        <p>Tổng tiền thanh toán: <span>đ400,000</span></p>
+                            <span class="name-sign2">T</span></h3>
+                        <p>
+                            <svg class="signature-sign2-iconcheck" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 512 512">
+                                 <path fill="#2d9a0e" d="M17.47 250.9C88.82 328.1 158 397.6 224.5 485.5c72.3-143.8 146.3-288.1 268.4-444.37L460 26.06C356.9 135.4 276.8 238.9 207.2 361.9c-48.4-43.6-126.62-105.3-174.38-137z" />
+                            </svg>
+                            <svg style="display: none;" class="signature-sign2-iconuncheck" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                    <path fill="#df2e01" d="m12 14.122l5.303 5.303a1.5 1.5 0 0 0 2.122-2.122L14.12 12l5.304-5.303a1.5 1.5 0 1 0-2.122-2.121L12 9.879L6.697 4.576a1.5 1.5 0 1 0-2.122 2.12L9.88 12l-5.304 5.304a1.5 1.5 0 1 0 2.122 2.12z" />
+                                </g>
+                            </svg>
+                        <span  class="signature-sign2"></span></p>
+                        <p>
+                            <svg class="info-sign2-iconcheck" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 512 512">
+                                <path fill="#2d9a0e" d="M17.47 250.9C88.82 328.1 158 397.6 224.5 485.5c72.3-143.8 146.3-288.1 268.4-444.37L460 26.06C356.9 135.4 276.8 238.9 207.2 361.9c-48.4-43.6-126.62-105.3-174.38-137z" />
+                           </svg>
+                           <svg style="display: none;" class="info-sign2-iconuncheck" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
+                               <g fill="none" fill-rule="evenodd">
+                                   <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                   <path fill="#df2e01" d="m12 14.122l5.303 5.303a1.5 1.5 0 0 0 2.122-2.122L14.12 12l5.304-5.303a1.5 1.5 0 1 0-2.122-2.121L12 9.879L6.697 4.576a1.5 1.5 0 1 0-2.122 2.12L9.88 12l-5.304 5.304a1.5 1.5 0 1 0 2.122 2.12z" />
+                               </g>
+                           </svg>
+                            <span  class="info-sign2"></span></p>
+                        <p>
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 512 512">
+                                <path fill="#2d9a0e" d="M17.47 250.9C88.82 328.1 158 397.6 224.5 485.5c72.3-143.8 146.3-288.1 268.4-444.37L460 26.06C356.9 135.4 276.8 238.9 207.2 361.9c-48.4-43.6-126.62-105.3-174.38-137z" />
+                            </svg>
+                            <span class="time-sign2"></span></p>
+                            <a href="#" style="margin-left: 30px; color: #069fff ; font-weight: 600" class="show-info-cer show-sign2">Signature properties</a>
+                
+        
                     </div>
+
+                  
                 </div>
-                <div class="col l-4 m-4 c-12">
-
-                    <div class="col-left">
-                        <h3>Đã kiểm tra</h3>
-                        <span>Kết quả tra cứu ngày <span id="date-time">29/04/2024</span></span>
-                        <p>Mẫu số: <span>01GTKT0/003</span></p>
-                        <p>Ký hiệu: <span>AB/21E</span></p>
-                        <p>Số hóa đơn: <span>0000024</span></p>
-                        <!-- <p>Ngày hóa đơn: <span>02/04/2024</span></p> -->
-                        <!-- <p>Ngày ký: <span>02/04/2024</span></p> -->
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="result">
-                <h3>Kết quả kiểm tra hóa đơn</h3>
-
-                <div class="valid">
-                    <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path fill="#1d9f4f" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd" />
-                        </svg>
-                        Thông tin trên hóa đơn chính xác</h3>
-
-                    <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 20 20">
-                            <path fill="#1d9f4f" d="M19 5.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m-2.146-1.854a.5.5 0 0 0-.708 0L13.5 6.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708M14.5 11q.168 0 .335-.01a2.5 2.5 0 0 1-.198.425l-3.463 5.907a1.37 1.37 0 0 1-.674.58v-7.036a1 1 0 0 0 .456-1.16A5.48 5.48 0 0 0 14.5 11M9 5.5c0 1.35.486 2.587 1.294 3.544a1 1 0 0 0-.794 1.822v7.044a1.37 1.37 0 0 1-.694-.588l-3.463-5.907a2.5 2.5 0 0 1-.102-2.335L6.7 6h-.2A1.5 1.5 0 0 1 5 4.5v-2a.5.5 0 0 1 1 0v2a.5.5 0 0 0 .5.5h2.522A6 6 0 0 0 9 5.5" />
-                        </svg>
-                        
-                        Chữ ký số hợp lệ</h3>
-
-                </div>
-
-                <div class="invalid" style="display: none;" >
-                    <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
-                            <defs>
-                                <mask id="ipSFileFailed0">
-                                    <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
-                                        <path fill="#fff" stroke="#fff" d="M10 44h28a2 2 0 0 0 2-2V14H30V4H10a2 2 0 0 0-2 2v36a2 2 0 0 0 2 2" />
-                                        <path stroke="#fff" d="m30 4l10 10" />
-                                        <path stroke="#000" d="m18 22l12 12m0-12L18 34" />
-                                    </g>
-                                </mask>
-                            </defs>
-                            <path fill="#fe1706" d="M0 0h48v48H0z" mask="url(#ipSFileFailed0)" />
-                        </svg>
-                        Thông tin trên hóa đơn đã bị chỉnh sửa</h3>
-
-                    <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20">
-                            <path fill="#fe1706" d="M19 5.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0M14.5 3a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0v-2a.5.5 0 0 0-.5-.5m0 5.125a.625.625 0 1 0 0-1.25a.625.625 0 0 0 0 1.25m0 2.875q.174 0 .345-.01a2.5 2.5 0 0 1-.198.425l-3.463 5.907c-.158.27-.401.473-.684.584v-7.04a1 1 0 0 0 .456-1.16A5.48 5.48 0 0 0 14.5 11M9 5.5c0 1.35.486 2.587 1.294 3.544a1 1 0 0 0-.794 1.822v7.04a1.37 1.37 0 0 1-.684-.584l-3.463-5.907a2.5 2.5 0 0 1-.102-2.335l1.232-2.6A1.75 1.75 0 0 1 5 4.75v-2a.75.75 0 0 1 1.5 0v2c0 .138.112.25.25.25h2.272A6 6 0 0 0 9 5.5" />
-                        </svg>
-                        
-                        Chữ ký số không hợp lệ</h3>
-
-                </div>
-
                 
             </div>
-            
+
         </div>
     </div>
     <!-- Begin Modal Sign -->
@@ -465,7 +461,206 @@
             
         </footer>
     </div>
+    <div class="overlay2" style="display: none;"></div>
     <!-- End Modal Sign -->
+    <div class="modal-viewsign"  style="display: none">
+        <header class="head-modal">
+            <h3>Signature properties</h3>
+            <svg  class="close1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 7l10 10M7 17L17 7" />
+            </svg>
+        </header>
+        
+        <div class="container sign1">
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    
+                    <div id="info-sign-rev1" class="info ">
+                        <p style="display: flex; align-items: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
+                                <path fill="#227f10" d="M128 136a8 8 0 0 1-8 8H72a8 8 0 0 1 0-16h48a8 8 0 0 1 8 8m-8-40H72a8 8 0 0 0 0 16h48a8 8 0 0 0 0-16m112 65.47V224a8 8 0 0 1-12 7l-24-13.74L172 231a8 8 0 0 1-12-7v-24H40a16 16 0 0 1-16-16V56a16 16 0 0 1 16-16h176a16 16 0 0 1 16 16v30.53a51.88 51.88 0 0 1 0 74.94M160 184v-22.53A52 52 0 0 1 216 76V56H40v128Zm56-12a51.88 51.88 0 0 1-40 0v38.22l16-9.16a8 8 0 0 1 7.94 0l16 9.16Zm16-48a36 36 0 1 0-36 36a36 36 0 0 0 36-36" />
+                            </svg>
+                        <span style="margin-left: 16px;" class="rev1-name"></span></p>
+                        <p>
+                        <p >
+                            <span style="margin-left: 8px;">Signature:</span>
+                             <span class="signature-sign1">Hợp lệ</span>
+                        </p>
+                        <p >
+                            <span style="margin-left: 8px;">Document:</span>
+                             <span class="info-sign1">Tài liệu có những sửa đổi không được phép</span>
+                        </p>                                   
+                            <div class="grid-container">
+                                <div class="grid-item">Reason</div>
+                                <div class="grid-item" id="rev1-reason">Ky hoa don</div>
+                                <div class="grid-item">Time</div>
+                                <div class="grid-item" id="rev1-time">2024.05.12,00:21:59</div>
+                                <div class="grid-item">Location</div>
+                                <div class="grid-item" id="rev1-location">Ha Noi, Viet Nam</div>
+                                <div class="grid-item">Changes allowed</div>
+                                <div class="grid-item" id="rev1-allow">Signing, Form filling, Commenting</div>
+                                <div class="grid-item">Certificate</div>
+                                <div class="grid-item"><a class="rev1-view" href="#" style="color: #069fff; font-weight:500">View</a></div>
+                            </div>                       
+                    </div>           
+                </div>                
+            </div>
+        </div>
+
+        <div class="container sign2" style="display: none;">
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    
+                    <div id="info-sign-rev1" class="info ">
+                        <p style="display: flex; align-items: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
+                                <path fill="#227f10" d="M128 136a8 8 0 0 1-8 8H72a8 8 0 0 1 0-16h48a8 8 0 0 1 8 8m-8-40H72a8 8 0 0 0 0 16h48a8 8 0 0 0 0-16m112 65.47V224a8 8 0 0 1-12 7l-24-13.74L172 231a8 8 0 0 1-12-7v-24H40a16 16 0 0 1-16-16V56a16 16 0 0 1 16-16h176a16 16 0 0 1 16 16v30.53a51.88 51.88 0 0 1 0 74.94M160 184v-22.53A52 52 0 0 1 216 76V56H40v128Zm56-12a51.88 51.88 0 0 1-40 0v38.22l16-9.16a8 8 0 0 1 7.94 0l16 9.16Zm16-48a36 36 0 1 0-36 36a36 36 0 0 0 36-36" />
+                            </svg>
+                        <span style="margin-left: 16px;" class="rev2-name"></span></p>
+                        <p>
+                        <p >
+                            <span style="margin-left: 8px;">Signature:</span>
+                             <span class="signature-sign2"></span>
+                        </p>
+                        <p >
+                            <span style="margin-left: 8px;">Document:</span>
+                             <span class="info-sign2"></span>
+                        </p>                                   
+                            <div class="grid-container">
+                                <div class="grid-item">Reason</div>
+                                <div class="grid-item" id="rev2-reason">Ky hoa don</div>
+                                <div class="grid-item">Time</div>
+                                <div class="grid-item" id="rev2-time">2024.05.12,00:21:59</div>
+                                <div class="grid-item">Location</div>
+                                <div class="grid-item" id="rev2-location">Ha Noi, Viet Nam</div>
+                                <div class="grid-item">Changes allowed</div>
+                                <div class="grid-item" id="rev2-allow">Signing, Form filling, Commenting</div>
+                                <div class="grid-item">Certificate</div>
+                                <div class="grid-item"><a class="rev1-view" href="#" style="color: #069fff; font-weight:500">View</a></div>
+                            </div>                       
+                    </div>           
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="overlaycer" style="display: none;"></div>
+
+    <div class="modal-viewcer"  style="display: none">
+        <header class="head-modal">
+            <h3>Certificate Viewer</h3>
+            <svg  class="close2" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 7l10 10M7 17L17 7" />
+            </svg>
+        </header>
+        
+        <div class="container sign1">
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    
+                    <div id="info-sign-rev1" class="info ">
+                        <p style="display: flex; align-items: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
+                                <path fill="#227f10" d="M128 136a8 8 0 0 1-8 8H72a8 8 0 0 1 0-16h48a8 8 0 0 1 8 8m-8-40H72a8 8 0 0 0 0 16h48a8 8 0 0 0 0-16m112 65.47V224a8 8 0 0 1-12 7l-24-13.74L172 231a8 8 0 0 1-12-7v-24H40a16 16 0 0 1-16-16V56a16 16 0 0 1 16-16h176a16 16 0 0 1 16 16v30.53a51.88 51.88 0 0 1 0 74.94M160 184v-22.53A52 52 0 0 1 216 76V56H40v128Zm56-12a51.88 51.88 0 0 1-40 0v38.22l16-9.16a8 8 0 0 1 7.94 0l16 9.16Zm16-48a36 36 0 1 0-36 36a36 36 0 0 0 36-36" />
+                            </svg>
+                        <span style="margin-left: 16px;" class="rev1-name">CN=Dona Beauty Hoang Thi Huong</span></p>
+                        <p>
+                        
+                            <div class="grid-container2">
+                                <div class="grid-item">Version</div>
+                                <div class="grid-item ok" id="rev1-version" >3</div>
+                                <div class="grid-item">Signature Algorithm</div>
+                                <div class="grid-item ok"id="rev1-sign-althm">SHA256 RSA</div>
+                                <div class="grid-item">Subject</div>
+                                <div class="grid-item ok"id="rev1-subject">cn=Dona Beauty Hoang Thi Huong</div>
+                                <div class="grid-item">Serial number</div>
+                                <div class="grid-item ok" id="rev1-serial">01 8F 57 E2 72 09</div>
+                                <div class="grid-item">Validity starts</div>
+                                <div class="grid-item ok"id="rev1-datestart">2024.05.12,22:21:59</div>
+                                <div class="grid-item">Validity ends</div>
+                                <div class="grid-item ok"id="rev1-dateend">2034.05.12,22:21:59</div>
+                                <div class="grid-item">Public key</div>
+                                <div class="grid-item ok">RSA (2048 bit)
+                                    <span id="rev1-public-key" style="margin-left: 8px;">d4c016ea094f3f5d23e856248c8ceec3e736772bcda3762788560c768f517565feb7f4048af5b06efa6c84c60c5417a5e9490ba77b98dab3b3b6a76ccb5e654266a6b30d2f22e384479fe44faaae6ab870c4bbcf6ee81db5170427e746fed41e3de0c0dad5c4f862552125d9a5ebd53e48ab2b2781bf25945f0cc2c3ae225d04498c4638fffe6adff84bce9bb8e2bd19d69c46aea7214f2a5485dc3ff1ea2e3d5ace01269b2f0fbd01d9d96e9fd9bcbf90933b9d8606506169266e7384c5bcbbc8c4be5c1ee56bf574a87cae746a12ef44172d350e0c576cbae5ad5853b2eda23ef4d44eac46d25af1d72d5af11fe5e3f720e9f54f31a6eacc79aa5fdfddd9f9</span>
+                                </div>
+                                <div class="grid-item">Signature</div>
+                                <div class="grid-item ok"id="rev1-signature">
+                                    
+                                </div>
+                            </div>  
+
+                            <p style="margin-top: 20px;">
+                                <span>Field Value</span>
+
+                                <div class="rev1-field" style="width:460px; height:100px; background-color:#eceff1; margin-left:16px; overflow:auto; padding:8px">
+                                    
+                                </div>
+                            </p>
+                            
+                            
+                    </div>
+
+                  
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="container sign2">
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    
+                    <div id="info-sign-rev1" class="info ">
+                        <p style="display: flex; align-items: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
+                                <path fill="#227f10" d="M128 136a8 8 0 0 1-8 8H72a8 8 0 0 1 0-16h48a8 8 0 0 1 8 8m-8-40H72a8 8 0 0 0 0 16h48a8 8 0 0 0 0-16m112 65.47V224a8 8 0 0 1-12 7l-24-13.74L172 231a8 8 0 0 1-12-7v-24H40a16 16 0 0 1-16-16V56a16 16 0 0 1 16-16h176a16 16 0 0 1 16 16v30.53a51.88 51.88 0 0 1 0 74.94M160 184v-22.53A52 52 0 0 1 216 76V56H40v128Zm56-12a51.88 51.88 0 0 1-40 0v38.22l16-9.16a8 8 0 0 1 7.94 0l16 9.16Zm16-48a36 36 0 1 0-36 36a36 36 0 0 0 36-36" />
+                            </svg>
+                        <span style="margin-left: 16px;" class="rev2-name"></span></p>
+                        <p>
+                        
+                            <div class="grid-container2">
+                                <div class="grid-item">Version</div>
+                                <div class="grid-item ok" id="rev2-version" >3</div>
+                                <div class="grid-item">Signature Algorithm</div>
+                                <div class="grid-item ok"id="rev2-sign-althm">SHA256 RSA</div>
+                                <div class="grid-item">Subject</div>
+                                <div class="grid-item ok"id="rev2-subject">cn=Dona Beauty Hoang Thi Huong</div>
+                                <div class="grid-item">Serial number</div>
+                                <div class="grid-item ok" id="rev2-serial">01 8F 57 E2 72 09</div>
+                                <div class="grid-item">Validity starts</div>
+                                <div class="grid-item ok"id="rev2-datestart">2024.05.12,22:21:59</div>
+                                <div class="grid-item">Validity ends</div>
+                                <div class="grid-item ok"id="rev2-dateend">2034.05.12,22:21:59</div>
+                                <div class="grid-item">Public key</div>
+                                <div class="grid-item ok">RSA (2048 bit)
+                                    <span id="rev2-public-key" style="margin-left: 8px;">d4c016ea094f3f5d23e856248c8ceec3e736772bcda3762788560c768f517565feb7f4048af5b06efa6c84c60c5417a5e9490ba77b98dab3b3b6a76ccb5e654266a6b30d2f22e384479fe44faaae6ab870c4bbcf6ee81db5170427e746fed41e3de0c0dad5c4f862552125d9a5ebd53e48ab2b2781bf25945f0cc2c3ae225d04498c4638fffe6adff84bce9bb8e2bd19d69c46aea7214f2a5485dc3ff1ea2e3d5ace01269b2f0fbd01d9d96e9fd9bcbf90933b9d8606506169266e7384c5bcbbc8c4be5c1ee56bf574a87cae746a12ef44172d350e0c576cbae5ad5853b2eda23ef4d44eac46d25af1d72d5af11fe5e3f720e9f54f31a6eacc79aa5fdfddd9f9</span>
+                                </div>
+                                <div class="grid-item">Signature</div>
+                                <div class="grid-item ok"id="rev2-signature">
+                                    
+                                </div>
+                            </div>  
+
+                            <p style="margin-top: 20px;">
+                                <span>Field Value</span>
+
+                                <div class="rev1-field" style="width:460px; height:100px; background-color:#eceff1; margin-left:16px; overflow:auto; padding:8px">
+                                    
+                                </div>
+                            </p>
+                            
+                            
+                    </div>
+
+                  
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
