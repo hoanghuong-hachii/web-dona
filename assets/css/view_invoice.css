@@ -185,6 +185,7 @@
   border: #ccc 2px solid;
   border-radius: 10px;
   overflow: hidden;
+  z-index: 102;
 }
 
 .modal-viewcer {
@@ -197,6 +198,7 @@
   border: #ccc 2px solid;
   border-radius: 10px;
   overflow: hidden;
+  z-index: 104;
 }
 
 .modal-viewsign {
@@ -209,6 +211,7 @@
   border: #ccc 2px solid;
   border-radius: 10px;
   overflow: hidden;
+  z-index: 103;
 }
 
 .modal-sign, .modal-draw, .modal-design, .modal-pass {
@@ -317,6 +320,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 103;
 }
 
 .overlaycer {
@@ -325,6 +329,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 102;
 }
 
 .grid-item {
@@ -588,6 +593,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 101;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
