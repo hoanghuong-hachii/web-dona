@@ -130,6 +130,10 @@
         display: block;
     }
 
+    .modal-check {
+        max-width: 350px;
+        margin: 0;
+    }
     .modal-sign, .modal-draw, .modal-design, .modal-pass {
         width: calc(100% - 20px);
         min-width: 0;
